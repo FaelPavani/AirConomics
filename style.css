@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #363636;
+  --secondary: #ddd;
+  --logo-color: #0080ff;       
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: var(--secondary);
+}
+
+.header {
+  background-color: var(--primary);
+  width: 100%;
+  height: 10vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Alinha verticalmente */
+}
+
+.header .navbar {
+  display: flex;
+  width: inherit;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header .navbar .navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.header .navbar .logo-link .logo {
+  width: 104px;
+}
+
+.header .navbar .profile-link .profile {
+  width: 36px;
+}
+
+.social {
+  background-image: url('../img/banner.jpg');
+  height: 90vh; 
+  
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+ 
+  justify-content: center;/* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.social .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  width: 80%; 
+  padding: 20px; /*espaço ao redor do conteúdo que você guilherme quiser implementar*/
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #363636;
+  --secondary: #ddd;
+  --logo-color: #0080ff;       
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: var(--secondary);
+}
+
+.header {
+  background-color: var(--primary);
+  width: 100%;
+  height: 10vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Alinha verticalmente */
+}
+
+.header .navbar {
+  display: flex;
+  width: inherit;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header .navbar .navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.header .navbar .logo-link .logo {
+  width: 104px;
+}
+
+.header .navbar .profile-link .profile {
+  width: 36px;
+}
+
+.social {
+  background-image: url('../img/banner.jpg');
+  height: 90vh; 
+  
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+ 
+  justify-content: center;/* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.social .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  width: 80%; 
+  padding: 20px; /*espaço ao redor do conteúdo que você guilherme quiser implementar*/
+}
+
+.social .container .boxes {
+  display: flex;
+  flex-direction: row; /* fiz as boxes ficarem  em linha */
+  justify-content: center; /* centralizei de forma horizontal boxes */
+  gap: 20px; 
+  align-self: center;
+ 
+}
+
+.box { 
+  flex: 1; /* Faz a box ocupar espaço proporcionalmente */
+  min-width: 400px; 
+  max-width: 500px; 
+  min-height: 400px;
+  border-radius: 16px; 
+  background-color: var(--secondary); 
+  box-shadow: 0 4px 20px var(--logo-color); 
+  padding: 30px; 
+ justify-content: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px;
+ 
+  perspective: 1000px; 
+ 
+ 
+  
+}
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Esconde a parte de trás quando não visível */
+  display: flex;
+
+  align-items: center;
+  transition: transform 0.6s;
+  flex-direction: column;
+  align-self: center;
+  padding: 20px;
+}
+
+
+
+.back {
+  background-color: var(--secondary);
+  transform: rotateY(180deg); /* Esconde a parte de trás inicialmente, ou seja irá rotacionar pessoal !! */
+}
+
+.box:hover .front {
+  transform: rotateY(180deg); /* Vira a frente ao passar o mouse */
+}
+
+.box:hover .back {
+  transform: rotateY(0); /* Mostra a parte de trás ao passar o mouse */
+}
+
+
+.box img { 
+  width: 200px;
+    border-radius: 10px;
+    height: 200px;
+   
+}
+ 
+
+
+.box h2 {
+  /* -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--logo-color); */
+  color: var(--secundary);
+  text-shadow: 0 0 5px var(--logo-color), 0 0 10px var(--logo-color), 0 0 15px var(--logo-color);
+  
+  
+ 
+
+    /* Remove margens para alinhamento */
+}
+
+
+
+
+.box p {
+margin: 10%;
+color: var(--primary);
+align-items: center;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+
+
+
+.front span{
+
+  color: var(--logo-color);
+}
+
+.back span {
+
+  color:  var(--logo-color);
+}
+
+
+.footer {
+  background-color: var(--primary);
+  height: 100px;
+  color:var(--secondary);
+  display: flex;
+  
+  
+  font-size: 12px;
+}
+
+
+
+
+
+
+.footer .container {
+justify-content: center;
+align-items: center ; }   /* optei por usar para centralizar os itens escritos em meu footer*/
+
+
+ .footer span {
+
+  color: var(--logo-color);
+
+ }
+
+
+
+/* a parte do footer foi mais fácil de realizar por conta do aprednizado que coloquei em prática
+
+tive a consciência e usei o social para pegar o parte do cabeçalho depois do header e antes do footer, assim o que estava presente nessa div foi
+meu conteiner que utilizei para criar boxes e e na box utilizei as formas de fazer com bordas masi arredondadas , mas não tive sucesso 
+nas suas realizações
+ 
+  perspective: 1000px; 
+ 
+ 
+  
+}
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Esconde a parte de trás quando não visível */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s;
+  flex-direction: column;
+}
+
+
+
+.back {
+  background-color: var(--secondary);
+  transform: rotateY(180deg); /* Esconde a parte de trás inicialmente, ou seja irá rotacionar pessoal !! */
+}
+
+.box:hover .front {
+  transform: rotateY(180deg); /* Vira a frente ao passar o mouse */
+}
+
+.box:hover .back {
+  transform: rotateY(0); /* Mostra a parte de trás ao passar o mouse */
+}
+
+
+.box img { 
+  width: 100px;
+    border-radius: 10px;
+    height: 100px;
+   
+}
+ 
+
+
+.box h2 {
+  /* -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--logo-color); */
+  color: var(--secundary);
+  text-shadow: 0 0 5px var(--logo-color), 0 0 10px var(--logo-color), 0 0 15px var(--logo-color);
+  
+  
+ 
+
+    margin-top: 20px;  /* Remove margens para alinhamento */
+}
+
+
+
+
+.box p {
+margin: 10%;
+color: var(--primary);
+align-items: center;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+
+
+
+.footer {
+  background-color: var(--primary);
+  height: 100px;
+  color:var(--secondary);
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  font-size: 12px;
+}
+
+
+
+
+
+
+.footer .container {
+justify-content: center;
+align-items: center ; }   /* optei por usar para centralizar os itens escritos em meu footer*/
+
+
+ .footer span {
+
+  color: var(--logo-color);
+
+ }
+
+.version {
+  font-size: 12px;
+}
+
+
+
+
+
+
+/* a parte do footer foi mais fácil de realizar por conta do aprednizado que coloquei em prática
+
+tive a consciência e usei o social para pegar o parte do cabeçalho depois do header e antes do footer, assim o que estava presente nessa div foi
+meu conteiner que utilizei para criar boxes e e na box utilizei as formas de fazer com bordas masi arredondadas , mas não tive sucesso 
+nas suas realizações
