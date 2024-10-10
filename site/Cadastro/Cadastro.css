@@ -79,8 +79,6 @@
     flex-direction: row;
     justify-content: space-around;
     gap: 15px;
-
-
 }
 
 .card h1 {
@@ -107,10 +105,54 @@
     color: #000000;
     padding: 20px 45px 20px 20px;
 }
-
-.input-box input::placeholder {
+.input-box input::placeholder{
     color: var(--primary);
 }
+.input-box-cidade input::placeholder{
+    color: var(--primary);
+}
+
+.input-box-cidade select:focus {
+   color: var(--primary)
+}
+
+  .input-box-cidade{
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  
+  .input-box-cidade input { 
+    width: 70%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    font-size: 16px;
+    color: #000000;
+    padding: 10px 20px;
+    border-top-left-radius:  40px;
+    border-bottom-left-radius:40px;
+  
+  }
+  .input-box-cidade select { 
+    width: 30%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-top-right-radius:  40px;
+    border-bottom-right-radius:40px;
+    font-size: 16px;
+    color: #000000;
+    padding: 10px 0px;
+  }
+
+
+
+
 
 .input-box i {
     position: absolute;
