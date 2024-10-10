@@ -1,15 +1,25 @@
-.grafico-direita, .grafico-esquerda{
+.dashboard{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.grafico-direita{
+    width: 100%;
+}
+
+.grafico-esquerda{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
 }
-.grafico-direita div, .grafico-direita div canvas{
-    width: inherit;
-}
 
 .grafico-esquerda span{
     font-size: 1.5rem;
     font-weight: bold;
+    text-align: center;
 }
