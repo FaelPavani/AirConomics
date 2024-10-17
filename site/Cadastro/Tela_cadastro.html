@@ -69,10 +69,14 @@
                         <i class='bx bxs-user'></i>
                     </div>
                     <div class="input-box">
-                        <input id="nome_fachada" type="text" placeholder="Nome fachada" />
+                        <input id="nome_fachada" type="text" placeholder="Nome Fantasia" />
                         <i class='bx bxs-user'></i>
                     </div>
-                 
+                    <div class="input-box">
+                        <input id="nome_input" type="text" placeholder="Responsável Legal" />
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    
                     <div class="input-box-cidade">
                         <input oninput="limpar_cnpj()" id="cnpj_input" type="text" placeholder="Cidade" maxlength="14">
                      
@@ -107,16 +111,7 @@
                             <option value="TO">TO</option>
                         </select>
                     </div>
-                    <div class="input-box">
-                        <input oninput="verificar_requisitos()" id="senha_input" type="password" placeholder="Senha" />
-                        <i class='bx bxs-lock-alt'></i>
-                    </div>
-                    <div class="input-box">
-                        <input onchange="verificar_senha()" id="confirmacao_senha_input" type="password"
-                            placeholder="Confirmar senha" />
-                        <i class='bx bxs-lock-alt'></i>
-                        <span id="span_senha">Senha e confirmação de senha são diferentes</span>
-                    </div>
+                  
                     
         
                 </div>
