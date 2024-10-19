@@ -178,85 +178,208 @@ background-image: url('../img/banner.jpg');
   width: 102px;
 }
 
-.dash1 {
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  height: 320px;
-}
+
 .dash2{
   display: flex;
-  justify-content: right;
-  align-items: right;
-  height: 320px;
+  position: absolute;
+  top: 55%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  height: 250px;
+  background-color: #b6b6b6;
+  border-radius: 5px;
+}
+.plano {
   
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    height: 570px;
 }
-.kp{
+.norma{
+  display: flex;
+  background-color: #363636;
+  width: 180px;
+  height: 380px;
+  color: #ddd;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 15px;
+}
+.bloco .norma{
   position: absolute;
-top: 25%;
-left: 79%;
-transform: translate(-50%, -50%);
+  top: 65%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+ 
+}
+.norma1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.qtdmain{
+  background-color: #0080ff;
+  position: absolute;
+  top: 20%;
+  left: 28.5%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+
+}
+.qtd2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   border-radius: 5px;
-  width: 350px;
+  padding: 5px;
+  height: 50px;
 }
-.kp .kpi1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #363636;
-  border-radius: 5px;
+.qtd{
   color: white;
-}
-
-.kp .titulo{
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  height: 50px;
 }
-.med{
+.img img{
+  display: inline-block;
+  height: 28px;
+  width: auto;
   position: absolute;
-top: 50%;
-left: 79%;
-transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 5px;
-  width: 350px;
-}
-.med .titulo{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #363636;
-  border-radius: 5px;
-  color: white;
+  top: 23.8%;
+  left: 26%;
+  transform: translate(-50%, -50%);
 }
 
-.med .ciclo{
+.dash3{
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.eco{
   position: absolute;
-top: 90%;
-left: 25%;
-transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 5px;
-  width: 350px;
+  top: 55%;
+  left: 39%;
+  transform: translate(-50%, -50%);
+  height: 250px;
+  border-radius: 10px;
+  background-color: #b6b6b6;
 }
-.eco .titulo{
+.select{
+  position: absolute;
+  top: 28%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  background-color: brown;
+  width: 180px;
+  height: 70px;
+  border-radius: 10px;
+}
+.title{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #363636;
+  color: aliceblue;
+}
+.sele{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.kp2{
+  position: absolute;
+  top: 20%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  background-color: green;
   border-radius: 5px;
+}
+.bom{
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  height: 50px;
+}
+.Number{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 50px;
+  background-color: white;
+}
+.img2 img {
+  
+  display: inline-block;
+  height: 28px;
+  width: auto;
+  position: absolute;
+  top: 23.8%;
+  left: 45.5%;
+  transform: translate(-50%, -50%);
 }
 
-.eco .economia{
+.kp3{
+  position: absolute;
+  top: 20%;
+  left: 68%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(143, 0, 0);
+  border-radius: 5px;
+}
+.mau{
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  height: 50px;
+}
+.mau2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 50px;
+  background-color: white;
+}
+.img3 img{
+  display: inline-block;
+  height: 40px;
+  width: auto;
+  position: absolute;
+  top: 23.8%;
+  left: 66%;
+  transform: translate(-50%, -50%); 
+}
+.kp4{
+  position: absolute;
+  top: 20%;
+  left: 88%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(143, 0, 0);
+  border-radius: 5px;
+  width: 225.5px;
+}
+.alerta{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  height: 50px;
+}
+.alerta2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 50px;
+  background-color: white;
 }
