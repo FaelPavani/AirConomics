@@ -1,5 +1,4 @@
 create database AirConomics;
-
 use AirConomics;
 
 create table tb_login(
@@ -7,7 +6,6 @@ id_login int primary key auto_increment,
 usuario_login varchar(45),
 senha_login varchar(100)
 );
-
 create table tb_endereco(
 id_endereco int primary key auto_increment,
 rua varchar(65),
@@ -24,7 +22,6 @@ nomeFantasia_empresa varchar(45),
 RazaoSocial_empresa varchar(45),
 fk_endereco int,
 constraint fk_endereco foreign key (fk_endereco) references tb_endereco(id_endereco));
-
 
 create table tb_usuario(
 id_usuario int primary key auto_increment,
@@ -61,6 +58,13 @@ ciclos_reais int,
 fk_sensor int,
 constraint fk_sensor_ciclo foreign key (fk_sensor) references tb_sensor(id_sensor),
 primary key (id_ciclo,fk_sensor)
+);
+
+create table tb_alerta (
+id_alerta int auto_increment,
+fk_dado int,
+constraint fk_dado foreign key (fk_dado) references tb_dado(id_dado),
+primary key(id_alerta,fk_dado )
 );
 
 insert into tb_login (usuario_login, senha_login) values 
@@ -203,7 +207,3 @@ JOIN
     tb_dado d ON s.id_sensor = d.fk_sensor
 JOIN 
     tb_ciclo c ON s.id_sensor = c.fk_sensor;
-
-
-
-
