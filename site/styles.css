@@ -305,3 +305,200 @@ html{
 }
 
 /* sobre nos */
+.social-about {
+  background-image: url('../img/banner.jpg');
+  height: 90vh; 
+  
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+ 
+  justify-content: center;/* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.social-about .container-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  width: 80%; 
+  padding: 20px; /*espaço ao redor do conteúdo que você guilherme quiser implementar*/
+}
+.social-about .container-about .boxes-about {
+  display: flex;
+  flex-direction: row; /* fiz as boxes ficarem  em linha */
+  justify-content: center; /* centralizei de forma horizontal boxes */
+  gap: 20px; 
+  align-self: center;
+ 
+}
+
+.box-about { 
+  flex: 1; /* Faz a box ocupar espaço proporcionalmente */
+  min-width: 400px; 
+  max-width: 500px; 
+  min-height: 400px;
+  /* border-radius: 20px;
+  background-color: var(--secondary); 
+  box-shadow: 0 4px 20px var(--logo-color);  */
+  padding: 30px; 
+ justify-content: center;
+ position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px;
+  transition: transform 0.9s; 
+  perspective: 1000px;
+ 
+ 
+  
+}
+
+
+.front-about, .back-about {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: var(--secondary); 
+  box-shadow: 0 4px 20px var(--logo-color);
+  
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  
+  flex-direction: column;
+  align-self: center;
+  padding: 20px;
+}
+
+
+.back-about {
+  transform: rotateY(180deg) rotateX(180deg)
+}
+
+.box-about:hover .front-about {
+  transform: rotateY(180deg);
+   /* Vira a frente ao passar o mouse */
+}
+
+.box-about:hover .back-about {
+  transform: rotateY(0); /* Mostra a parte de trás ao passar o mouse */
+}
+
+.box-about img { 
+  width: 200px;
+    border-radius: 10px;
+    height: 200px;
+}
+
+.box-about p {
+  margin: 10%;
+  color: var(--primary);
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.front-about span{
+  color: var(--logo-color);
+}
+
+.back-about span {
+  color:  var(--logo-color);
+}
+/* Estilo geral da seção */
+.content-about {
+  padding: 40px; /* Espaçamento interno */
+  background-color: var(--secondary); /* Cor de fundo */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 2px 10px var(--logo-color0); /* Sombra */
+ 
+}
+
+.content-about span {
+  color:  var(--logo-color);
+}
+
+/* Estilo do título principal da seção */
+.content-about h1 {
+  font-size: 2.5em; /* Tamanho da fonte */
+  color: var(--primary); /* Cor do texto */
+  margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Estilo dos subtítulos */
+.content-about h3 {
+  font-size: 1.8em; /* Tamanho da fonte */
+  color: var(--primary); /* Cor do texto */
+  margin: 20px 0; /* Margem superior e inferior */
+}
+
+/* Estilo dos parágrafos */
+.content-about p {
+  font-size: 1em; /* Tamanho da fonte */
+  line-height: 1.6; /* Altura da linha */
+  color: var(--primary); /* Cor do texto */
+  margin-bottom: 15px; /* Margem inferior */
+}
+
+/* Estilo da lista */
+.content-about ul {
+  padding-left: 0px; /* Espaçamento interno à esquerda */
+  list-style-type: disc; /* Estilo da lista */
+}
+
+/* Estilo dos itens da lista */
+.content-about ul li {
+  margin-bottom: 10px; /* Margem inferior para os itens */
+color: var(--primary);
+}
+
+
+ 
+  
+
+
+.front-about, .back-about {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Esconde a parte de trás quando não visível */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s;
+  flex-direction: column;
+}
+
+.back-about {
+  background-color: var(--secondary);
+  transform: rotateY(180deg); /* Esconde a parte de trás inicialmente, ou seja irá rotacionar pessoal !! */
+}
+
+.box-about img { 
+  width: 60px;
+  border-radius: 10px;
+  height: 60px;
+}
+
+.box-about h2 {
+  color: var(--secondary);
+  /* text-shadow: 0 0 5px var(--logo-color), 0 0 10px var(--logo-color), 0 0 15px var(--logo-color); */
+  margin-top: 20px;  /* Remove margens para alinhamento */
+}
+
+.box-about p {
+  margin: 10%;
+  color: var(--primary);
+  align-items: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.container-about h2{
+  color: var(--primary);
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5%;
+}
