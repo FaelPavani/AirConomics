@@ -186,7 +186,7 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary);
+  background-color: white;
 }
 
 .social .social-container {
@@ -427,6 +427,7 @@ html{
   font-size: 2.5em; /* Tamanho da fonte */
   color: var(--primary); /* Cor do texto */
   margin-bottom: 20px; /* Espaçamento inferior */
+ 
 }
 
 /* Estilo dos subtítulos */
@@ -500,7 +501,7 @@ color: var(--primary);
   color: var(--primary);
   width: 100%;
   text-align: center;
-  margin-bottom: 5%;
+  
 }
 
 
@@ -508,7 +509,25 @@ color: var(--primary);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  background-color: var(--logo-color);
+  /* background-color: var(--secondary); */
+  background-color: white;
+  margin: 5%;
+  margin-bottom: 5%;
+  
+ 
+}
+
+.card h1 {
+  margin: 0;
+  align-self: flex-start; /* Posiciona o título no início do card */
+}
+
+.team-cards  h2 {
+  color: var(--primary);
+  width: 100%;
+  text-align: center;
+  margin: 5%
+
   
 }
 
@@ -525,10 +544,19 @@ color: var(--primary);
   height: 100%;
   transition: transform 0.6s;
   transform-style: preserve-3d;
+  
 }
 
 .cards:hover .card-inner {
   transform: rotateY(180deg);
+}
+
+.team-cards .cards .img_int {
+  width: 100%; /* Ajuste a largura conforme necessário */
+  height: 200px; /* Defina uma altura fixa para todas as imagens */
+  object-fit: cover; /* Corta a imagem para preencher o espaço */
+  border-radius: 10%; /* Bordas arredondadas, se desejado */
+
 }
 
 .card-front, .card-back {
@@ -544,13 +572,15 @@ color: var(--primary);
 }
 
 .card-front {
-  background-color: #fff;
+  background-color: var(--primary);
+  padding: 10%;
 }
 
 .card-back {
   background-color: var(--primary);
   color: var(--secondary);
   align-items: center;
+  padding: 10%;
   transform: rotateY(180deg);
   
  
@@ -559,6 +589,7 @@ color: var(--primary);
 
 .card .img .back {
   width: 10px;
+  padding: 10px;
   
 }
 .card .img .front {
