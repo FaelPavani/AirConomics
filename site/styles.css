@@ -186,7 +186,7 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: var(--primary);
 }
 
 .social .social-container {
@@ -613,4 +613,20 @@ color: var(--primary);
 
 .card-social a:hover {
   color: var(--logo-color)
+}
+
+/* endereco */
+.endereco{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.endereco .mapa{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
