@@ -210,6 +210,33 @@ html{
   margin-bottom: 5%;
 }
 
+.social-content{
+  padding-bottom: 2em;
+  color: var(--secondary);
+}
+
+.social-content .img{
+  display: flex;
+  gap: 20px;
+}
+
+.social-content .img.img-right{
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-content .img.img-left{
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-content .img img{
+  width: 120px;
+}
+
+
 .social .social-container .social-boxes {
   display: flex;
   flex-direction: row;
