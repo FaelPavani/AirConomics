@@ -1,5 +1,5 @@
 function verificar_requisitos(){
-    var senha = senha_input.value
+    var senha = CadastroSenha_input.value
   
     if(senha.length >= 8){
       req_char.style.color = '#228B22'
@@ -35,7 +35,7 @@ function verificar_requisitos(){
   }
   
   function verificar_senha(){
-    var senha = senha_input.value
+    var senha = CadastroSenha_input.value
     var conf_senha = confirmacao_senha_input.value
     
     if(senha != conf_senha){

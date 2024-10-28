@@ -104,7 +104,7 @@ body {
 }
 
 .cardCad {
-    transform: translatey(-10vw);
+    transform: translatey(-11vw);
     width: 900px;
     height: fit-content;
     padding: 25px 40px;
@@ -250,6 +250,9 @@ body {
     font-size: 16px;
     color: #000000;
     padding: 10px 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none; /* Para Firefox */
+    appearance: none;
 }
 
 .link-to {
@@ -352,3 +355,18 @@ width: 100% !important  ;
     display: none;
 }
     
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+/* Oculta o ícone de calendário no Firefox */
+input[type="date"] {
+    -moz-appearance:
+     textfield;}
+     #input_data{
+
+width: 90%;
+text-align: center;
+color: var(--primary);
+     }

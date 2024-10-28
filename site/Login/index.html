@@ -33,11 +33,11 @@
         <h1>Login</h1>
         <div class="main">
           <div class="input-boxlogin">
-            <input id="nome_input" type="text" placeholder="Nome" />
+            <input id="LoginNome_input" type="text" placeholder="Nome" />
             <i id="i"class='bx bxs-user'></i>
           </div>
           <div class="input-boxlogin">
-              <input id="senha_input" type="password" placeholder="Senha" />
+              <input id="LoginSenha_input" type="password" placeholder="Senha" />
               <i id="i" class='bx bxs-lock-alt'></i>
               <!-- <i class='bx bxs-low-vision'></i>
               <i class='bx bxs-show'></i> -->
@@ -60,17 +60,17 @@
 
                       <div class="input-box">
                           <span>Nome</span>
-                          <input id="nome_input" type="text" placeholder="Ex: joão" />
+                          <input id="CadastroNome_input" type="text" placeholder="Ex: joão" />
                           <i class='bx bxs-user'></i>
                       </div>
                       <div class="input-box">
                           <span>Telefone</span>
-                          <input id="Telefone_input" type="text" placeholder="Ex: 11 94002-8922" />
+                          <input id="Telefone_input" type="text" placeholder="Ex: 11 94002-8922" maxlength="13"/>
                           <i class='bx bxs-phone'></i>
                       </div>
                       <div class="input-box">
                           <span>senha</span>
-                          <input oninput="verificar_requisitos()" id="senha_input" type="password"
+                          <input oninput="verificar_requisitos()" id="CadastroSenha_input" type="password"
                               placeholder="Senha" />
                           <i class='bx bxs-lock-alt'></i>
                       </div>
@@ -84,7 +84,7 @@
                       </div>
                       <div class="input-box">
                           <span> Data de nascimento </span>
-                          <input type="date" id="data" />
+                          <input type="date" id="input_data" />
                           <i class='bx bxs-calendar'></i>
                       </div>
                       <div class="input-box">
@@ -125,7 +125,7 @@
                       </div>
                       <div class="input-box">
                           <span>Responsável Legal</span>
-                          <input id="nome_input" type="text" placeholder="Ex. Jõao" />
+                          <input id="responsavel_input" type="text" placeholder="Ex. Jõao" />
                           <i class='bx bxs-user'></i>
                       </div>
                       <div class="input-box">
