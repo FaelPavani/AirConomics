@@ -360,10 +360,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     -webkit-appearance: none;
 }
 
-/* Oculta o ícone de calendário no Firefox */
-input[type="date"] {
-    -moz-appearance:
-     textfield;}
+input[type="date"] {-moz-appearance: textfield;}
      #input_data{
 
 width: 90%;
