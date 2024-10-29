@@ -1,11 +1,15 @@
+
 create database AirConomics;
+
+
 use AirConomics;
 
 create table tb_login(
 id_login int primary key auto_increment,
-usuario_login varchar(45),
+email_login varchar(45),
 senha_login varchar(100)
 );
+
 create table tb_endereco(
 id_endereco int primary key auto_increment,
 rua varchar(65),
@@ -20,8 +24,11 @@ nome_empresa varchar(45),
 cnpj_empresa char(14),
 nomeFantasia_empresa varchar(45),
 RazaoSocial_empresa varchar(45),
+responsavel_empresa varchar(45),
+telefone_responsavel char(13),
 fk_endereco int,
 constraint fk_endereco foreign key (fk_endereco) references tb_endereco(id_endereco));
+
 
 create table tb_usuario(
 id_usuario int primary key auto_increment,
@@ -51,15 +58,6 @@ constraint fk_sensor_dado foreign key (fk_sensor) references tb_sensor(id_sensor
 primary key(id_dado,fk_sensor)
 );
 
-create table tb_ciclo (
-id_ciclo int auto_increment, 
-ciclos_esperados int,
-ciclos_reais int, 
-fk_sensor int,
-constraint fk_sensor_ciclo foreign key (fk_sensor) references tb_sensor(id_sensor),
-primary key (id_ciclo,fk_sensor)
-);
-
 create table tb_alerta (
 id_alerta int auto_increment,
 fk_dado int,
@@ -67,7 +65,7 @@ constraint fk_dado foreign key (fk_dado) references tb_dado(id_dado),
 primary key(id_alerta,fk_dado )
 );
 
-insert into tb_login (usuario_login, senha_login) values 
+insert into tb_login (email_login, senha_login) values 
 ('rafael.nascimento', md5('senhaSegura123')), 
 ('luciana.martins', md5('Password!2024')), 
 ('marcos.tavares', md5('SecurePass456')), 
@@ -161,49 +159,31 @@ insert into tb_dado (dataColeta_dado, temperatura_dado, fk_sensor) values
 ('2024-10-01 08:15:00', 22.2, 7), 
 ('2024-10-01 08:30:00', 22.1, 7);
 
-insert into tb_ciclo (ciclos_esperados, ciclos_reais, fk_sensor) values 
-(30, 28, 1), 
-(40, 35, 1), 
-(50, 48, 2), 
-(45, 42, 2), 
-(35, 30, 3), 
-(33, 30, 3), 
-(60, 55, 4), 
-(55, 52, 4), 
-(25, 22, 5), 
-(30, 27, 5), 
-(38, 35, 6), 
-(32, 30, 6), 
-(40, 38, 7), 
-(42, 40, 7), 
-(35, 33, 8), 
-(45, 42, 8), 
-(50, 48, 9), 
-(30, 29, 9), 
-(20, 18, 10), 
-(25, 24, 10);
-
 SELECT 
-    u.nome_usuario,
-    u.email_usuario,
-    u.telefone_usuario,
-    e.nome_empresa,
-    e.nomeFantasia_empresa,
-    d.dataColeta_dado,
-    d.temperatura_dado,
-    c.ciclos_esperados,
-    c.ciclos_reais,
-    s.numero_sensor,
-    s.numeroSala_sensor
+   d.temperatura_dado as "Temperatura",
+   dataColeta_dado as "Data da coleta",
+     s.numero_sensor as "Numero do sensor",
+   s.numeroSala_sensor as "Numero da sala",
+   
+    e.nome_empresa as "Nome da emoresa",
+    e.nomeFantasia_empresa as "Nome fantasia"
+  
+    
+  
+    
 FROM 
     tb_usuario u
 JOIN 
-    tb_login l ON u.fk_login = l.id_login
+    tb_empresa as  e ON u.fk_empresa = e.id_empresa
 JOIN 
-    tb_empresa e ON u.fk_empresa = e.id_empresa
+    tb_sensor as s ON e.id_empresa = s.fk_empresa
 JOIN 
-    tb_sensor s ON e.id_empresa = s.fk_empresa
-JOIN 
-    tb_dado d ON s.id_sensor = d.fk_sensor
-JOIN 
-    tb_ciclo c ON s.id_sensor = c.fk_sensor;
+    tb_dado as d ON s.id_sensor = d.fk_sensor
+WHERE 
+	e.nome_empresa = "Banco do Brasil"
+    
+
+
+
+
+
