@@ -357,6 +357,8 @@ html{
  
   justify-content: center;/* Centraliza horizontalmente */
   align-items: center; /* Centraliza verticalmente */
+
+  /* margin-bottom: 2rem; */
 }
 
 .social-about .container-about {
@@ -385,17 +387,14 @@ html{
   background-color: var(--secondary); 
   box-shadow: 0 4px 20px var(--logo-color);  */
   padding: 30px; 
- justify-content: center;
- position: relative; 
+  justify-content: center;
+  position: relative; 
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 25px;
   transition: transform 0.9s; 
-  perspective: 1000px;
- 
- 
-  
+  perspective: 1000px; 
 }
 
 
