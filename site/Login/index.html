@@ -33,7 +33,7 @@
         <h1>Login</h1>
         <div class="main">
           <div class="input-boxlogin">
-            <input id="LoginNome_input" type="text" placeholder="Nome" />
+            <input id="LoginNome_input" type="text" placeholder="E-mail" />
             <i id="i"class='bx bxs-user'></i>
           </div>
           <div class="input-boxlogin">
@@ -42,7 +42,8 @@
               <!-- <i class='bx bxs-low-vision'></i>
               <i class='bx bxs-show'></i> -->
           </div>
-          <button class="btn entrar">Entrar</button>
+          <span id="error_login">Email e/ou Senha inválidos</span>
+          <button class="btn entrar" onclick="logar()">Entrar</button>
           <hr>
           <span>Não é cadastrado?</span>
           <button class="link-to" onclick="mudartela()">Cadastrar </button>
@@ -65,7 +66,7 @@
                       </div>
                       <div class="input-box">
                           <span>Telefone</span>
-                          <input id="Telefone_input" type="text" placeholder="Ex: 11 94002-8922" maxlength="13"/>
+                          <input id="Telefone_input" type="number" placeholder="Ex: 11 94002-8922" maxlength="13"/>
                           <i class='bx bxs-phone'></i>
                       </div>
                       <div class="input-box">
@@ -130,12 +131,12 @@
                       </div>
                       <div class="input-box">
                           <span> Telefone Responsável</span>
-                          <input id="telefone_input" type="text" placeholder="Ex. 11 91234-5678" />
+                          <input id="telefone_input" type="number" maxlength="13" placeholder="Ex. 11 91234-5678" />
                           <i class='bx bxs-phone'></i>
                       </div>
                       <div class="input-box">
                           <span> CNPJ </span>
-                          <input oninput="limpar_cnpj()" id="cnpj_input" type="text" placeholder="Ex. 69.087.048/0001-22."
+                          <input oninput="limpar_cnpj()" id="cnpj_input" type="number" maxlength="14" placeholder="Ex. 69087048000122."
                               maxlength="14" />
                           <i class='bx bxs-briefcase'></i>
                       </div>
@@ -143,12 +144,12 @@
                   <div class="direita">
                       <div class="input-box">
                           <span> CEP</span>
-                          <input id="cep_input" type="text" placeholder="Ex. 02125-040"/>
+                          <input id="cep_input" type="number" maxlength="8" placeholder="Ex. 02125-040"/>
                           <i class='bx bx-buildings'></i>
                       </div>
                       <div class="input-box">
                           <span>Numero</span>
-                          <input id="Numero_input" type="text" placeholder="Ex. 123"/>
+                          <input id="Numero_input" type="number" placeholder="Ex. 123"/>
                           <i class='bx bx-buildings'></i>
                       </div>
                       <div class="input-box">
@@ -200,11 +201,17 @@
               </div>
               <div class="s">
                   <button id="backButton" type="submit" class="btn">Voltar</button>
-                  <button id="concludeButton" type="submit" class="btn">Concluir</button>
+                  <button id="concludeButton" type="submit" class="btn">Concluir Cadastro</button>
               </div>
           </div>
       </div>
   </div>
+  <div id="messageBox" class="hidden">
+    Cadastro concluido com sucesso!
+    <div id="progressBar">
+        <div id="progress"></div>
+    </div>
+</div>
   <script src="script.js"></script>
 </body>
 

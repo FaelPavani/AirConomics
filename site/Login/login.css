@@ -25,6 +25,13 @@ body {
     background-size: cover;
 }
 
+#error_login{
+    display: none;
+    color: #CC0000;
+    font-size: 18px;
+    visibility: hidden;
+}
+
 .header {
     background-color: var(--primary);
     width: 100%;
@@ -71,6 +78,7 @@ body {
     background-image: url('../img/banner.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: 4rem;
 }
 
 .card {
@@ -82,6 +90,7 @@ body {
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(10px);
     position: absolute;
+    transform: translatey(-5vw);
 }
 
 .card h1 {
@@ -104,7 +113,7 @@ body {
 }
 
 .cardCad {
-    transform: translatey(-11vw);
+    transform: translatey(-15vw);
     width: 900px;
     height: fit-content;
     padding: 25px 40px;
@@ -129,9 +138,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: transparent;
-    border-radius: 12px;
     padding: 25px 40px;
+    border-radius: 12px;
+    background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
@@ -196,7 +205,8 @@ body {
     background: transparent;
     border: none;
     outline: none;
-    border: 2px solid rgba(255, 255, 255, .2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+
     border-radius: 40px;
     font-size: 16px;
     color: #000000;
@@ -360,10 +370,40 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     -webkit-appearance: none;
 }
 
-input[type="date"] {-moz-appearance: textfield;}
-     #input_data{
 
+   
+#input_data{
 width: 90%;
 text-align: center;
 color: var(--primary);
      }
+
+     #messageBox {
+        position: fixed;
+        top: 80%;
+        right: 5%;
+        botton: 0;
+        padding: 20px;
+        border-radius: 12px;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, .2);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    #progressBar {
+        width: 100%;
+        height: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 5px;
+        border: 2px solid rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+    #progress {
+        height: 100%;
+        width: 100%;
+        background-color: var(--logo-color);
+        transition: width 1.5s linear; /* Transição para a largura */
+    }
