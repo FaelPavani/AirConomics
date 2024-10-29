@@ -58,12 +58,17 @@ const serial = async (
 
         // insere os dados no banco de dados (se habilitado)
         if (HABILITAR_OPERACAO_INSERIR) {
-            let date = Date.now()
             // este insert irá inserir os dados na tabela "medida"
-            await poolBancoDados.execute(
-                'INSERT INTO tb_dado (temp_dado, dataColeta_dado, fk_empresa) VALUES (?,default, 1)',
-                [sensorAnalogico]
+            const [result] = await poolBancoDados.execute(
+                'INSERT INTO tb_dado (temperatura_dado, dataColeta_dado, fk_sensor) VALUES (?,default, 1)',
+                [sensorAnalogico]  
             );
+
+            if(sensorAnalogico >= 22 || sensorAnalogico <= 20){
+                await poolBancoDados.execute(
+                    'INSERT INTO tb_alerta VALUES (default, ?)', [result.insertId]
+                )
+            }
             console.log("valores inseridos no banco: ", sensorAnalogico);
 
         }
