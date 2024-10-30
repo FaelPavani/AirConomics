@@ -11,18 +11,28 @@
 
 <body>
   <header class="header">
-    <nav class="navbar">
-      <a href="../index.html" class="logo-link"><img src="../img/airconomics_logo_completo.png" class="logo" /></a>
-      <ul class="navbar-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../index.html#about">Sobre Nós</a></li>
-        <li><a href="../index.html#social">Serviços</a></li>
-        <li>
-          <a href="./index.html">Calculadora</a>
-        </li>
-      </ul>
-      <a href="../login/index.html" class="profile-link"><img src="../img/profile.png" class="profile"></a>
-    </nav>
+        <nav class="navbar">
+            <a href="./index.html" class="logo-link">
+                <img src="../img/airconomics_logo_completo.png" class="logo">
+            </a>
+            <ul class="navbar-links">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="../index.html#about">Sobre Nós</a>
+                </li>
+                <li>
+                    <a href="../index.html#social">Serviços</a>
+                </li>
+                <li>
+                    <a href="index.html">Calculadora</a>
+                </li>
+            </ul>
+            <a href="./login/index.html" class="profile-link">
+                <img src="../img/profile.png" class="profile">
+            </a>
+        </nav>
   </header>
   <div class="social">
     <div class="container">
@@ -30,15 +40,10 @@
         <div class="box">
           <div class="container-calculator">
             <h1><span>AIR</span>Conomics Calc</h1>
-            Selecione o tamanho do seu ambiente:
-            <select id="select_sala">
-              <option value="">Selecione o tamanho do seu ambiente...</option>
-              <option value="1">30m²</option>
-              <option value="2">50m²</option>
-              <option value="3">100m²</option>
-            </select>
-            BTU's dos aparelhos somados: <input type="number" id="ipt_btu">
-            Tempo de uso (horas): <input type="number" id="ipt_tempo">
+            Selecione o tamanho do seu ambiente em ²:
+           <input type="number"id="select_sala" placeholder="Ex: 100 ">
+            BTU's dos aparelhos somados: <input type="number" id="ipt_btu" placeholder="Ex: 30000" >
+            Tempo de uso (horas): <input type="number" id="ipt_tempo"  placeholder="Ex: 8">
             <button onclick="calcular()">Calcular</button>
           </div>
         </div>

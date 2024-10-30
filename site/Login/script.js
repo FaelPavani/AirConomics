@@ -117,16 +117,6 @@ else {
 
   document.getElementById('concludeButton').addEventListener('click', function() {
 
-if(
-
-
-
-
-
-
-  
-){}
-
     email_comp = email_input.value
     senha_comp = CadastroSenha_input.value
     const box = document.getElementById('messageBox');

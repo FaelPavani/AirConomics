@@ -89,13 +89,16 @@ body {
     padding: 25px 40px;
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(10px);
+    background-color: var(--primary);
     position: absolute;
     transform: translatey(-5vw);
+    color: white !important;
 }
 
 .card h1 {
     font-size: 36px;
     text-align: center;
+    color: white !important;
 }
 
 .card .main {
@@ -144,6 +147,8 @@ body {
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    background-color: var(--primary);
+    color: white;
 }
 
 .card-back {
@@ -179,12 +184,16 @@ body {
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
     font-size: 16px;
-    color: #000000;
+    color: var(--secondary);
     padding: 20px 45px 20px 20px;
 }
+.input-box input::placeholder {
+    color: var(--secondary);
+}
+
 
 .input-boxlogin input::placeholder {
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 .input-box {
@@ -206,10 +215,10 @@ body {
     border: none;
     outline: none;
     border: 2px solid rgba(255, 255, 255, 0.1);
-
+    color: var(--secondary);
     border-radius: 40px;
     font-size: 16px;
-    color: #000000;
+   
     padding: 20px 45px 20px 20px;
 }
 
@@ -241,7 +250,8 @@ body {
     outline: none;
     border: 2px solid rgba(255, 255, 255, .2);
     font-size: 14px;
-    color: #000000;
+
+    color: var(--secondary);
     padding: 10px 20px;
     border-top-left-radius: 40px !important;
     border-bottom-left-radius: 40px !important;
@@ -258,7 +268,7 @@ body {
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     font-size: 16px;
-    color: #000000;
+    color: var(--secondary);
     padding: 10px 0px;
     -webkit-appearance: none;
     -moz-appearance: none; /* Para Firefox */
@@ -375,7 +385,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 #input_data{
 width: 90%;
 text-align: center;
-color: var(--primary);
+color: var(--secondary);
      }
 
      #messageBox {
@@ -414,4 +424,10 @@ color: var(--primary);
     color:red !important;
 
 
+    }
+    #cidade_input::placeholder{
+
+
+        
+    color: var(--secondary);
     }
