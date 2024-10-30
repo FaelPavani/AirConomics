@@ -1,218 +1,391 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AirConomics | Login</title>
-
-    <link rel="stylesheet" href="./login.css">
-    <link rel="shortcut icon" href="../img/airconomics_logo_logo.png" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
 </head>
+
 <body>
-      
-    
     <header class="header">
-      <nav class="navbar">
-        <a href="../index.html" class="logo-link"><img src="../img/airconomics_logo_completo.png" class="logo"/></a>
-        <ul class="navbar-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../Sobre_nos/Sobre_nós.html">Sobre Nós</a></li>
-          <li><a href="../servicos/servicos.html">Serviços</a></li>
-        </ul>
-
-        <a href="../login/index.html" class="profile-link"><img src="../img/profile.png" class="profile"></a>
-      </nav>
+        <nav class="navbar">
+            <a href="./index.html" class="logo-link">
+                <img src="./img/airconomics_logo_completo.png" class="logo">
+            </a>
+            <ul class="navbar-links">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#about">Sobre Nós</a>
+                </li>
+                <li>
+                    <a href="#social">Serviços</a>
+                </li>
+                <li>
+                    <a href="./calculadora/index.html">Calculadora</a>
+                </li>
+            </ul>
+            <a href="./login/index.html" class="profile-link">
+                <img src="./img/profile.png" class="profile">
+            </a>
+        </nav>
     </header>
-
-    <div class="container">
-      <div class="card" id="card">
-        <h1>Login</h1>
-        <div class="main">
-          <div class="input-boxlogin">
-            <input id="LoginNome_input" type="text" placeholder="E-mail" />
-            <i id="i"class='bx bxs-user'></i>
-          </div>
-          <div class="input-boxlogin">
-              <input id="LoginSenha_input" type="password" placeholder="Senha" />
-              <i id="i" class='bx bxs-lock-alt'></i>
-              <!-- <i class='bx bxs-low-vision'></i>
-              <i class='bx bxs-show'></i> -->
-          </div>
-          <span id="error_login">Email e/ou Senha inválidos</span>
-          <button class="btn entrar" onclick="logar()">Entrar</button>
-          <hr>
-          <span>Não é cadastrado?</span>
-          <button class="link-to" onclick="mudartela()">Cadastrar </button>
+    <main class="container">
+        <div class="container-content">
+            <span class="container-message">
+                <span class="container-message-blue">AIR</span>
+                Conomics! Monitorando sua temperatura em ambientes para o bem-estar físico e econômico
+                </AIRConomics>
+                <a href="./Sobre_nos/Sobre_nós.html" class="container-button">Conhecer</a>
         </div>
-      </div>
+    </main>
+
+    <div class="social" id="social">
+        <div class="social-container">
+            <h2>Nossos Serviços</h2>
+            <div class="social-content">
+                <div class="img img-right">
+                    <img src="./img/aduino.png" alt="">
+                    <p>
+                        Oferecemos um serviço de monitoramento de temperatura para empresas, que utiliza o sensor LM35 e 
+                        Arduino para coletar dados em tempo real.
+                    </p>
+                </div>
+                <div class="img img-left">
+                    <img src="./img/chart.png" alt="">
+                    <p>
+                        As informações são exibidas em uma página de dashboards 
+                        intuitiva, onde é possível acompanhar a temperatura de diferentes áreas, configurar alertas e acessar 
+                        relatórios históricos. Essa solução auxilia no controle do clima, conforto dos ocupantes e na economia 
+                        de energia, ideal para empresas que buscam eficiência e praticidade no gerenciamento de climatização.
+                    </p>
+                </div>
+                <div class="diagrama-solucao">
+                    <h3>Diagrama de solução: </h3>
+                    <img src="./img/diagrama_solucao.png" alt="">
+                </div>
+                
+            </div>
+            <div class="social-boxes">
+                <!-- Cartão 1 -->
+                <div class="box">
+                    <div class="front">
+                        <img src="./img/Temperatura.png" alt="Monitoramento de Temperatura">
+                        <h4>Monitoramento de Temperatura</h4>
+                    </div>
+                    <div class="back">
+                        <p>Nossos sensores de alta precisão monitoram a temperatura ambiente em tempo real, garantindo
+                            que o sistema de ar-condicionado seja ajustado de acordo com a necessidade, promovendo maior
+                            eficiência energética.</p>
+                    </div>
+                </div>
+                <!-- Cartão 2 -->
+                <div class="box">
+                    <div class="front">
+                        <img src="./img/Energia.png" alt="Economia de Energia">
+                        <h4>Economia de Energia</h4>
+                    </div>
+                    <div class="back">
+                        <p>Com o ajuste automático da climatização baseado nas medições dos sensores, nossa tecnologia
+                            otimiza o uso de energia, resultando em uma economia significativa nas despesas de energia
+                            elétrica.</p>
+                    </div>
+                </div>
+                <!-- Cartão 3 -->
+                <div class="box">
+                    <div class="front">
+                        <img src="./img/Relatorio.png" alt="Relatórios de Desempenho">
+                        <h4>Relatórios de Desempenho</h4>
+                    </div>
+                    <div class="back">
+                        <p>Fornecemos relatórios detalhados sobre o desempenho do sistema de climatização, permitindo
+                            análises de consumo e ajustes proativos para manter a eficiência ao longo do tempo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="cardCad hidden" id="cardCad">
-      <div class="card-inner">
-          <div class="card-front">
-              <h1>Cadastro - Usuário</h1>
-              <div class="card_row">
+    <!-- sobre nos -->
+    <div class="social-about" id="about">
+        <div class="container-about">
+            <h2>Sobre nós</h2>
+            <div class="boxes-about">
+                <div class="box-about">
+                    <div class="front-about">
+                        <img src="./img/valores.png" alt="Image 1">
+                        <h2>Valores da Empresa</h2>
+                        <p>A <span>AIR</span>Conomics valoriza 	<strong>Sustentabilidade</strong> Soluções que reduzem o consumo de energia.<br>
+                                        <strong>Inovação </strong> Criatividade e a tecnologia para desenvolver soluções inteligentes e eficientes.<br>
+                                        <strong>Eficiência e Economia</strong> Eficiência e economia são priorizadas, com soluções que reduzem custos de energia.
+                        </p>
+                    </div>
+                    <div class="back-about">
+                        <h2>Mais sobre nossos Valores</h2>
+                        <p>A <span>AIR</span>Conomics, nossos valores são fundamentais para a maneira como operamos e
+                            interagimos
+                            com nossos
+                            clientes. Inovação é um pilar central, pois estamos sempre em busca de tecnologias e
+                            abordagens que
+                            otimizem o consumo de energia e garantam soluções de ponta. A sustentabilidade guia nossas
+                            ações, com o
+                            objetivo de reduzir o impacto ambiental das empresas.</p>
+                    </div>
+                </div>
 
-                  <div class="esquerda">
+                <!-- Segundo Box -->
+                <div class="box-about">
+                    <div class="front-about">
+                        <img src="./img/visao.png" alt="Image 2">
+                        <h2>Visão de Futuro</h2>
+                        <p>A visão da <span>AIR</span>Conomics é ser líder na transformação da gestão de energia em
+                            ambientes
+                            corporativos,
+                            promovendo a sustentabilidade e a eficiência energética. Buscamos criar um futuro onde
+                            empresas operem com
+                            máxima eficiência, reduzindo custos e impacto ambiental.
+                        </p>
+                    </div>
+                    <div class="back-about">
+                        <h2>Veja nossa Visão</h2>
+                        <p>A visão da <span>AIR</span>Conomics é ser referência em soluções de eficiência energética,
+                            capacitando
+                            empresas a
+                            adotarem práticas sustentáveis e inteligentes no uso de seus sistemas de climatização.
+                            Almejamos um futuro
+                            onde a gestão energética se torne uma prioridade, resultando em ambientes de trabalho mais
+                            saudáveis e
+                            redução significativa nos custos operacionais.</p>
+                    </div>
+                </div>
 
+                <!-- Terceiro Box -->
+                <div class="box-about">
+                    <div class="front-about">
+                        <img src="./img/papiro.png" alt="Image 3">
+                        <h2>Missão da AirConomics </h2>
+                        <p>A missão da AIRconomics é fornecer um sistema inteligente de gestão de ar-condicionado, que ajuda os usuários a evitar gastos excessivos com energia elétrica. A empresa se dedica a oferecer uma plataforma que monitora 
+                            e ajusta o clima ambiente de forma eficiente, proporcionando conforto e economia e 
+                            contribuindo para um ambiente mais sustentável.</p>
+                    </div>
+                    <div class="back-about">
+                        <h2>Missão da AirConomics </h2>
+                        <p>A <span>AIR</span>Conomics fundamenta-se em valores como inovação, sustentabilidade e
+                            comprometimento com
+                            o cliente.
+                            Buscamos constantemente soluções tecnológicas que reduzem o consumo de energia e promovem
+                            práticas
+                            eficientes. Valorizamos a transparência em nossos serviços, garantindo que nossos clientes
+                            entendam o
+                            impacto de nossas soluções. </p>
+                    </div>
+                </div>
 
-                      <div class="input-box">
-                          <span>Nome</span>
-                          <input id="CadastroNome_input" type="text" placeholder="Ex: joão" />
-                          <i class='bx bxs-user'></i>
-                      </div>
-                      <div class="input-box">
-                          <span>Telefone</span>
-                          <input id="Telefone_input" type="number" placeholder="Ex: 11 94002-8922" maxlength="13"/>
-                          <i class='bx bxs-phone'></i>
-                      </div>
-                      <div class="input-box">
-                          <span>senha</span>
-                          <input oninput="verificar_requisitos()" id="CadastroSenha_input" type="password"
-                              placeholder="Senha" />
-                          <i class='bx bxs-lock-alt'></i>
-                      </div>
-                  </div>
-                  <div class="direita">
-                      <div class="input-box">
-                          <span>Email</span>
-                          <input oninput="verificar_email()" id="email_input" type="text"
-                              placeholder="Ex: joao@gmail.com" />
-                          <i class='bx bxs-envelope'></i>
-                      </div>
-                      <div class="input-box">
-                          <span> Data de nascimento </span>
-                          <input type="date" id="input_data" />
-                          <i class='bx bxs-calendar'></i>
-                      </div>
-                      <div class="input-box">
-                          <span> Confirme a senha</span>
-                          <input onchange="verificar_senha()" id="confirmacao_senha_input" type="password"
-                              placeholder="Confirmar senha" />
-                          <i class='bx bxs-lock-alt'></i>
-                          <span id="span_senha">Senha e confirmação de senha são diferentes</span>
-                      </div>
-                  </div>
-              </div>
-              <div class="senha-requisitos">
-                  <span id="req_char"><i class='bx bxs-dislike'></i>8 caracteres</span>
-                  <span id="req_mai"><i class='bx bxs-dislike'></i>Letras maiúsuclas</span>
-                  <span id="req_min"><i class='bx bxs-dislike'></i>Letras minúsculas</span>
-                  <span id="req_esp"><i class='bx bxs-dislike'></i>Caractere especial</span>
-              </div>
-              <div class="s">
-                <button onclick="voltartela()" type="submit" class="btn">Ja tem uma conta? </button>
-                  <button id="rotateButton" type="submit" class="btn">proximo </button>
-                  
-              </div>
-          </div>
-          <div class="card-back">
-              <h1>Cadastro - Empresa</h1>
-              <div class="card_row">
-
-                  <div class="esquerda">
-                      <div class="input-box">
-                          <span> Razão social</span>
-                          <input id="RazãoSocial_input" type="text" placeholder="Ex. Jõao" />
-                          <i class='bx bxs-user'></i>
-                      </div>
-                      <div class="input-box">
-                          <span>Nome Fantasia</span>
-                          <input id="NomeFantasia_input" type="text" placeholder="Ex. Jõao" />
-                          <i class='bx bxs-user'></i>
-                      </div>
-                      <div class="input-box">
-                          <span>Responsável Legal</span>
-                          <input id="responsavel_input" type="text" placeholder="Ex. Jõao" />
-                          <i class='bx bxs-user'></i>
-                      </div>
-                      <div class="input-box">
-                          <span> Telefone Responsável</span>
-                          <input id="telefone_input" type="number" maxlength="13" placeholder="Ex. 11 91234-5678" />
-                          <i class='bx bxs-phone'></i>
-                      </div>
-                      <div class="input-box">
-                          <span> CNPJ </span>
-                          <input oninput="limpar_cnpj()" id="cnpj_input" type="number" maxlength="14" placeholder="Ex. 69087048000122."
-                              maxlength="14" />
-                          <i class='bx bxs-briefcase'></i>
-                      </div>
-                  </div>
-                  <div class="direita">
-                      <div class="input-box">
-                          <span> CEP</span>
-                          <input id="cep_input" type="number" maxlength="8" placeholder="Ex. 02125-040"/>
-                          <i class='bx bx-buildings'></i>
-                      </div>
-                      <div class="input-box">
-                          <span>Numero</span>
-                          <input id="Numero_input" type="number" placeholder="Ex. 123"/>
-                          <i class='bx bx-buildings'></i>
-                      </div>
-                      <div class="input-box">
-                          <span>Complemento</span>
-                          <input id="Complemento" type="text" placeholder="Ex. 5° andar"/>
-                          <i class='bx bx-buildings'></i>
-                      </div>
-                      <div class="input-box">
-                          <span> Rua</span>
-                          <input id="rua_input" type="text" placeholder="Ex. Haddock Lobo"/>
-                          <i class='bx bxs-briefcase'></i>
-                      </div>
-                      <center> <span> Cidade</span></center>
-                      <div class="cidade">
-                          <input id="cidade_input" type="text" placeholder="São Paulo">
-
-                          <select placeholder="Estado">
-                              <option value="">UF</option>
-                              <option value="AC">AC</option>
-                              <option value="AL">AL</option>
-                              <option value="AP">AP</option>
-                              <option value="AM">AM</option>
-                              <option value="BA">BA</option>
-                              <option value="CE">CE</option>
-                              <option value="DF">DF</option>
-                              <option value="ES">ES</option>
-                              <option value="GO">GO</option>
-                              <option value="MA">MA</option>
-                              <option value="MT">MT</option>
-                              <option value="MS">MS</option>
-                              <option value="MG">MG</option>
-                              <option value="PA">PA</option>
-                              <option value="PB">PB</option>
-                              <option value="PR">PR</option>
-                              <option value="PE">PE</option>
-                              <option value="PI">PI</option>
-                              <option value="RJ">RJ</option>
-                              <option value="RN">RN</option>
-                              <option value="RS">RS</option>
-                              <option value="RO">RO</option>
-                              <option value="RR">RR</option>
-                              <option value="SC">SC</option>
-                              <option value="SP">SP</option>
-                              <option value="SE">SE</option>
-                              <option value="TO">TO</option>
-                          </select>
-                      </div>
-                  </div>
-              </div>
-              <div class="s">
-                  <button id="backButton" type="submit" class="btn">Voltar</button>
-                  <button id="concludeButton" type="submit" class="btn">Concluir Cadastro</button>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div id="messageBox" class="hidden">
-    Cadastro concluido com sucesso!
-    <div id="progressBar">
-        <div id="progress"></div>
+            </div>
+        </div>
+        
     </div>
-</div>
-  <script src="script.js"></script>
+    <div class="about-content">
+        <h1>O que é a <span>AIR</span>Conomics?</h1>
+        <h3>Desbloqueie o Poder da Eficiência Energética com a <span>AIR</span>Conomics</h3>
+        <p>Na <span>AIR</span>Conomics, somos especialistas em monitoramento inteligente de temperatura em ambientes fechados,
+            garantindo conforto e eficiência em escritórios e outros espaços corporativos. Com a nossa tecnologia avançada,
+            incluindo sensores e Arduino, capturamos dados em tempo real sobre o funcionamento dos sistemas de ar condicionado e os exibimos de maneira clara e intuitiva em um dashboard personalizado.</p>
+
+        <h3>Otimização de Energia, Conforto e Longevidade</h3>
+        <p>Nosso objetivo é otimizar o consumo de energia, melhorar o conforto dos ocupantes e garantir a 
+            longevidade dos equipamentos de climatização. Com a <span>AIR</span>Conomics, você pode:</p>
+        <ul>
+            <li>Reduzir custos de energia e operacionais</li>
+            <li>Melhorar a produtividade e o conforto dos funcionários</li>
+            <li>Garantir a longevidade dos equipamentos de climatização</li>
+            <li>Ter controle total sobre o clima dos seus ambientes</li>
+        </ul>
+        <br>
+    
+
+        <p>Com a <span>AIR</span>Conomics, você pode desbloquear o poder da eficiência energética e transformar a gestão da temperatura
+            em um processo simples e eficaz. Entre em contato conosco para saber mais sobre como podemos ajudar a sua
+            empresa a alcançar seus objetivos de eficiência energética.</p>
+    </div>
+    <div class="endereco">
+        <div class="mapa">
+            <h3>Nossa localização</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.288297656506!2d-46.66425538894578!3d-23.558087061383727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59d2a5270055%3A0x3c7ea4f4c7d51fb6!2sRua%20Haddock%20Lobo%2C%20595%20-%20Cerqueira%20C%C3%A9sar%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001414-001!5e0!3m2!1sen!2sbr!4v1730117260267!5m2!1sen!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="team-cards">
+     
+        <h2>Integrantes <span>AIR</span>Conomics</h2>
+        <div class="cards">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="./img/Montin.png" alt="Foto do Integrante 1" class="img_int">
+
+                </div>
+                <div class="card-back">
+                    <h3>Guilherme A</h3>
+                    <div class="card-social">
+                        <a href="https://linkedin.com/integrante1" target="_blank"> <img src="./img/linkedin.png">
+                            @Seu_linkedin
+                        </a>
+                        <a href="https://contato.com/in/integrante1" target="_blank"> <img src="./img/whatsapp.png">
+                            @Seu_número</a>
+                        <a href="https://github.com/integrante1" target="_blank"> <img src="./img/instagram.png">
+                            @Seu_github</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="./img/Romulo.png" alt="Foto do Integrante 2" class="img_int">
+                </div>
+                <div class="card-back">
+                    <h3>Romulo Ciriaco</h3>
+                    <div class="card-social">
+                        <a href="https://linkedin.com/integrante1" target="_blank"> <img src="./img/linkedin.png">
+                            @Seu_linkedin
+                        </a>
+                        <a href="https://contato.com/in/integrante1" target="_blank"> <img src="./img/whatsapp.png">
+                            @Seu_número</a>
+                        <a href="https://github.com/integrante1" target="_blank"> <img src="./img/instagram.png">
+                            @Seu_github</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cards">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="./img/Pedro Moral.png" alt="Foto do Integrante 3" class="img_int">
+                </div>
+                <div class="card-back">
+                    <h3>Pedro Morais</h3>
+                    <div class="card-social">
+                        <a href="https://linkedin.com/integrante1" target="_blank"> <img src="./img/linkedin.png">
+                            @Seu_linkedin
+                        </a>
+                        <a href="https://contato.com/in/integrante1" target="_blank"> <img src="./img/whatsapp.png">
+                            @Seu_número</a>
+                        <a href="https://github.com/integrante1" target="_blank"> <img src="./img/instagram.png">
+                            @Seu_github</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="./img/Pedro Rogerio.png" alt="Foto do Integrante 4" class="img_int">
+                </div>
+                <div class="card-back">
+                    <h3>Pedro Rogerio</h3>
+                    <div class="card-social">
+                        <a href="https://linkedin.com/integrante1" target="_blank"> <img src="./img/linkedin.png">
+                            @Seu_linkedin
+                        </a>
+                        <a href="https://contato.com/in/integrante1" target="_blank"> <img src="./img/whatsapp.png">
+                            @Seu_número</a>
+                        <a href="https://github.com/integrante1" target="_blank"> <img src="./img/instagram.png">
+                            @Seu_github</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="img/Rafael.jpg" alt="Foto do Integrante 5" class="img_int">
+                </div>
+                <div class="card-back">
+                    <h3>Rafael Pavani</h3>
+                    <div class="card-social">
+                        <a href="https://linkedin.com/integrante1" target="_blank"> <img src="./img/linkedin.png">
+                            @Seu_linkedin
+                        </a>
+                        <a href="https://contato.com/in/integrante1" target="_blank"> <img src="./img/whatsapp.png">
+                            @Seu_número</a>
+                        <a href="https://github.com/integrante1" target="_blank"> <img src="./img/instagram.png">
+                            @Seu_github</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="./img/Willian Salles.png" alt="Foto do Integrante 6" class="img_int">
+                </div>
+                <div class="card-back">
+                    <h3>Willian Salles</h3>
+                    <div class="card-social">
+                        <a href="https://linkedin.com/integrante1" target="_blank"> <img src="./img/linkedin.png">
+                            @Seu_linkedin
+                        </a>
+                        <a href="https://contato.com/in/integrante1" target="_blank"> <img src="./img/whatsapp.png">
+                            @(11)911482873</a>
+                        <a href="https://github.com/WillianSallesSPTECH" target="_blank"> <img src="./img/instagram.png">
+                            @Will_ss</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-left">
+                Navegue pelo site:
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#social">Serviços</a>
+                    </li>
+                    <li>
+                        <a href="#about">Sobre Nós</a>
+                    </li>
+                    <li>
+                        <a href="#">Calculadora</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                Entre em contato:
+                <ul>
+                    <li>
+                        <img src="./img/instagram.png">
+                        @airconomics
+                    </li>
+                    <li>
+                        <img src="./img/linkedin.png" alt="">
+                        AIRConomics
+                    </li>
+                    <li>
+                        <img src="./img/whatsapp.png" alt="">
+                        (11)99999-9999
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <img src="./img/airconomics_logo_completo.png" alt="">
+            <span class="footer-rights">AIRConomics © - 2024</span>
+        </div>
+    </footer>
 </body>
 
 </html>

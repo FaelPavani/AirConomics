@@ -51,18 +51,18 @@ function verificar_senha(){
     span_senha.style.visibility = 'hidden'
   }
 }
-
 function verificar_email(){
   var email = email_input.value
 
-  if(!email.includes('@') || !email.includes('.com')){
+  if(!email.includes('@') || !email.includes('.')){
     email_input.style.border = '1px solid #CC0000'
+   
   }else{
     email_input.style.border = '1px solid #DDD'
   }
 }
 
-// n funciona n sei pq, vou ver com o grandioso jp
+
 function limpar_cnpj(){
   var cnpj = cnpj_input.value
 
@@ -76,12 +76,30 @@ function limpar_cnpj(){
 
   const cadastro = document.getElementById('cardCad');
   const login = document.getElementById('card');
-  document.getElementById('rotateButton').addEventListener('click', function() {
-      cadastro.classList.add('rotated'); // Gira para o verso
+  document.getElementById('rotateButton').addEventListener('click', function(){ 
+    var senha = CadastroSenha_input.value
+    var conf_senha = confirmacao_senha_input.value
+    var email = email_input.value
+if(
+  (CadastroNome_input.value != "" &&
+  Telefone_input.value != ""&&
+  CadastroSenha_input.value != ""&&
+  email_input.value != ""&&
+  input_data.value!= ""&&
+  confirmacao_senha_input.value!= "")&&(senha == conf_senha)&&(email.includes('@') && email.includes('.') )
+)
+{
+  cadastro.classList.add('rotated');
+  valcad.classList.add('valcad');
+}
+else {
+  valcad.classList.remove('valcad');
+}
+
   });
 
   document.getElementById('backButton').addEventListener('click', function() {
-      cadastro.classList.remove('rotated'); // Volta para a frente
+      cadastro.classList.remove('rotated'); 
   });
 
   
@@ -89,33 +107,48 @@ function limpar_cnpj(){
   function mudartela(){
   login.classList.add('hidden');
     cadastro.classList.remove('hidden');
+    valcad.classList.add('valcad');
   }
   function voltartela(){
     cadastro.classList.add('hidden');
     login.classList.remove('hidden');
+    valcad.classList.add('valcad');
   }
 
   document.getElementById('concludeButton').addEventListener('click', function() {
+
+if(
+
+
+
+
+
+
+  
+){}
+
     email_comp = email_input.value
     senha_comp = CadastroSenha_input.value
     const box = document.getElementById('messageBox');
     const progress = document.getElementById('progress');
     box.classList.remove('hidden');
-    box.style.display = 'block'; // Exibe a caixa
-
-    progress.style.width = '100%'; // Reseta a largura da barra
+    box.style.display = 'block'; 
+     
+    progress.style.width = '100%'; 
     setTimeout(() => {
-        progress.style.width = '0%'; // Diminui a barra para 0% após 2 segundos
-    }, 10); // Pequeno delay para garantir que a animação funcione
+        progress.style.width = '0%'; 
+    }, 10); 
 
     setTimeout(() => {
-        box.style.display = 'none'; // Esconde a caixa após 2 segundos
-    }, 1500); // Altera para 2 segundos
+        box.style.display = 'none'; 
+    }, 1500); 
 
     setTimeout(() => {
         cadastro.classList.add('hidden');
         login.classList.remove('hidden');
-    }, 1500); // Altera para 2 segundos
+        cadastro.classList.remove('rotated');
+    }, 1500); 
+  
 });
 
 function logar(){

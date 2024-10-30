@@ -407,3 +407,11 @@ color: var(--primary);
         background-color: var(--logo-color);
         transition: width 1.5s linear; /* Transição para a largura */
     }
+    .valcad{
+        opacity: 0;
+    }
+    #valcad{
+    color:red !important;
+
+
+    }
