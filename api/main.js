@@ -19,11 +19,11 @@ const serial = async (
     // conexão com o banco de dados MySQL
     let poolBancoDados = mysql.createPool(
         {
-            host: 'localhost',
-            user: 'AirConomics',
-            password: 'Sptech#2024',
+            host: '10.18.34.241',
+            user: 'rafael',
+            password: 'Rafael2024!',
             database: 'AirConomics',
-            port: 3307
+            port: 3306
         }
     ).promise();
 
@@ -63,14 +63,14 @@ const serial = async (
                 'INSERT INTO tb_dado (temperatura_dado, dataColeta_dado, fk_sensor) VALUES (?,default, 1)',
                 [sensorAnalogico]  
             );
+            console.log("valores inseridos no banco: ", sensorAnalogico);
 
             if(sensorAnalogico >= 22 || sensorAnalogico <= 20){
                 await poolBancoDados.execute(
                     'INSERT INTO tb_alerta VALUES (default, ?)', [result.insertId]
                 )
+                console.log("Alerta inserido no banco: ");
             }
-            console.log("valores inseridos no banco: ", sensorAnalogico);
-
         }
 
     });

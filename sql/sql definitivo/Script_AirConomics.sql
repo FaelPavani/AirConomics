@@ -1,14 +1,6 @@
 
 create database AirConomics;
-
-
 use AirConomics;
-
-create table tb_login(
-id_login int primary key auto_increment,
-email_login varchar(45),
-senha_login varchar(100)
-);
 
 create table tb_endereco(
 id_endereco int primary key auto_increment,
@@ -35,7 +27,8 @@ id_usuario int primary key auto_increment,
 nome_usuario varchar(45),
 email_usuario varchar(45),
 telefone_usuario char(13),
-fk_login int,
+email_login varchar(45),
+senha_login varchar(100),
 fk_empresa int,
 constraint fk_login foreign key (fk_login) references tb_login(id_login),
 constraint fk_empresa_usuario foreign key (fk_empresa) references tb_empresa(id_empresa)
@@ -62,20 +55,8 @@ create table tb_alerta (
 id_alerta int auto_increment,
 fk_dado int,
 constraint fk_dado foreign key (fk_dado) references tb_dado(id_dado),
-primary key(id_alerta,fk_dado )
+primary key(id_alerta,fk_dado)
 );
-
-insert into tb_login (email_login, senha_login) values 
-('rafael.nascimento', md5('senhaSegura123')), 
-('luciana.martins', md5('Password!2024')), 
-('marcos.tavares', md5('SecurePass456')), 
-('fernanda.souza', md5('StrongPassword789')), 
-('tiago.silveira', md5('MySecretKey101')), 
-('camila.rodrigues', md5('TopSecret2022')), 
-('andre.melo', md5('HiddenPass!2023')), 
-('natasha.pires', md5('Complex1234')), 
-('diego.castro', md5('UltraSecure!567')), 
-('renata.farias', md5('SafePassword88'));
 
 insert into tb_endereco (rua, bairro, cidade, cep, estado) values 
 ('Av. Brigadeiro Faria Lima, 4221', 'Itaim Bibi', 'São Paulo', '04538-133', 'SP'), 
