@@ -1,320 +1,318 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./style_estatico.css">
-        <title>Document</title>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    </head>
-    <body>
-        <header class="header">
-            <nav class="navbar">
-                <a href="../index.html" class="logo-link">
-                    <img src="../img/airconomics_logo_completo.png" class="logo">
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaTech | Dashboards</title>
+
+    
+    <link rel="stylesheet" href="./style_estatico.css">
+    <link rel="stylesheet" href="./style_estatico.css" />
+    <script src="../js/sessao.js"></script>
+    <script src="./../js/alerta.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- <body onload=" atualizarFeed()"> -->
+
+<body>
+
+    <div class="janela">
+        <div class="header-left">
+            <img src="../img/airconomics_logo_completo.png" alt="" class = "logo">
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./cards.html">
+                    <h3>Aquários</h3>
                 </a>
-                <ul class="navbar-links">
-                    <li>
-                        <a href="../index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="../Sobre_nos/Sobre_nós.html">Sobre Nós</a>
-                    </li>
-                    <li>
-                        <a href="../servicos/servicos.html">Serviços</a>
-                    </li>
-                </ul>
-                <a href="../login/index.html" class="profile-link">
-                    <img src="../img/profile.png" class="profile">
+            </div>
+
+            <div class="btn-nav">
+
+                <h3>Gráficos</h3>
+
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Mural de Avisos</h3>
                 </a>
-            </nav>
-        </header>
-
-        <main class="bloco">
-            <div class="row">
-                <div class="select-dia">
-                    <div class="titulo">
-                        Selecione o dia...
-                    </div>
-                    <select id="input_dia">
-                        <option value=""></option>
-                        <option value="30_10">30/10/2024</option>
-                        <option value="29_10">29/10/2024</option>
-                        <option value="28_10">28/10/2024</option>
-                        <option value="25_10">25/10/2024</option>
-                    </select>
-                </div>
-                <div class="select-sala">
-                    <div class="titulo">
-                        Selecione a sala...
-                    </div>
-                    <select onchange="selecionar()" id="input_sala">
-                        <option value="#"></option>
-                        <option value="1">Sala 1</option>
-                        <option value="2">Sala 2</option>
-                        <option value="3">Sala 3</option>
-                        <option value="4">Sala 4</option>
-                        <option value="5">Sala 5</option>
-                        <option value="6">Sala 6</option>
-                        <option value="7">Sala 7</option>
-                        <option value="8">Sala 8</option>
-                        <option value="9">Sala 9</option>
-                        <option value="10">Sala 10</option>
-                    </select>
-                </div>
-
-                <div class="kp">
-                    <div class="titulo">
-                        Quantidade de Sensores
-                    </div>
-                    <div class="valor">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAe1BMVEX///8AAAD39/ff398SEhJRUVHr6+s3NzfCwsL09PSOjo4+Pj7t7e3R0dH29vZCQkLl5eWamposLCwiIiKpqanb29tJSUmAgIAICAh5eXnLy8tVVVW8vLyIiIhnZ2fGxsazs7McHBxcXFyjo6OTk5MzMzMpKSlra2tiYmJ5p59vAAAEtUlEQVR4nO2da1viMBCFodxEactFEEUU8Mb//4WrZuICe3JpSVvinvebz1ST0ySTZJKOrRYhhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQggh5Fcw6sTHqIC+zarbjo/uauOp72HWdF1Ls33wEfjSdDXP4sUt8LbpOp7JrUvgvOkans3coXDRdAXPpldTEy56RQn2bu2NeB2mkN3YNRoA412Ywq+tpdwEKeOthL5PkmmQ0nNrIcsgZUzKKWxNgpS+tJYRpIj2VUmFV2GKp8IA/DcKh31fhpEqXHv/wjpShf6T6zUVFoIKA0CF/xCrwsl04Md0EqnCwlChJ1QYgMeSCh/DFF+DwruSCu/CFF+DwnanlMBOoNLrUNi+HSVFGQWL1NaisFGoMH6oMH6oMH6oMH6oMH6oMH6oMH6oMH6oMH6oMH6sCgkhhBAPtk1PZmezdSj0v6l1qawdCgMdNDeI64h91HQFz8b5+VPsnyMsXAJDnaU3hvsOQewD0X3TZXz4+CJ1Pt886dHA8vjSY/D36ZvqqxeEg69EBh6PHwzE58rrFoaDkeVzlefg8WHldQvDsMgwPHo8QoVeVZ5FrHDm9fw6YoWuRani8VRhvuxeJsv8VKHfrcjhqcIwn+xVwY2hxi7yk+fjUWj/9PAvPzNidAp9L7b+zIjRKfS9ft3XvxCdwr6nwp+lqSh8b6j+bt6PFfosShVyazc7/vESkRpmxz8SQgghhBBCouFqld+bTurSXf5hOj4YP+V702HI6D5fmcLs2Trvlf34thTfX0N2sUQVIsCfkapcYjj3n9p4b3CB2y/ba4malkXtOHFY5O3btoM2lc5rCm336o9Cm2SQKpLe8jxSVSA8b5XjuSnajiZbS00llAAbXxKd1XdUJLEqmN5OktoNkEK5JbCECiUUAUewxFW8UlsGQWJT98i2V7YVskmcEp4u6JybyKbD8N6RpnPZSIEoz6R0YJj5TgfxnoAtk1Rx8FRW3uh7bYGYVds8nMRfwOyFr23zcPJ5a37nLgHQwTuYoNDSTHo0wWZ6sjSTTnRTmysVX9LNgG1kqUwi2YnhjC+HJXBWl6FdNllhcTw8aRfZ9DBEzZRJVkjoSXPLm6mEB1UgjDDryyrINhJngo7AkoF5+LZ6ylY2KUxxdFvAEi0OQ5+fQ4ch3usD2cR7uS90hULnGYUeQ3pUF3XFD8sg1d4EdUWdE6S+pbdPbTbA9tw2uwyd3xetIrT7wmvdKtDdFE0XyczS3WzTxd4ygvXlifquTshSf49sMnXDA+fU0oX7FhVZ1+KHKsFnb4Fmy0RUwPWlqIB7i9q9adm9hayGIthb9MxeQTtMuLcQFwX3FtpFIZt2UbXtLfRmpujeQvtEtGhNuLdoN7C3gGEascGpS0YTTGgue4utbW9RWydNLf5Cd0TkL/TeAvoL6YgbZNuZO341/P69haiAnnRoUS/OBN96UW24hauWvUV9NQwsr1RNJHiNrLwQ3shOzG9NfLfjH1cEpZ8bnN4n2cooQjWG6XbdVxwOxj5aSn4PLZKqY56aYybz1OzzOqk5aWQnNS87+xYbIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCLog/PwFYu0/ofQsAAAAASUVORK5CYII=" alt="">
-                        30
-                    </div>
-                </div>
-
-                <div class="kp">
-                    <div class="titulo sucesso">
-                        Sensores com temperatura adequada
-                    </div>
-                    <div class="valor">
-                        <img src="data:image/png;base64,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" alt="">
-                        27
-                    </div>
-                </div>
-                <div class="kp">
-                    <div class="titulo alerta">
-                        Sensores com temperatura inadequada
-                    </div>
-                    <div class="valor">
-                        <img src="data:image/png;base64,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" alt="">
-                        3
-                    </div>
-                </div>
-                <div class="kp">
-                    <div class="titulo alerta">
-                        Sala com maior alertas
-                    </div>
-                    <div class="valor">
-                        Sala 7
-                    </div>
-                </div>
-                <div class="kp">
-                    <div class="titulo" id="back_temperatura">
-                        Temperatura atual
-                    </div>
-                    <div class="valor" id="div_temperatura">
-                    </div>
-                </div>
             </div>
-            <div class="row">
-                <div class="dash">
-                    <canvas id="myChart3"></canvas>
-                </div>
-                <div class="dash">
-                    <canvas id="myChart5"></canvas>
-                </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
             </div>
-            <div class="row">
-                <span class="norma">
-                    *De acordo com a Resolução Nº 9, a ANVISA determina que, para melhor conforto térmico, a temperatura ideal do ar condicionado deve ficar entre 23°C e 26°C no verão e 20°C e 22°C no inverno.
-                </span>
+
+        </div>
+
+        <div class="dash">
+            <div id="alerta">
             </div>
-        </main>
-        
-        <footer class="footer">
-            <div class="footer-top">
-                <div class="footer-left">
-                    Navegue pelo site:
-                    <ul>
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="../servicos/servicos.html">Serviços</a>
-                        </li>
-                        <li>
-                            <a href="../Sobre_nos/Sobre_nós.html">Sobre Nós</a>
-                        </li>
-                        <li>
-                            <a href="../calculadora/index.html">Calculadora</a>
-                        </li>
-                    </ul>
+
+            <div class="btns-dash" id="btnAquario">
+                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+            </div>
+            <div id="graficos">
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    let proximaAtualizacao;
+
+    window.onload = exibirAquariosDoUsuario();
+
+    function exibirAquariosDoUsuario() {
+        var aquarios = JSON.parse(sessionStorage.AQUARIOS);
+        aquarios.forEach(item => {
+            document.getElementById("btnAquario").innerHTML += `
+            <button class="btn-chart" onclick="exibirAquario(${item.id})" id="btnAquario${item.id}">${item.descricao}</button>
+            `
+
+            document.getElementById("graficos").innerHTML += `
+                <div id="grafico${item.id}" class="display-none">
+                    <h3 class="tituloGraficos">
+                        <span id="tituloAquario${item.id}">${item.descricao}</span>
+                    </h3>
+                    <div class="graph">
+                        <canvas id="myChartCanvas${item.id}"></canvas>
+                    </div>
+                    <div class="label-captura">
+                        <p id="avisoCaptura${item.id}" style="color: white"></p>
+                    </div>
                 </div>
-                <div class="footer-right">
-                    Entre em contato:
-                    <ul>
-                        <li>
-                            <img src="../img/instagram.png"> @airconomics
-                        </li>
-                        <li>
-                            <img src="../img/linkedin.png" alt=""> AIRConomics
-                        </li>
-                        <li>
-                            <img src="../img/whatsapp.png" alt=""> (11)99999-9999
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <div class="footer-bottom">
-                <img src="../img/airconomics_logo_completo.png" alt="">
-                <span class="footer-rights">AIRConomics © - 2024</span>
-            </div>
-        </footer>
-        <script>
-        let myChart3;
+            `
 
-        function selecionar() {
-            const sala = Number(document.getElementById('input_sala').value);
-            const ctx3 = document.getElementById('myChart3').getContext('2d');
-            
+            obterDadosGrafico(item.id)
+        });
 
+        if (aquarios.length > 0) {
+            exibirAquario(aquarios[0].id)
+        }
+    }
 
-            if (myChart3) {
-                myChart3.destroy();
-            }
+    function alterarTitulo(idAquario) {
+        var tituloAquario = document.getElementById(`tituloAquario${idAquario}`)
+        var descricao = JSON.parse(sessionStorage.AQUARIOS).find(item => item.id == idAquario).descricao;
+        tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>" + descricao + "</span>"
+    }
 
-            const dados = {
-                1: { max: [22, 22, 22, 22, 22, 22, 22, 22, 22], min: [20, 20, 20, 20, 20, 20, 20, 20, 20], atual: [21, 22, 21, 23, 21, 20, 22, 21, 21], qtdAlertas: 1},
-                2: { max: [22, 22, 22, 22, 22, 22, 22, 22, 22], min: [20, 20, 20, 20, 20, 20, 20, 20, 20], atual: [20, 22, 20, 19, 20, 20, 21, 22, 20], qtdAlertas: 3},
-                3: { max: [22, 22, 22, 22, 22, 22, 22, 22, 22], min: [20, 20, 20, 20, 20, 20, 20, 20, 20], atual: [21, 21, 22, 22, 19, 20, 21, 22, 21], qtdAlertas: 2},
-                4: { max: [22, 22, 22, 22, 22, 22, 22, 22, 22], min: [20, 20, 20, 20, 20, 20, 20, 20, 20], atual: [21, 23, 21, 19, 20, 19, 20, 23, 21], qtdAlertas: 5},
-                5: { max: [22, 22, 22, 22, 22, 22, 22, 22, 22], min: [20, 20, 20, 20, 20, 20, 20, 20, 20], atual: [18, 18, 23, 26, 21, 20, 23, 19, 18], qtdAlertas: 15},
-                6: { max: [22, 22, 22, 22, 22, 22, 22, 22, 22], min: [20, 20, 20, 20, 20, 20, 20, 20, 20], atual: [20, 22, 22, 21, 21, 20, 20, 20, 22], qtdAlertas: 0},
-                7: { max: [22, 22, 22, 22, 22, 22, 22, 22, 22], min: [20, 20, 20, 20, 20, 20, 20, 20, 20], atual: [21, 24, 25, 23, 19, 18, 23, 21, 24], qtdAlertas: 27},
-                8: { max: [22, 22, 22, 22, 22, 22, 22, 22, 22], min: [20, 20, 20, 20, 20, 20, 20, 20, 20], atual: [22, 21, 22, 22, 21, 22, 22, 22, 22], qtdAlertas: 1},
-                9: { max: [22, 22, 22, 22, 22, 22, 22, 22, 22], min: [20, 20, 20, 20, 20, 20, 20, 20, 20], atual: [20, 19, 20, 23, 20, 23, 24, 21, 20], qtdAlertas: 5},
-                10: { max: [22, 22, 22, 22, 22, 22, 22, 22, 22], min: [20, 20, 20, 20, 20, 20, 20, 20, 20], atual: [21, 21, 21, 19, 21, 20, 21, 21, 23], qtdAlertas: 3}
-            };
+    function exibirAquario(idAquario) {
+        let todosOsGraficos = JSON.parse(sessionStorage.AQUARIOS);
 
-            
-            const salaDados = dados[sala];
-            const tempAtual = salaDados.atual[salaDados.atual.length - 1]
-            let color = ''
-            if(tempAtual > 22 || tempAtual <= 20){
-                color = 'var(--erro)'
-            }else{
-                color = 'var(--sucesso)'
-            }
-            
-            div_temperatura.style.color = color
-            div_temperatura.innerHTML = `${tempAtual}`
-            back_temperatura.style.backgroundColor = color
-
-            myChart3 = new Chart(ctx3, {
-                type: 'line',
-                data: {
-                    labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'],
-                    datasets: [
-                        {
-                            label: 'Temperatura máxima',
-                            data: salaDados.max,
-                            backgroundColor: '#8A0303',
-                            borderColor: '#8A0303',
-                            borderWidth: 4,
-                            pointRadius: 0
-                        },
-                        {
-                            label: 'Temperatura mínima',
-                            data: salaDados.min,
-                            backgroundColor: 'blue',
-                            borderColor: 'blue',
-                            borderWidth: 4,
-                            pointRadius: 0
-                        },
-                        {
-                            label: 'Temperatura Atual',
-                            data: salaDados.atual,
-                            backgroundColor: '#B8CAD4',
-                            borderColor: 'black',
-                            borderWidth: 3,
-                            pointHoverBackgroundColor: '#B8CAD4',
-                            pointRadius: 5,
-                            pointHoverRadius: 10
-                        }
-                    ]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 28,
-                            min: 16,
-                            ticks: {
-                                color: 'black'
-                            }
-                        },
-                        x: {
-                            ticks: {
-                                color: 'black'
-                            }
-                        }
-                    },
-                    plugins: {
-                        tooltip: {
-                            enabled: true
-                        },
-                        legend: {
-                            labels: {
-                                color: 'black',
-                                font: {
-                                    weight: 'bold'
-                                }
-                            }
-                        }
-                    }
+        for (i = 0; i < todosOsGraficos.length; i++) {
+            // exibindo - ou não - o gráfico
+            if (todosOsGraficos[i].id != idAquario) {
+                let elementoAtual = document.getElementById(`grafico${todosOsGraficos[i].id}`)
+                if (elementoAtual.classList.contains("display-block")) {
+                    elementoAtual.classList.remove("display-block")
                 }
-            }); 
+                elementoAtual.classList.add("display-none")
+
+                // alterando estilo do botão
+                let btnAtual = document.getElementById(`btnAquario${todosOsGraficos[i].id}`)
+                if (btnAtual.classList.contains("btn-pink")) {
+                    btnAtual.classList.remove("btn-pink")
+                }
+                btnAtual.classList.add("btn-white")
+            }
         }
 
-        // Gráficos padrão
-        window.document.addEventListener('DOMContentLoaded', () => {
-            const ctx5 = document.getElementById('myChart5').getContext('2d');  
-            const myChart5 = new Chart(ctx5, {
-                type: 'bar',
-                data: {
-                    labels: ['Sala 1', 'Sala 2', 'Sala 3', 'Sala 4', 'Sala 5', 'Sala 6', 'Sala 7', 'Sala 8', 'Sala 9', 'Sala 10'],
-                    datasets: [{
-                        label: 'Alertas',
-                        data: [1, 3, 2, 5, 15, 0, 29, 1, 5, 2],
-                        backgroundColor: '#8A0303', 
-                        borderColor: '#8A0303',
-                        borderWidth: 3,
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            min: 0,
-                            ticks: {
-                                color: 'black' 
-                            }
-                        },
-                        x: {
-                            ticks: {
-                                color: 'black' 
-                            }
-                        }
-                    },
-                    plugins: {
-                        tooltip: {
-                            enabled: true
-                        },
-                        legend: {
-                            labels: {
-                                color: 'black', 
-                                font: {
-                                    weight: 'bold' 
-                                }
-                            }
-                        }
-                    }
-                }
-            });
+        // exibindo - ou não - o gráfico
+        let graficoExibir = document.getElementById(`grafico${idAquario}`)
+        graficoExibir.classList.remove("display-none")
+        graficoExibir.classList.add("display-block")
+
+        // alterando estilo do botão
+        let btnExibir = document.getElementById(`btnAquario${idAquario}`)
+        btnExibir.classList.remove("btn-white")
+        btnExibir.classList.add("btn-pink")
+    }
+
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function obterDadosGrafico(idAquario) {
+
+        alterarTitulo(idAquario)
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idAquario);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
         })
-        
-        </script>
-    </body>
-</html>
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta, idAquario) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Umidade',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            },
+            {
+                label: 'Temperatura',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(199, 52, 52)',
+                tension: 0.1
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.momento_grafico);
+            dados.datasets[0].data.push(registro.umidade);
+            dados.datasets[1].data.push(registro.temperatura);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'line',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas${idAquario}`),
+            config
+        );
+
+        setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+    }
+
+
+    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+    // buscando a última medida inserida em tabela contendo as capturas, 
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function atualizarGrafico(idAquario, dados, myChart) {
+
+
+
+        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    obterdados(idAquario);
+                    // alertar(novoRegistro, idAquario);
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico:`);
+                    console.log(dados);
+
+                    let avisoCaptura = document.getElementById(`avisoCaptura${idAquario}`)
+                    avisoCaptura.innerHTML = ""
+
+
+                    if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
+                        console.log("---------------------------------------------------------------")
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                        avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
+                        console.log("Horário do novo dado capturado:")
+                        console.log(novoRegistro[0].momento_grafico)
+                        console.log("Horário do último dado capturado:")
+                        console.log(dados.labels[dados.labels.length - 1])
+                        console.log("---------------------------------------------------------------")
+                    } else {
+                        // tirando e colocando valores no gráfico
+                        dados.labels.shift(); // apagar o primeiro
+                        dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+
+                        dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+
+                        dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
+                        dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+
+                        myChart.update();
+                    }
+
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+</script>
