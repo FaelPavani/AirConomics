@@ -348,9 +348,41 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
+  border-right: 3px solid #5100ff;
   background-color: #212124;
 }
+
+@keyframes neon-border {
+  0% {
+    border-right-color: #0095ff; /* Azul */
+    box-shadow: 0 0 0px #0095ff, 0 0 10px #0095ff, 0 0 0px #0095ff;
+  }
+  50% {
+    border-right-color: #ffffff; /* Rosa */
+    box-shadow: 0 0 0px #ffffff, 0 0 10px #ffffff, 0 0 0px #ffffff;
+  }
+  100% {
+    border-right-color: #0055ff; /* Azul */
+    box-shadow: 0 0 0px #0055ff, 0 0 10px #0055ff, 0 0 0px #0055ff;
+  }
+}
+
+.header-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-right: 3px solid #5100ff;
+  background-color: #212124;
+  animation: neon-border 3s ease-in-out infinite;
+}
+
 
 .dash-right {
   display: flex;
@@ -382,6 +414,7 @@ canvas {
 
 .hello h3 span {
   font-weight: 800;
+  color: white;
 }
 
 .btn-nav {
