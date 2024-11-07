@@ -261,168 +261,161 @@ background-color: #45a049;
 } */
 
 /* serviços */
-.social {
-  height: calc(fit-content + 10%);
+
+#image-valores {
+  margin-top: 5%;
+  margin-left: -71%;
+  width: 100vw; 
+  height: 200vh;
+  background-image: url('../img/valores.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  overflow: hidden; 
   display: flex;
+  align-items: center; 
   justify-content: center;
-  align-items: center;
-  background-color: var(--primary);
 }
 
-.social .social-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* Centraliza verticalmente */
-  align-items: center;
-  /* Centraliza horizontalmente */
-  width: 80%;
-  height: 100%;
-  /* Garante que a altura ocupe todo o espaço disponível */
-  padding: 20px;
-  /* Espaço ao redor do conteúdo */
-}
+#image-valores::before {
+  backdrop-filter: blur(5px);
+z-index: -1;
+content:''}
 
-.social .social-container h2{
-  color: var(--secondary);
-  width: 100%;
+#h1-val {
+  margin-top: 5%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin-bottom: 2rem;
+  color: #2980b9;
+  margin-right: 65%;
 }
 
-.social-content{
-  padding-bottom: 2em;
-  color: var(--secondary);
-  width: 85%;
-}
-
-.social-content .img{
+#h1-faz {
+  margin-top: -90%;
+  font-weight: bold;
   display: flex;
-  gap: 20px;
-}
-
-.social-content .img.img-right{
-  flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  margin-right: 55%;
 }
 
-.social-content .img.img-left{
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.social-content .img img{
-  width: 120px;
-}
-
-.social-content .diagrama-solucao{
-  width: 100%;
-  margin: 2rem 0;
+.main_box {
+  margin-top: -55%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 20px;
+  margin-right: 1%;
 }
-
-.social-content .diagrama-solucao img{
-  width: 100%;
-}
-
-.social .social-container .social-boxes {
+.boxes {
   display: flex;
-  flex-direction: row;
-  /* As boxes ficam em linha */
-  justify-content: center;
-  /* Centraliza boxes horizontalmente */
-  gap: 50px;
-  /* Aumente este valor para mais espaço entre as boxes */
-  align-self: center;
-  /* Centraliza o grupo de boxes */
+  text-align: center;
 }
 
 .box {
-  position: relative;
-  /* Necessário para o efeito de rotação */
-  width: 300px;
-  /* Ajuste conforme necessário */
-  height: 300px;
-  /* Ajuste conforme necessário */
-  perspective: 1000px;
-  /* Profundidade do efeito 3D */
+  background-color: #9947bd;
+  border-radius: 25px;
+  opacity: 90%;
+  width: 302px;
+  height: 442px;
+  margin: 12px;
+  padding-top: 41px;
+  background: linear-gradient(135deg, rgba(110, 4, 131, 0.567), rgba(169, 27, 182, 0.534));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 3px solid rgba(62, 12, 85, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(38, 0, 48, 0.89);
 }
 
-.front, .back {
+.box_color {
+  background-color: #8E44AD;
+
+}
+
+.title_valores {
+  margin-top: 43px;
+  color: #f9f9f8;
+  font-weight: bold;
+  font-size: 28px;
+  margin-top: 43px;
+}
+
+.box p {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  /* Esconde o lado oposto ao girar */
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  background-color: var(--secondary);
-  transition: transform 0.6s;
-  /* Efeito suave na rotação */
-}
-
-.front {
-  z-index: 2;
-  /* Mantém a frente acima da parte de trás */
-  flex-direction: column;
-  /* Empilha logo e texto verticalmente */
-  justify-content: flex-start;
-  /* Alinha o conteúdo no topo */
-  align-items: center;
-  /* Centraliza horizontalmente */
-  text-align: center;
-  /* Centraliza o texto */
-  height: 100%;
-  /* Garante que ocupe toda a altura da box */
-  padding-top: 10px;
-  /* Adiciona um espaço no topo para afastar do limite */
-}
-
-.back {
-  transform: rotateY(180deg);
-  /* Gira o verso da box */
-}
-
-.box:hover .front {
-  transform: rotateY(180deg);
-  /* Gira a frente ao passar o mouse */
-}
-
-.box:hover .back {
-  transform: rotateY(0);
-  /* Mostra o verso ao passar o mouse */
+  height: 182px;
+  padding: 11px 17px 11px 17px;
+  color: #f9f9f8;
+  margin: 22px 16px 0px 16px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(243, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(39, 0, 43, 0.37);
 }
 
 .box img {
-  width: 80%;
-  height: 100%;
-  max-height: 200px;
-  margin-bottom: 5px;
-  filter: grayscale(70%) brightness(0);
+  margin: 205px 3px 3px 130px;
 }
 
-.box h4 {
-  color: var(--primary);
-  margin: -30px 0 2px 0;
-  font-size: 22px;
+.diagrama_section {
+  display: flex;
+  justify-content: center;
+  margin-right: 65%;
 }
-
-.back p {
-  font-size: 1rem;
-  letter-spacing: 1.2px;
-  line-height: 1.6;
-  color: var(--primary);
-  font-weight: bold;
+.boxes_diagrama {
+  display: flex;
   text-align: center;
-  padding: 3%;
+}
+
+.box_diagrama {
+  background: linear-gradient(145deg, #e0e0e0, #eeecec);
+  box-shadow: 20px 20px 60px #858ac4,
+      -20px -20px 60px #7377a0;
+      border-radius: 25px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  width: 264px;
+  height: 440px;
+  padding: 11px 17px 11px 17px;
+  color: #171717;
+  margin: 22px 16px 0px 16px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.box_diagrama p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #171717;
+}
+
+.box_diagrama .teste{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box_diagrama .teste img{
+  display: flex;
+  height: 150px;
+  width: 150px;
+}
+
+.box_diagrama .teste .dupla{
+  height: 100px;
+  width: 100px;
 }
 
 /* sobre nos */

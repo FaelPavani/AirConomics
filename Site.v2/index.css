@@ -1,48 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #363636;
+  --secondary: #ddd;
+  --logo-color: #0080ff;
+}
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-  .header {
-    background-color: #323643;
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 9999;
-  }
-  
-  .header .navbar {
-    display: flex;
-    width: inherit;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .header .navbar .navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+html{
+  scroll-behavior: smooth;
+}
 
-    text-decoration: none;
-  }
-  
-  .header .navbar .navbar-links li a {
-    color: var(--secondary);
-    text-decoration: none;
-    font-size: 2VW;
-  }
-  
-  .header .navbar .logo-link .logo {
-    width: 7vw;
+.header {
+  background-color: white;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 9999;
+}
 
-  }
+.header .navbar {
+  display: flex;
+  width: inherit;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header .navbar .navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  text-decoration: none;
+}
+
+header .navbar .navbar-links li a {
+  color: var(--secondary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+  display: flex;
+  background-color: var(--secondary);
+  color: var(--logo-color);
+  box-shadow: 0 3px 15px var(--primary);
+  margin-right: 10px;
+  font-size: 15px;
+  margin: 30px;
+  padding: 15px 30px;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+}
+
+.botao-header {
+  display: flex;
+  background-color: var(--secondary);
+  color: var(--logo-color);
+  box-shadow: 0 3px 15px var(--logo-color);
+  margin-right: 10px;
+  font-size: 15px;
+  padding: 15px 30px;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+}
+
+/* 
+.botao-header:hover {
+background-color: #45a049;
+} */
+
+.header .navbar .logo-link .logo {
+  width: 104px;
+}
+
+.header .navbar .profile-link .profile {
+  width: 36px;
+}
+
+/* carrosel  */
+
+.section.slider {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 0 !important;
+} 
+.slider-containner {
+  width: 300%; /* 100% por imagem, ajuste conforme o número de imagens */
+  height: auto;
+  display: flex;
+  transition: transform 0.5s ease; /* Adiciona uma transição suave */
+}
+
+.slider-containner input{
+  display: none;
+}
+
+.slider-box {
+  width: 100vw; /* Cada imagem ocupa a largura total da tela */
+  height: auto;
+  position: relative;
+  text-align: center;
+}
+.slider-box img {
+  width: 100%; /* As imagens ocupam a largura total de cada box */
+  height: auto;
+}
+.nav-manual{
+  position: fixed;
+  width: 100%;
+  margin-top: 35%;
+  display: flex;
+  justify-content: center;
+}
+.nav-manual .manual-btn, .nav-auto div {
+  border: 1px solid #0080ff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+
+} 
+.nav-manual .manual-btn:not(:last-child){
+  margin-right: 10px;
+}
+
+.nav-manual .manual-btn:hover{
+  background-color: aqua;
+}
+.content {
+  padding: 40px; /* Espaçamento interno */
+  background-color: var(--secondary); /* Cor de fundo */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 2px 10px var(--logo-color0); /* Sombra */
+ 
+}
+
+.content span {
+  color:  var(--logo-color);
+}
+
+/* Estilo do título principal da seção */
+.content h1 {
+  font-size: 2.5em; /* Tamanho da fonte */
+  color: var(--primary); /* Cor do texto */
+  margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Estilo dos subtítulos */
+.content h3 {
+  font-size: 1.8em; /* Tamanho da fonte */
+  color: var(--primary); /* Cor do texto */
+  margin: 20px 0; /* Margem superior e inferior */
+}
+
+/* Estilo dos parágrafos */
+.content p {
+  font-size: 1em; /* Tamanho da fonte */
+  line-height: 1.6; /* Altura da linha */
+  color: var(--primary); /* Cor do texto */
+  margin-bottom: 15px; /* Margem inferior */
+}
+
+/* Estilo da lista */
+.content ul {
+  padding-left: 0px; /* Espaçamento interno à esquerda */
+  list-style-type: disc; /* Estilo da lista */
+}
+
+/* Estilo dos itens da lista */
+.content ul li {
+  margin-bottom: 10px; /* Margem inferior para os itens */
+color: var(--primary);
+}
+
+
+ 
   
-  .header .navbar .profile-link .profile {
-    width: 200vh;
-  }
+
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Esconde a parte de trás quando não visível */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s;
+  flex-direction: column;
+}
+
+.back {
+  background-color: var(--secondary);
+  transform: rotateY(180deg); /* Esconde a parte de trás inicialmente, ou seja irá rotacionar pessoal !! */
+}
+
+.box img { 
+  width: 60px;
+  border-radius: 10px;
+  height: 60px;
+}
+
+.box h2 {
+  color: var(--secondary);
+  text-shadow: 0 0 5px var(--logo-color), 0 0 10px var(--logo-color), 0 0 15px var(--logo-color);
+  margin-top: 20px;  /* Remove margens para alinhamento */
+}
+
+.box p {
+  margin: 10%;
+  color: var(--primary);
+  align-items: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+
+
+
+
+
+/*footer*/
+
+.footer-container {
+  font-family: 'Poppins';
   
+  display: flex;
+justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+  height: 45vh;
+  border-radius: 10px var(--logo-color);
+}
+
+.footer-section {
+  min-width: 250px;
+}
+
+.footer-logo img {
+  max-width: 200px; /* Ajuste o tamanho conforme necessário */
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Garante que a imagem seja redimensionada proporcionalmente */
+  margin-top: 20px; /* Para dar um pequeno espaço superior */
+}
+
+.social-icons {
+  margin-left: 25px;
+  display: flex;
+}
+
+.footer-section p {
+  margin-bottom: 10px; 
+}
+
+
+.footer-links1 a {
+  margin-right: 70px;
+  text-decoration: none; 
+  color: #000000;
+  font-size: 16px;
+}
+
+.footer-links1 li {
+  margin-bottom: 15px;
+}
+
+.footer-links2 a {
+  text-decoration: none; 
+  color: #000000;
+  font-size: 16px;
+}
+
+.footer-links2 li {
+  margin-bottom: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  margin-right: 15px; 
+}
+
+.p-footer {
+  color: #000000;
+  font-size: 14px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+.h3-n {
+  margin-bottom: 55%;
+  all: unset;
+  font-size: 25px;
+}
+
+.links {
+  display: flex;
+}
+
+.h3-r {
+  margin-bottom: 35%;
+  all: unset;
+  font-size: 16px;
+}
+
+.p-copy {
+  
+  font-size: 16px;
+  text-align: center;
+  border-top: 2px solid var(--primary); /* Borda superior */
+  padding-top: 10px; /* Espaço entre o texto e a borda */
+  padding-bottom: 10px; /* Espaço entre o texto e a borda */
+}
