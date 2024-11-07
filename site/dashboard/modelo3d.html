@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Sala 3D</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+        button {
+            margin: 5px 0;
+        }
+        #toggleControls {
+            position: absolute;
+            top: 10px;
+            left: 150px;
+            z-index: 1;
+            font-size: 24px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+        #zoomInButton {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #zoomOutButton {
+            position: absolute;
+            bottom: 20px;
+            left: 120px;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #topViewButton {
+            position: absolute;
+            bottom: 20px;
+            left: 220px;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="controls">
+        <button id="addSensor">Adicionar Sensor</button>
+        <button id="addAC">Adicionar Ar-Condicionado</button>
+        <button id="nextObject">Selecionar Próximo Objeto</button>
+        <button id="deselectAll">Deselecionar Todos</button>
+        <button id="increaseRange">Aumentar Alcance</button>
+        <button id="decreaseRange">Diminuir Alcance</button>
+    </div>
+    <button id="toggleControls">+</button>
+    <button id="zoomInButton">+</button>
+    <button id="zoomOutButton">-</button>
+    <button id="topViewButton">👁️</button>
+    <script>
+        let scene, camera, renderer;
+        const objects = [];
+        const maxObjects = { sensor: 6, ac: 6 };
+        let sensorCount = 0, acCount = 0;
+        let currentObjectIndex = -1;
+        const sensorRange = [];
+        let isTopView = false; // Controle para a visão superior
+
+        function init() {
+            // Criação da cena
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+            
+            // Adicionando um chão para a sala
+            const floorGeometry = new THREE.PlaneGeometry(10, 10);
+            const floorMaterial = new THREE.MeshBasicMaterial({ color: 0xaaaaaa });
+            const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+            floor.rotation.x = -Math.PI / 2;
+            scene.add(floor);
+
+            // Configuração da câmera
+            camera.position.set(0, 2, 5);
+            camera.lookAt(0, 0, 0);
+
+            // Eventos de resize
+            window.addEventListener('resize', onWindowResize);
+            document.getElementById('toggleControls').onclick = toggleControls;
+
+            // Inicializar botões de zoom
+            document.getElementById('zoomInButton').onclick = () => camera.position.z -= 1;
+            document.getElementById('zoomOutButton').onclick = () => camera.position.z += 1;
+            document.getElementById('topViewButton').onclick = toggleTopView;
+
+            initObjectControls();
+            animate();
+        }
+
+        function initObjectControls() {
+            document.getElementById('addSensor').onclick = addSensor;
+            document.getElementById('addAC').onclick = addAC;
+            document.getElementById('nextObject').onclick = selectNextObject;
+            document.getElementById('deselectAll').onclick = deselectAll;
+            document.getElementById('increaseRange').onclick = () => changeSensorRange(0.1);
+            document.getElementById('decreaseRange').onclick = () => changeSensorRange(-0.1);
+
+            document.addEventListener('keydown', onKeyDown);
+        }
+
+        function addSensor() {
+            if (sensorCount < maxObjects.sensor) {
+                const sensorGeometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
+                const sensorMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+                const sensor = new THREE.Mesh(sensorGeometry, sensorMaterial);
+                sensor.position.set(Math.random() * 8 - 4, 0.1, Math.random() * 8 - 4);
+                scene.add(sensor);
+                objects.push(sensor);
+                sensorCount++;
+
+                // Adiciona o círculo de alcance em forma de bolha
+                const rangeBubble = new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshBasicMaterial({ color: 0xffff00, transparent: true, opacity: 0.5 }));
+                rangeBubble.position.copy(sensor.position);
+                rangeBubble.position.y = 0.01; // Levanta a bolha um pouco
+                scene.add(rangeBubble);
+                sensorRange.push(rangeBubble);
+                sensor.isSensor = true; // Propriedade para identificar sensores
+
+                // Atualiza a bolha de alcance para o novo sensor
+                updateRangeBubble(sensorCount - 1);
+            } else {
+                alert('Limite de sensores alcançado.');
+            }
+        }
+
+        function addAC() {
+            if (acCount < maxObjects.ac) {
+                const acGeometry = new THREE.BoxGeometry(0.5, 0.2, 0.2);
+                const acMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+                const ac = new THREE.Mesh(acGeometry, acMaterial);
+                ac.position.set(Math.random() * 8 - 4, 0.1, Math.random() * 8 - 4);
+                scene.add(ac);
+                objects.push(ac);
+                acCount++;
+                ac.isSensor = false; // Propriedade para identificar ar-condicionados
+            } else {
+                alert('Limite de ar-condicionados alcançado.');
+            }
+        }
+
+        function selectNextObject() {
+            if (objects.length === 0) return; // Nenhum objeto adicionado
+            
+            if (currentObjectIndex !== -1) {
+                // Reseta a cor do objeto anterior e a bolha
+                resetObjectColor(currentObjectIndex);
+            }
+
+            currentObjectIndex = (currentObjectIndex + 1) % objects.length;
+            highlightCurrentObject();
+        }
+
+        function highlightCurrentObject() {
+            if (currentObjectIndex >= 0) {
+                const currentObject = objects[currentObjectIndex];
+                if (currentObject.isSensor) {
+                    currentObject.material.color.set(0x0000ff); // Azul para destacar sensores
+                } else {
+                    currentObject.material.color.set(0x00ffff); // Ciano para destacar ar-condicionados
+                }
+                updateRangeBubble(currentObjectIndex);
+            }
+        }
+
+        function resetObjectColor(index) {
+            const obj = objects[index];
+            if (obj.isSensor) {
+                obj.material.color.set(0x00ff00); // Verde para sensores
+            } else {
+                obj.material.color.set(0xff0000); // Vermelho para ar-condicionados
+            }
+            // Resetar a bolha
+            if (sensorRange[index]) {
+                sensorRange[index].position.copy(obj.position);
+                sensorRange[index].position.y = 0.01; // Levanta a bolha um pouco
+            }
+        }
+
+        function updateRangeBubble(index) {
+            const rangeBubble = sensorRange[index];
+            if (rangeBubble) {
+                rangeBubble.position.copy(objects[index].position);
+                rangeBubble.position.y = 0.01; // Levanta a bolha um pouco
+            }
+        }
+
+        function changeSensorRange(delta) {
+            if (currentObjectIndex >= 0 && objects[currentObjectIndex].isSensor) {
+                const rangeBubble = sensorRange[currentObjectIndex];
+                const newScale = Math.max(0.1, rangeBubble.scale.x + delta);
+                rangeBubble.scale.set(newScale, newScale, newScale); // Mantém a forma esférica
+                updateRangeBubble(currentObjectIndex);
+            }
+        }
+
+        function deselectAll() {
+            if (currentObjectIndex !== -1) {
+                resetObjectColor(currentObjectIndex);
+                currentObjectIndex = -1; // Reseta o índice de seleção
+            }
+        }
+
+        function toggleControls() {
+            const controls = document.getElementById('controls');
+
+            if (controls.style.display === 'none') {
+                controls.style.display = 'flex';
+            } else {
+                controls.style.display = 'none';
+            }
+        }
+
+        function toggleTopView() {
+            isTopView = !isTopView;
+            if (isTopView) {
+                camera.position.set(0, 10, 0); // Ajusta a posição para visão de cima
+                camera.lookAt(0, 0, 0);
+            } else {
+                camera.position.set(0, 2, 5); // Retorna para a posição original
+                camera.lookAt(0, 0, 0);
+            }
+        }
+
+        function onKeyDown(event) {
+            if (currentObjectIndex >= 0) {
+                const currentObject = objects[currentObjectIndex];
+                const moveDistance = 0.1;
+
+                switch (event.key) {
+                    case 'w': // Move para frente
+                        currentObject.position.z -= moveDistance;
+                        break;
+                    case 's': // Move para trás
+                        currentObject.position.z += moveDistance;
+                        break;
+                    case 'a': // Move para a esquerda
+                        currentObject.position.x -= moveDistance;
+                        break;
+                    case 'd': // Move para a direita
+                        currentObject.position.x += moveDistance;
+                        break;
+                    case 'e': // Rotaciona para a direita
+                        currentObject.rotation.y -= 0.1;
+                        break;
+                    case 'q': // Rotaciona para a esquerda
+                        currentObject.rotation.y += 0.1;
+                        break;
+                }
+
+                // Atualiza a posição do círculo de alcance, se for um sensor
+                if (currentObject.isSensor) {
+                    updateRangeBubble(currentObjectIndex);
+                }
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        init();
+    </script>
+</body>
+</html>

@@ -123,7 +123,7 @@ body {
   background-color: #161618;
   height: 100vh;
   overflow: auto;
-  background-image: url('../img/plano\ de\ fundo\ 9.jpg');
+  background-image: url('../img/fundo\ azul\ escuro.jpg');
   background-size: cover;      /* Faz a imagem cobrir toda a div */
   background-position: center; /* Centraliza a imagem */
   background-repeat: no-repeat; /* Evita repetição da imagem */
@@ -499,7 +499,7 @@ canvas {
 .btn-logout:hover {
   color: white;
   background-color: #0080FF;
-  box-shadow: 0 0 10px #0068e6, 0 0 20px #0068e6, 0 0 30px #0068e6;
+  box-shadow: 0 0 5px #0068e6, 0 0 5px #0068e6, 0 0 10px #0068e6;
 }
 
 .dash-right .avisos .div-form button::before,
@@ -528,4 +528,24 @@ canvas {
 .btn-logout:hover::before {
   top: -70%;
   left: -70%;
+}
+
+.btn-nav {
+  background-color: #252525;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-nav button {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  color: inherit;
+  font-size: 16px;
+}
+
+.btn-nav h3 {
+  margin: 0;
+  padding: 10px 20px;
 }
