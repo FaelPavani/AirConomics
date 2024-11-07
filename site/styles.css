@@ -18,13 +18,13 @@ html{
 }
 
 .header {
-  background-color: var(--primary);
+  background-color: var(--secondary);
   width: 100%;
   height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: absolute;
   z-index: 9999;
 }
 
@@ -42,10 +42,39 @@ html{
   text-decoration: none;
 }
 
-.header .navbar .navbar-links li a {
+header .navbar .navbar-links li a {
   color: var(--secondary);
+  font-weight: 500;
   text-decoration: none;
+  transition: color 0.3s;
+  display: flex;
+  background-color: var(--secondary);
+  color: var(--logo-color);
+  box-shadow: 0 3px 15px var(--primary);
+  margin-right: 10px;
+  font-size: 15px;
+  margin: 30px;
+  padding: 15px 30px;
+  border-radius: 25px;
+  transition: background-color 0.3s;
 }
+
+.botao-header {
+  display: flex;
+  background-color: var(--secondary);
+  color: var(--logo-color);
+  box-shadow: 0 3px 15px var(--logo-color);
+  margin-right: 10px;
+  font-size: 15px;
+  padding: 15px 30px;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+}
+
+/* 
+.botao-header:hover {
+background-color: #45a049;
+} */
 
 .header .navbar .logo-link .logo {
   width: 104px;
@@ -55,7 +84,58 @@ html{
   width: 36px;
 }
 
+.section.slider {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 0 !important;
+} 
+.slider-containner {
+  width: 400%;
+  height: auto;
+  display: flex;
+}
 
+.slider-containner input{
+  display: none;
+}
+
+.slider-box {
+  width: 25%;
+  height: auto;
+  position: relative;
+  text-align: center;
+}
+.slider-box img {
+  width: 100%;
+}
+.nav-manual{
+  position: absolute;
+  width: 100%;
+  margin-top: 35%;
+  display: flex;
+  justify-content: center;
+}
+.nav-manual .manual-btn, .nav-auto div {
+  border: 1px solid #0080ff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+
+} 
+.nav-manual .manual-btn:not(:last-child){
+  margin-right: 10px;
+}
+
+.nav-manual .manual-btn :hover{
+  background-color: aqua;
+}
+
+ 
+
+
+/* 
 .container {
   display: flex;
   flex-direction: column;
@@ -112,9 +192,9 @@ html{
 .container .container-content .container-button:hover {
   scale: 1.1;
   transition: .5s all ease;
-}
+}*/
 
-.footer {
+ .footer {
   background-color: var(--primary);
   color: var(--secondary);
   height: fit-content;
@@ -132,7 +212,7 @@ html{
 .footer .footer-top .footer-left {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center; */
   justify-content: center;
 }
 
@@ -178,7 +258,7 @@ html{
 
 .footer .footer-bottom img {
   width: 102px;
-}
+} */
 
 /* serviços */
 .social {
