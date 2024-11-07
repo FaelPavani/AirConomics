@@ -63,6 +63,16 @@
             padding: 10px;
             cursor: pointer;
         }
+        .instruction-text {
+            position: absolute;
+            bottom: 20px; /* Ajusta a posição vertical */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translateX(-50%); /* Centraliza o texto */
+            color: white; /* Cor do texto */
+            opacity: 0.5; /* Transparência */
+            font-size: 16px; /* Tamanho da fonte */
+            text-align: center; /* Centraliza o texto */
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
@@ -79,6 +89,11 @@
     <button id="zoomInButton">+</button>
     <button id="zoomOutButton">-</button>
     <button id="topViewButton">👁️</button>
+    
+    <div class="instruction-text">
+        <p>Use W A S D para mover o sensor</p>
+    </div>
+
     <script>
         let scene, camera, renderer;
         const objects = [];
