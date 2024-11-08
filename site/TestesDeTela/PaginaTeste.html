@@ -310,10 +310,10 @@ color: var(--logo-color);
           <div class="box">
             <div class="container-calculator">
               <h1><span>AIR</span>Conomics Calc</h1>
-              Selecione o tamanho do seu ambiente em ²:
-             <input type="number"id="select_sala" placeholder="Ex: 100 ">
+              Preço médio por kWh (R$):
+             <input type="number"id="ipt_preco_kwh" placeholder="Ex: 0,656 ">
               BTU's dos aparelhos somados: <input type="number" id="ipt_btu" placeholder="Ex: 30000" >
-              Tempo de uso (horas): <input type="number" id="ipt_tempo"  placeholder="Ex: 8">
+              Tempo médio diário de uso do aparelho em horas.: <input type="number" id="ipt_temp"  placeholder="Ex: 8">
               <button onclick="calcular()">Calcular</button>
             </div>
           </div>
@@ -329,7 +329,7 @@ color: var(--logo-color);
     </div>
     </body>
     <script>
-       function calcularEconomiaSimples() {
+       function calcular() {
     var precoKwh = Number(ipt_preco_kwh.value);
     var potenciaBTU = Number(ipt_btu.value);
     var tempoUsoDiario = Number(ipt_temp.value); 
@@ -343,9 +343,11 @@ color: var(--logo-color);
 
     
     document.getElementById('resultado_texto').innerHTML = `
-        <p><strong>Custo Mensal (Modo Contínuo):</strong> R$${custoMensalContinuo.toFixed(2)}</p>
-        <p><strong>Custo Mensal (Modo Econômico):</strong> R$${custoMensalEco.toFixed(2)}</p>
-        <p><strong>Economia Mensal:</strong> R$${economiaMensal.toFixed(2)}</p>
+        <p>Custo Mensal (Modo Contínuo): <span style = "color : red">R$${custoMensalContinuo.toFixed(2)}</span></p>
+        <p>Custo Mensal (Modo Econômico):<span style = "color : blue">R$${custoMensalEco.toFixed(2)}</span></p> <br>
+        <p> Você sabia que, com a Airconomics, você pode reduzir sua conta de energia em até <span style = "color : green"> R$${economiaMensal.toFixed(2)}</span> por mês?</p> <br>
+        <p>Ao investir na nossa solução inovadora e eficiente, você transforma a maneira como o seu ar condicionado consome energia.</p> <br>
+        <p>Não perca mais dinheiro! Investir em nossa solução não é apenas uma escolha inteligente, é uma forma de garantir economia real no seu dia a dia e longo prazo.</p>
     `;
     document.getElementById('div_result').style.display = 'block';
 }
