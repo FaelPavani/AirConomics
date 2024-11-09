@@ -33,45 +33,35 @@
             border-radius: 5px;
             padding: 5px 10px;
         }
-        #zoomInButton {
+        #zoomInButton, #zoomOutButton, #topViewButton {
             position: absolute;
             bottom: 20px;
-            left: 20px;
             background: rgba(255, 255, 255, 0.5);
             border: none;
             border-radius: 5px;
             padding: 10px;
             cursor: pointer;
         }
-        #zoomOutButton {
-            position: absolute;
-            bottom: 20px;
-            left: 120px;
-            background: rgba(255, 255, 255, 0.5);
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            cursor: pointer;
-        }
-        #topViewButton {
-            position: absolute;
-            bottom: 20px;
-            left: 220px;
-            background: rgba(255, 255, 255, 0.5);
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            cursor: pointer;
-        }
+        #zoomInButton { left: 20px; }
+        #zoomOutButton { left: 120px; }
+        #topViewButton { left: 220px; }
         .instruction-text {
             position: absolute;
-            bottom: 20px; /* Ajusta a posição vertical */
-            left: 50%; /* Centraliza horizontalmente */
-            transform: translateX(-50%); /* Centraliza o texto */
-            color: white; /* Cor do texto */
-            opacity: 0.5; /* Transparência */
+            bottom: 50px; /* Ajusta a posição para não sobrepor a legenda */
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            opacity: 0.5;
+            font-size: 16px;
+            text-align: center;
+        }
+        #rangeLabel {
+            position: absolute;
+            top: 220px; /* Ajuste a posição para mais abaixo */
+            left: 10px;
+            z-index: 1;
+            color: yellow; /* Cor da legenda */
             font-size: 16px; /* Tamanho da fonte */
-            text-align: center; /* Centraliza o texto */
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -90,6 +80,8 @@
     <button id="zoomOutButton">-</button>
     <button id="topViewButton">👁️</button>
     
+    <div id="rangeLabel">Alcance: 10m</div> <!-- Legenda para o alcance -->
+
     <div class="instruction-text">
         <p>1º Adicione o Sensor/Ar-Condicionado<br>
            2º Selecione Próximo Objeto <br>
@@ -104,6 +96,7 @@
         let currentObjectIndex = -1;
         const sensorRange = [];
         let isTopView = false; // Controle para a visão superior
+        let currentRange = 10; // Alcance inicial
 
         function init() {
             // Criação da cena
@@ -142,8 +135,8 @@
             document.getElementById('addAC').onclick = addAC;
             document.getElementById('nextObject').onclick = selectNextObject;
             document.getElementById('deselectAll').onclick = deselectAll;
-            document.getElementById('increaseRange').onclick = () => changeSensorRange(0.1);
-            document.getElementById('decreaseRange').onclick = () => changeSensorRange(-0.1);
+            document.getElementById('increaseRange').onclick = () => changeSensorRange(10); // Aumenta em 10 metros
+            document.getElementById('decreaseRange').onclick = () => changeSensorRange(-10); // Diminui em 10 metros
 
             document.addEventListener('keydown', onKeyDown);
         }
@@ -188,11 +181,28 @@
             }
         }
 
+        function updateRangeBubble(index) {
+            const rangeBubble = sensorRange[index];
+            if (rangeBubble) {
+                rangeBubble.position.copy(objects[index].position);
+                rangeBubble.position.y = 0.01; // Levanta a bolha um pouco
+                rangeBubble.scale.set(currentRange / 10, currentRange / 10, currentRange / 10); // Atualiza o tamanho da bolha
+            }
+        }
+
+        function changeSensorRange(delta) {
+            if (currentObjectIndex >= 0 && objects[currentObjectIndex].isSensor) {
+                currentRange = Math.max(10, currentRange + delta); // Atualiza o alcance
+                document.getElementById('rangeLabel').textContent = `Alcance: ${currentRange}m`; // Atualiza a legenda
+                updateRangeBubble(currentObjectIndex); // Atualiza a bolha do sensor atual
+            }
+        }
+
         function selectNextObject() {
             if (objects.length === 0) return; // Nenhum objeto adicionado
             
             if (currentObjectIndex !== -1) {
-                // Reseta a cor do objeto anterior e a bolha
+                // Reseta a cor do objeto anterior
                 resetObjectColor(currentObjectIndex);
             }
 
@@ -218,28 +228,6 @@
                 obj.material.color.set(0x00ff00); // Verde para sensores
             } else {
                 obj.material.color.set(0xff0000); // Vermelho para ar-condicionados
-            }
-            // Resetar a bolha
-            if (sensorRange[index]) {
-                sensorRange[index].position.copy(obj.position);
-                sensorRange[index].position.y = 0.01; // Levanta a bolha um pouco
-            }
-        }
-
-        function updateRangeBubble(index) {
-            const rangeBubble = sensorRange[index];
-            if (rangeBubble) {
-                rangeBubble.position.copy(objects[index].position);
-                rangeBubble.position.y = 0.01; // Levanta a bolha um pouco
-            }
-        }
-
-        function changeSensorRange(delta) {
-            if (currentObjectIndex >= 0 && objects[currentObjectIndex].isSensor) {
-                const rangeBubble = sensorRange[currentObjectIndex];
-                const newScale = Math.max(0.1, rangeBubble.scale.x + delta);
-                rangeBubble.scale.set(newScale, newScale, newScale); // Mantém a forma esférica
-                updateRangeBubble(currentObjectIndex);
             }
         }
 
