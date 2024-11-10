@@ -1,0 +1,66 @@
+.header {
+  background-color: white;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 9999;
+}
+
+.header .navbar {
+  display: flex;
+  width: inherit;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header .navbar .navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  text-decoration: none;
+}
+
+header .navbar .navbar-links li a {
+  color: var(--secondary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+  display: flex;
+  background-color: var(--secondary);
+  color: var(--logo-color);
+  box-shadow: 0 3px 15px var(--primary);
+  margin-right: 10px;
+  font-size: 15px;
+  margin: 30px;
+  padding: 15px 30px;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+}
+
+.botao-header {
+  display: flex;
+  background-color: var(--secondary);
+  color: var(--logo-color);
+  box-shadow: 0 3px 15px var(--logo-color);
+  margin-right: 10px;
+  font-size: 15px;
+  padding: 15px 30px;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+}
+
+/* 
+.botao-header:hover {
+background-color: #45a049;
+} */
+
+.header .navbar .logo-link .logo {
+  width: 104px;
+}
+
+.header .navbar .profile-link .profile {
+  width: 36px;
+}
