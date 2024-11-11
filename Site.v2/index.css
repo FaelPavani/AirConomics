@@ -18,7 +18,9 @@ html{
 }
 
 .header {
-  background-color: white;
+  height: 90vh; 
+  background-color: var(--primary);
+  
   width: 100%;
   height: 10vh;
   display: flex;
@@ -26,6 +28,7 @@ html{
   align-items: center;
   position: absolute;
   z-index: 9999;
+ 
 }
 
 .header .navbar {
@@ -48,29 +51,35 @@ header .navbar .navbar-links li a {
   text-decoration: none;
   transition: color 0.3s;
   display: flex;
-  background-color: var(--secondary);
+  background-color: white;
   color: var(--logo-color);
   box-shadow: 0 3px 15px var(--primary);
   margin-right: 10px;
   font-size: 15px;
   margin: 30px;
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 15px;
   transition: background-color 0.3s;
 }
 
+
 .botao-header {
   display: flex;
-  background-color: var(--secondary);
-  color: var(--logo-color);
-  box-shadow: 0 3px 15px var(--logo-color);
+  background: linear-gradient(145deg, #f3eded, #ffffff); /* Gradiente para realismo */
+  color: #333;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.7); /* Sombras suaves */
   margin-right: 10px;
   font-size: 15px;
   padding: 15px 30px;
   border-radius: 25px;
-  transition: background-color 0.3s;
+  transition: background 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Contorno sutil */
 }
 
+.botao-header:hover {
+  background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Efeito de luz ao passar o mouse */
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25), -6px -6px 12px rgba(255, 255, 255, 0.8); /* Sombras mais intensas */
+}
 /* 
 .botao-header:hover {
 background-color: #45a049;
@@ -86,58 +95,101 @@ background-color: #45a049;
 
 /* carrosel  */
 
-.section.slider {
-  margin: 0 auto;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  padding: 0 !important;
-} 
-.slider-containner {
-  width: 300%; /* 100% por imagem, ajuste conforme o número de imagens */
-  height: auto;
-  display: flex;
-  transition: transform 0.5s ease; /* Adiciona uma transição suave */
+/* Estilos gerais para o carrossel */
+.slider {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 0 !important;
 }
 
-.slider-containner input{
-  display: none;
+.slider-containner {
+    width: 300%; /* 100% por imagem, ajuste conforme o número de imagens */
+    height: auto;
+    display: flex;
+    transition: transform 0.5s ease; /* Adiciona uma transição suave */
+}
+
+.slider-containner input {
+    display: none; /* Esconde os inputs de rádio */
 }
 
 .slider-box {
-  width: 100vw; /* Cada imagem ocupa a largura total da tela */
-  height: auto;
-  position: relative;
-  text-align: center;
+    width: 100vw; /* Cada imagem ocupa a largura total da tela */
+    height: auto;
+    position: relative;
+    text-align: center;
 }
+
 .slider-box img {
-  width: 100%; /* As imagens ocupam a largura total de cada box */
-  height: auto;
+    width: 100%; /* As imagens ocupam a largura total de cada box */
+    height: auto;
 }
-.nav-manual{
-  position: fixed;
-  width: 100%;
-  margin-top: 35%;
-  display: flex;
-  justify-content: center;
+
+.slider-text {
+    position: absolute;
+    bottom: 20px; /* Ajusta a posição do texto */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white; /* Cor do texto */
+    font-size: 24px; /* Tamanho da fonte */
+    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
 }
+
+/* Navegação manual */
+.nav-manual {
+    position: fixed;
+    width: 100%;
+    bottom: 20px; /* Ajusta a posição da navegação */
+    display: flex;
+    justify-content: center;
+}
+
 .nav-manual .manual-btn, .nav-auto div {
-  border: 1px solid #0080ff;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-
-} 
-.nav-manual .manual-btn:not(:last-child){
-  margin-right: 10px;
+    border: 1px solid #0080ff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: white; /* Fundo branco para os botões */
+    margin: 0 5px; /* Espaçamento entre os botões */
 }
 
-.nav-manual .manual-btn:hover{
-  background-color: aqua;
+.nav-manual .manual-btn:hover {
+    background-color: aqua; /* Cor ao passar o mouse */
 }
+
+/* Navegação automática */
+.nav-auto {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Espaçamento acima da navegação automática */
+}
+
+.nav-auto div {
+    width: 10px; /* Largura dos botões automáticos */
+    height: 10px; /* Altura dos botões automáticos */
+    border-radius: 50%; /* Bordas arredondadas */
+    background-color: #0080ff; /* Cor de fundo */
+    margin: 0 5px; /* Espaçamento entre os botões */
+    cursor: pointer;
+}
+
+.nav-auto div:hover {
+    background-color: #005f7f; /* Cor ao passar o mouse */
+}
+
+
 .content {
   padding: 40px; /* Espaçamento interno */
-  background-color: var(--secondary); /* Cor de fundo */
+  
+  height: 90vh; 
+  background-color: white;
+  
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 8px; /* Bordas arredondadas */
   box-shadow: 0 2px 10px var(--logo-color0); /* Sombra */
  
@@ -220,50 +272,484 @@ color: var(--primary);
   color: var(--primary);
   align-items: center;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+} 
+
+/* Problemas que enfrentamos ou solucionamos */
+.problemas {
+  height: 550px;
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+  text-align: center;
+}
+
+#img-AirCono {
+  /* Ajuste o tamanho conforme necessário */
+  margin: 0;
+  border: 5px solid var(--primary); /* Borda sólida de 5px com cor azul */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 1px; /* Espaçamento entre a borda e a imagem */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave */
+}
+
+
+
+/* Título centralizado */
+.titulo-problemas {
+  font-size: 40px;
+  color: var(--primary);
+  margin-bottom: 30px; /* Aumenta o espaço abaixo do título */
+}
+
+/* Flexbox para alinhar imagem e lista lado a lado */
+.conteudo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* Imagem posicionada à esquerda */
+#img-AirCono {
+  max-width: 300px; /* Ajuste o tamanho conforme necessário */
+  margin: 0;
+}
+
+/* Lista de problemas à direita da imagem */
+.lista-problemas {
+  color: #000;
+  list-style-type: disc;
+  text-align: left;
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* Adiciona espaçamento entre os itens da lista */
+.lista-problemas li {
+  margin-bottom: 20px;
+}
+
+/* Espaçamento entre parágrafos */
+.lista-problemas p {
+  margin-bottom: 20px; /* Espaçamento entre parágrafo e próximo elemento */
+  font-size: 18px;
+  line-height: 1.8;
 }
 
 
 
 
+/* sobre nós e serviços */
 
+.social-about {
+  
+  height: 40vh; 
+
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+ padding: 20%;
+  justify-content: center;/* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+
+  /* margin-bottom: 2rem; */
+}
+
+.social-about h1{
+  font-size: 40px;
+  color: var(--primary);
+}
+
+.social-about .container-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  
+  width: 80%; 
+  padding: 20px; /*espaço ao redor do conteúdo que você guilherme quiser implementar*/
+}
+.social-about .container-about .boxes-about {
+  display: flex;
+  flex-direction: row; /* fiz as boxes ficarem  em linha */
+  justify-content: center; /* centralizei de forma horizontal boxes */
+  gap: 20px; 
+  align-self: center;
+ 
+}
+
+.box-about { 
+  flex: 1; /* Faz a box ocupar espaço proporcionalmente */
+  min-width: 400px; 
+  max-width: 500px; 
+  min-height: 400px;
+ 
+   
+ 
+ 
+  padding: 30px; 
+  justify-content: center;
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px;
+  transition: transform 0.9s; 
+  perspective: 1000px; 
+}
+
+
+.front-about, .back-about {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: var(--secondary) ;
+  box-shadow: 0 4px 20px var(--primary);
+  
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  border: 5px solid var(--primary);
+  flex-direction: column;
+  align-self: center;
+  padding: 20px;
+}
+
+
+.back-about {
+  transform: rotateY(180deg) rotateX(180deg)
+}
+
+.box-about:hover .front-about {
+  transform: rotateY(180deg);
+   /* Vira a frente ao passar o mouse */
+}
+
+.box-about:hover .back-about {
+  transform: rotateY(0); /* Mostra a parte de trás ao passar o mouse */
+}
+
+.box-about img { 
+  width: 200px;
+    border-radius: 10px;
+    height: 200px;
+}
+
+.box-about p {
+  margin: 10%;
+  color: var(--primary);
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.front-about span{
+  color: var(--logo-color);
+}
+
+.back-about span {
+  color:  var(--logo-color);
+}
+/* Estilo geral da seção */
+.content-about {
+  padding: 40px; /* Espaçamento interno */
+  background-color: var(--secondary); /* Cor de fundo */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 2px 10px var(--logo-color0); /* Sombra */
+ 
+}
+
+.content-about span {
+  color:  var(--logo-color);
+}
+
+/* Estilo do título principal da seção */
+.content-about h1 {
+  font-size: 2.5em; /* Tamanho da fonte */
+  color: var(--primary); /* Cor do texto */
+  margin-bottom: 20px; /* Espaçamento inferior */
+ 
+}
+
+/* Estilo dos subtítulos */
+.content-about h3 {
+  font-size: 1.8em; /* Tamanho da fonte */
+  color: var(--primary); /* Cor do texto */
+  margin: 20px 0; /* Margem superior e inferior */
+}
+
+/* Estilo dos parágrafos */
+.content-about p {
+  font-size: 1em; /* Tamanho da fonte */
+  line-height: 1.6; /* Altura da linha */
+  color: var(--primary); /* Cor do texto */
+  margin-bottom: 15px; /* Margem inferior */
+}
+
+/* Estilo da lista */
+.content-about ul {
+  padding-left: 0px; /* Espaçamento interno à esquerda */
+  list-style-type: disc; /* Estilo da lista */
+}
+
+/* Estilo dos itens da lista */
+.content-about ul li {
+  margin-bottom: 10px; /* Margem inferior para os itens */
+color: var(--primary);
+}
+
+
+ 
+  
+
+
+.front-about, .back-about {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Esconde a parte de trás quando não visível */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s;
+  flex-direction: column;
+}
+
+.back-about {
+  background-color: var(--secondary);
+  transform: rotateY(180deg); /* Esconde a parte de trás inicialmente, ou seja irá rotacionar pessoal !! */
+}
+
+.box-about img { 
+  width: 60px;
+  border-radius: 10px;
+  height: 60px;
+}
+
+.box-about h2 {
+  color: var(--secondary);
+  /* text-shadow: 0 0 5px var(--logo-color), 0 0 10px var(--logo-color), 0 0 15px var(--logo-color); */
+  margin-top: 20px;  /* Remove margens para alinhamento */
+}
+
+.box-about p {
+  margin: 10%;
+  color: var(--primary);
+  align-items: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.container-about h2{
+  color: var(--primary);
+  width: 100%;
+  text-align: center;
+  
+}
+
+
+
+
+/* serviços */
+
+
+.social {
+  
+  height: calc(fit-content + 10%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+
+.social-boxes h1{
+  font-size: 40px;
+  color: var(--primary);
+}
+
+.social .social-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Centraliza verticalmente */
+  align-items: center;
+  /* Centraliza horizontalmente */
+  width: 80%;
+  height: 100%;
+  /* Garante que a altura ocupe todo o espaço disponível */
+  padding: 20px;
+  /* Espaço ao redor do conteúdo */
+}
+
+.social .social-container h2{
+  color: var(--secondary);
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.social .social-container .social-boxes {
+  display: flex;
+  flex-direction: row;
+  /* As boxes ficam em linha */
+  margin-top: 5%;
+  justify-content: center;
+  /* Centraliza boxes horizontalmente */
+  gap: 50px;
+  /* Aumente este valor para mais espaço entre as boxes */
+  align-self: center;
+  /* Centraliza o grupo de boxes */
+}
+
+.box {
+  position: relative;
+  /* Necessário para o efeito de rotação */
+  width: 300px;
+  /* Ajuste conforme necessário */
+  height: 300px;
+  /* Ajuste conforme necessário */
+  perspective: 1000px;
+  /* Profundidade do efeito 3D */
+}
+
+
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: var(--secondary) ;
+  box-shadow: 0 4px 20px var(--primary);
+  
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  border: 5px solid var(--primary);
+  flex-direction: column;
+  align-self: center;
+  padding: 20px;
+  /* Efeito suave na rotação */
+}
+
+.front {
+  z-index: 2;
+  /* Mantém a frente acima da parte de trás */
+  flex-direction: column;
+  /* Empilha logo e texto verticalmente */
+  justify-content: flex-start;
+  /* Alinha o conteúdo no topo */
+  align-items: center;
+  /* Centraliza horizontalmente */
+  text-align: center;
+  /* Centraliza o texto */
+  height: 100%;
+  /* Garante que ocupe toda a altura da box */
+  padding-top: 10px;
+  /* Adiciona um espaço no topo para afastar do limite */
+}
+
+.back {
+  transform: rotateY(180deg);
+  /* Gira o verso da box */
+}
+
+.box:hover .front {
+  transform: rotateY(180deg);
+  /* Gira a frente ao passar o mouse */
+}
+
+.box:hover .back {
+  transform: rotateY(0);
+  /* Mostra o verso ao passar o mouse */
+}
+
+.box img {
+  width: 80%;
+  height: 100%;
+  max-height: 200px;
+  margin-bottom: 5px;
+  filter: grayscale(70%) brightness(0);
+}
+
+.box h4 {
+  color: var(--primary);
+  margin: -30px 0 2px 0;
+  font-size: 22px;
+}
+
+.back p {
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+  line-height: 1.6;
+  color: var(--primary);
+  font-weight: bold;
+  text-align: center;
+  padding: 3%;
+}
+
+/* Integrantes */
 
 
 
 /*footer*/
 
 .footer-container {
+
   font-family: 'Poppins';
   
   display: flex;
-justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
   text-align: left;
-  height: 45vh;
-  border-radius: 10px var(--logo-color);
-}
 
+}
 .footer-section {
-  min-width: 250px;
-}
-
-.footer-logo img {
-  max-width: 200px; /* Ajuste o tamanho conforme necessário */
-  width: 100%;
-  height: auto;
-  object-fit: contain; /* Garante que a imagem seja redimensionada proporcionalmente */
-  margin-top: 20px; /* Para dar um pequeno espaço superior */
-}
-
-.social-icons {
-  margin-left: 25px;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinha os itens à esquerda */
+ 
 }
 
-.footer-section p {
-  margin-bottom: 10px; 
+.h3-r {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;  /* Centraliza as imagens horizontalmente */
+  align-items: center;      /* Alinha as imagens verticalmente */
+  gap: 15px;                /* Espaçamento entre os ícones */
+  margin-top: 10px;         /* Espaço superior, se necessário */
+}
+
+/* Ajuste as imagens das redes sociais */
+.social-icons img {
+  width: 40px;  /* Ajuste o tamanho das imagens (tamanho uniforme) */
+  height: 40px; /* Mantenha as proporções dos ícones */
+  object-fit: contain; /* Garante que as imagens não se distorçam */
+  transition: transform 0.3s ease; /* Animação quando houver interação */
+}
+
+.social-icons img:hover {
+  transform: scale(1.1); /* Aumenta um pouco o ícone quando o usuário passar o mouse */
+}
+
+/* Estilo do endereço e do contato */
+.p-footer {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000000;
+  line-height: 1.5; /* Melhora o espaçamento entre as linhas */
 }
 
 
@@ -288,10 +774,23 @@ justify-content: center;
   margin-bottom: 15px;
 }
 
+.social-icons img {
+  width: 30px; /* Ajuste o valor para o tamanho desejado */
+  height: 30px;
+}
 .social-icons a {
   display: inline-block;
   transition: transform 0.3s ease, opacity 0.3s ease;
   margin-right: 15px; 
+  width: 30px; /* Ajuste o valor para o tamanho desejado */
+  height: 30px;
+}
+
+.footer-logo img {
+  max-width: 200px; /* Define a largura máxima da imagem */
+  max-height: 100px; /* Define a altura máxima da imagem */
+  width: auto; /* Ajuste automático da largura para manter a proporção */
+  height: auto; /* Ajuste automático da altura para manter a proporção */
 }
 
 .p-footer {
@@ -322,10 +821,7 @@ ul {
 }
 
 .p-copy {
-  
-  font-size: 16px;
-  text-align: center;
-  border-top: 2px solid var(--primary); /* Borda superior */
-  padding-top: 10px; /* Espaço entre o texto e a borda */
-  padding-bottom: 10px; /* Espaço entre o texto e a borda */
+  text-align: center;    /* Centraliza o texto horizontalmente */
+  margin: 0;             /* Remove qualquer margem padrão */
+  padding: 10px 0;       /* Adiciona algum espaçamento vertical */
 }
