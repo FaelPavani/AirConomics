@@ -81,10 +81,7 @@ header .navbar .navbar-links li a {
   background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Efeito de luz ao passar o mouse */
   box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25), -6px -6px 12px rgba(255, 255, 255, 0.8); /* Sombras mais intensas */
 }
-/* 
-.botao-header:hover {
-background-color: #45a049;
-} */
+
 
 .header .navbar .logo-link .logo {
   width: 104px;
@@ -102,7 +99,7 @@ background-color: #45a049;
     width: 100%;
     height: auto;
     overflow: hidden;
-    padding: 0 !important;
+    padding: 0;
 }
 
 .slider-containner {
@@ -112,9 +109,7 @@ background-color: #45a049;
     transition: transform 0.5s ease; /* Adiciona uma transição suave */
 }
 
-.slider-containner input {
-    display: none; /* Esconde os inputs de rádio */
-}
+
 
 .slider-box {
     width: 100vw; /* Cada imagem ocupa a largura total da tela */
@@ -128,59 +123,9 @@ background-color: #45a049;
     height: auto;
 }
 
-.slider-text {
-    position: absolute;
-    bottom: 20px; /* Ajusta a posição do texto */
-    left: 50%;
-    transform: translateX(-50%);
-    color: white; /* Cor do texto */
-    font-size: 24px; /* Tamanho da fonte */
-    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
-    padding: 10px; /* Espaçamento interno */
-    border-radius: 5px; /* Bordas arredondadas */
-}
 
-/* Navegação manual */
-.nav-manual {
-    position: fixed;
-    width: 100%;
-    bottom: 20px; /* Ajusta a posição da navegação */
-    display: flex;
-    justify-content: center;
-}
 
-.nav-manual .manual-btn, .nav-auto div {
-    border: 1px solid #0080ff;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    background-color: white; /* Fundo branco para os botões */
-    margin: 0 5px; /* Espaçamento entre os botões */
-}
 
-.nav-manual .manual-btn:hover {
-    background-color: aqua; /* Cor ao passar o mouse */
-}
-
-/* Navegação automática */
-.nav-auto {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px; /* Espaçamento acima da navegação automática */
-}
-
-.nav-auto div {
-    width: 10px; /* Largura dos botões automáticos */
-    height: 10px; /* Altura dos botões automáticos */
-    border-radius: 50%; /* Bordas arredondadas */
-    background-color: #0080ff; /* Cor de fundo */
-    margin: 0 5px; /* Espaçamento entre os botões */
-    cursor: pointer;
-}
-
-.nav-auto div:hover {
-    background-color: #005f7f; /* Cor ao passar o mouse */
-}
 
 
 .content {
