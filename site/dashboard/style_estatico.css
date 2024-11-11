@@ -123,10 +123,16 @@ body {
   background-color: #161618;
   height: 100vh;
   overflow: auto;
-  background-image: url('../img/fundo\ azul\ escuro.jpg');
-  background-size: cover;      /* Faz a imagem cobrir toda a div */
-  background-position: center; /* Centraliza a imagem */
-  background-repeat: no-repeat; /* Evita repetição da imagem */
+  color: white;
+}
+
+.dash .div_animacao{
+  margin-left: 2rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .area-parametros-alerta {
@@ -404,23 +410,6 @@ canvas {
   color: #32b9cd;
 }
 
-.hello {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.hello h3 {
-  color: #e3b062;
-  font-weight: 300;
-  font-size: 1.2rem;
-}
-
-.hello h3 span {
-  font-weight: 800;
-  color: white;
-}
-
 .btn-nav {
   width: 40%;
   color: white;
@@ -548,4 +537,14 @@ canvas {
 .btn-nav h3 {
   margin: 0;
   padding: 10px 20px;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: fit-content }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
 }
