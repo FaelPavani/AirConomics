@@ -134,12 +134,32 @@ function logar() {
   var senha_login = LoginSenha_input.value
   var email_login = LoginNome_input.value
 
-  if (senha_login == senha_comp && email_login == email_comp) {
-    window.location.href = '../dashboard/dashboard_estatico.html'
-  } else {
-    error_login.style.display = 'block'
-    error_login.style.visibility = 'visible'
+  if(senha_login == undefined || email_login == undefined) {
+    alert("Por favor, preenchas as informações")
+    return
   }
+
+  fetch('http://localhost:3333/usuarios/autenticar', {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      senha: senha,
+      email: email,
+    }),
+  }).then(function(resposta){
+    if(resposta.ok){
+      alert('Cadastro realizado com sucesso!')
+      window.location.href = 'index.html'
+    }else{
+      alert('Problema ao realizar cadastro')
+    }
+  })
+
+  // error_login.style.display = 'block'
+  // error_login.style.visibility = 'visible'
+  
 }
 
 function cadastrar_button() {
