@@ -167,6 +167,7 @@ function cadastrar_usuario() {
   var senha = confirmacao_senha_input.value
   var confSenha = confirmacao_senha_input.value
   var email = email_input.value
+  var data_nascimento = input_data.value
 
   if(nome == undefined || telefone == undefined || senha == undefined || confSenha == undefined || email == undefined){
     alert('Todos os campos devem ser preenchidos')
@@ -197,7 +198,7 @@ function cadastrar_usuario() {
   }).then(function(resposta){
     if(resposta.ok){
       alert('Cadastro realizado com sucesso!')
-      window.location.href = 'login.html'
+      window.location.href = 'index.html'
     }else{
       alert('Problema ao realizar cadastro')
     }
@@ -205,40 +206,3 @@ function cadastrar_usuario() {
 
 }
 
-fetch("/usuarios/cadastrar", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    // crie um atributo que recebe o valor recuperado aqui
-    // Agora vá para o arquivo routes/usuario.js
-    nomeServer: nomeVar,
-    emailServer: emailVar,
-    senhaServer: senhaVar,
-    idEmpresaVincularServer: idEmpresaVincular
-  }),
-})
-  .then(function (resposta) {
-    console.log("resposta: ", resposta);
-
-    if (resposta.ok) {
-      cardErro.style.display = "block";
-
-      mensagem_erro.innerHTML =
-        "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-      setTimeout(() => {
-        window.location = "login.html";
-      }, "2000");
-
-      limparFormulario();
-      finalizarAguardar();
-    } else {
-      throw "Houve um erro ao tentar realizar o cadastro!";
-    }
-  })
-  .catch(function (resposta) {
-    console.log(`#ERRO: ${resposta}`);
-    finalizarAguardar();
-  });
