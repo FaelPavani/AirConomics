@@ -116,10 +116,10 @@ function logar() {
       senha: senha_login,
       email: email_login,
     }),
-  }).then(function (resposta) {
+  }).then((resposta) => {
     if (resposta.ok) {
       console.log(resposta);
-      resposta.json().then(json => {
+      resposta.json().then((json) => {
         console.log(json);
         console.log(JSON.stringify(json));
         sessionStorage.EMAIL_USUARIO = json.email;
