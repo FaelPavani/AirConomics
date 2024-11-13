@@ -25,10 +25,10 @@
 	create table tb_usuario(
 	id_usuario int primary key auto_increment,
 	nome_usuario varchar(45),
-	email_usuario varchar(45),
 	telefone_usuario char(13),
 	email_login varchar(45),
 	senha_login varchar(100),
+	dt_nascimento DATE,
 	fk_empresa int,
 	constraint fk_empresa_usuario foreign key (fk_empresa) references tb_empresa(id_empresa)
 	);
