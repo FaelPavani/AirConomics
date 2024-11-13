@@ -98,38 +98,6 @@ document.getElementById('rotateButton').addEventListener('click', function () {
 
 });
 
-document.getElementById('backButton').addEventListener('click', function () {
-  cadastro.classList.remove('rotated');
-});
-
-
-
-document.getElementById('concludeButton').addEventListener('click', function () {
-
-  email_comp = email_input.value
-  senha_comp = CadastroSenha_input.value
-  const box = document.getElementById('messageBox');
-  const progress = document.getElementById('progress');
-  box.classList.remove('hidden');
-  box.style.display = 'block';
-
-  progress.style.width = '100%';
-  setTimeout(() => {
-    progress.style.width = '0%';
-  }, 10);
-
-  setTimeout(() => {
-    box.style.display = 'none';
-  }, 1500);
-
-  setTimeout(() => {
-    cadastro.classList.add('hidden');
-    login.classList.remove('hidden');
-    cadastro.classList.remove('rotated');
-  }, 1500);
-
-});
-
 function logar() {
   var senha_login = LoginSenha_input.value
   var email_login = LoginNome_input.value
