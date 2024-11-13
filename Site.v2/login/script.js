@@ -98,48 +98,49 @@ document.getElementById('rotateButton').addEventListener('click', function () {
 
 });
 
-document.getElementById('backButton').addEventListener('click', function () {
-  cadastro.classList.remove('rotated');
-});
-
-
-
-document.getElementById('concludeButton').addEventListener('click', function () {
-
-  email_comp = email_input.value
-  senha_comp = CadastroSenha_input.value
-  const box = document.getElementById('messageBox');
-  const progress = document.getElementById('progress');
-  box.classList.remove('hidden');
-  box.style.display = 'block';
-
-  progress.style.width = '100%';
-  setTimeout(() => {
-    progress.style.width = '0%';
-  }, 10);
-
-  setTimeout(() => {
-    box.style.display = 'none';
-  }, 1500);
-
-  setTimeout(() => {
-    cadastro.classList.add('hidden');
-    login.classList.remove('hidden');
-    cadastro.classList.remove('rotated');
-  }, 1500);
-
-});
-
 function logar() {
   var senha_login = LoginSenha_input.value
   var email_login = LoginNome_input.value
 
-  if (senha_login == senha_comp && email_login == email_comp) {
-    window.location.href = '../dashboard/dashboard_estatico.html'
-  } else {
-    error_login.style.display = 'block'
-    error_login.style.visibility = 'visible'
+  if (senha_login == undefined || email_login == undefined) {
+    alert("Por favor, preenchas as informações")
+    return
   }
+
+  fetch('http://localhost:3333/usuarios/autenticar', {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      senha: senha_login,
+      email: email_login,
+    }),
+  }).then(function (resposta) {
+    if (resposta.ok) {
+      console.log(resposta);
+      resposta.json().then(json => {
+        console.log(json);
+        console.log(JSON.stringify(json));
+        sessionStorage.EMAIL_USUARIO = json.email;
+        sessionStorage.NOME_USUARIO = json.nome;
+        sessionStorage.ID_USUARIO = json.id;
+        setTimeout(function () {
+          window.location.href = "../../site/dashboard/dashboard_estatico.html";
+        }, 1000); // apenas para exibir o loading
+      });
+
+    } else {
+      alert('Problema ao realizar cadastro')
+      error_login.style.display = 'block'
+      error_login.style.visibility = 'visible'
+
+      resposta.text().then(msg => {
+        console.error(msg);
+        finalizarAguardar(msg);
+      });
+    }
+  })
 }
 
 function cadastrar_button() {
@@ -169,17 +170,17 @@ function cadastrar_usuario() {
   var email = email_input.value
   var data_nascimento = input_data.value
 
-  if(nome == undefined || telefone == undefined || senha == undefined || confSenha == undefined || email == undefined){
+  if (nome == undefined || telefone == undefined || senha == undefined || confSenha == undefined || email == undefined) {
     alert('Todos os campos devem ser preenchidos')
     return
   }
 
-  if(senha !== confSenha){
+  if (senha !== confSenha) {
     alert('As senhas devem ser iguais')
     return
   }
 
-  if(!(email.includes('@') && email.includes('.com'))){
+  if (!(email.includes('@') && email.includes('.com'))) {
     alert('Email inválido')
     return
   }
@@ -196,11 +197,11 @@ function cadastrar_usuario() {
       email: email,
       dtNascimento: data_nascimento
     }),
-  }).then(function(resposta){
-    if(resposta.ok){
+  }).then(function (resposta) {
+    if (resposta.ok) {
       alert('Cadastro realizado com sucesso!')
       window.location.href = 'index.html'
-    }else{
+    } else {
       alert('Problema ao realizar cadastro')
     }
   })

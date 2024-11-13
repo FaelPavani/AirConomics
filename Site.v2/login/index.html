@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<<<<<<< HEAD
 
 <head>
     <meta charset="UTF-8">
@@ -45,9 +46,33 @@
                 <input id="LoginSenha_input" type="password" placeholder="Senha" />
                 <i id="i" class='bx bxs-lock-alt'></i>
                 <!-- <i class='bx bxs-low-vision'></i>
+=======
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AirConomics | Login</title>
+        <link rel="stylesheet" href="../header.css">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="shortcut icon" href="../img/airconomics_logo_logo.png" type="image/x-icon">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main">
+            <div class="login" id="login">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input id="LoginNome_input" type="text" placeholder="E-mail">
+                    <i id="i" class="bx bxs-user"></i>
+                </div>
+                <div class="input-box">
+                    <input id="LoginSenha_input" type="password" placeholder="Senha">
+                    <i id="i" class="bx bxs-lock-alt"></i>
+                    <!-- <i class='bx bxs-low-vision'></i>
+>>>>>>> 42d35a991f7432a429a3d52bb4693cc91655d843
               <i class='bx bxs-show'></i> -->
                 </div>
-                <span id="error_login">Email e/ou Senha inválidos</span>
+                <span id="error_login">Login e/ou Senha inválidos</span>
                 <button class="btn entrar" onclick="logar()">Entrar</button>
                 <hr>
                 <div class="box-login">
@@ -115,22 +140,31 @@
                 </div>
                 <div class="senha-requisitos">
                     <span id="req_char">
-                        <i class="bx bxs-dislike"></i>8 caracteres
+                        <i class="bx bxs-dislike"></i>
+                        8 caracteres
                     </span>
                     <span id="req_mai">
-                        <i class="bx bxs-dislike"></i>Letras maiúsuclas
+                        <i class="bx bxs-dislike"></i>
+                        Letras maiúsuclas
                     </span>
                     <span id="req_min">
-                        <i class="bx bxs-dislike"></i>Letras minúsculas
+                        <i class="bx bxs-dislike"></i>
+                        Letras minúsculas
                     </span>
                     <span id="req_esp">
-                        <i class="bx bxs-dislike"></i>Caractere especial
+                        <i class="bx bxs-dislike"></i>
+                        Caractere especial
                     </span>
                 </div>
                 <span id="valcad" class="valcad">Por favor, preencha todos os campos corretamente.</span>
                 <div class="box-cadastro">
                     <button onclick="retornar()" type="submit" class="btn">Ja tem uma conta?</button>
-                    <button id="rotateButton" type="submit" class="btn" onclick="cadastrar_usuario()">Concluir</button>
+                    <button
+                        id="rotateButton"
+                        type="submit"
+                        class="btn"
+                        onclick="cadastrar_usuario()"
+                    >Concluir</button>
                 </div>
             </div>
         </div>
