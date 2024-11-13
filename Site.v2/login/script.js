@@ -193,7 +193,8 @@ function cadastrar_usuario() {
       nome: nome,
       telefone: telefone,
       senha: senha,
-      email: email
+      email: email,
+      dtNascimento: data_nascimento
     }),
   }).then(function(resposta){
     if(resposta.ok){
