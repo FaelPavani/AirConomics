@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-  --primary: #363636;
-  --secondary: #ddd;
-  --logo-color: #0080ff;
+  --primary: #303841;
+  --primary-light: #3A4750;
+  --secondary: #F3F3F3;
+  --alertcolor: #FF9669;
+  --logo-color: #2185D5;
 }
 
 * {
@@ -17,79 +19,7 @@ html{
   scroll-behavior: smooth;
 }
 
-.header {
-  height: 90vh; 
-  background-color: var(--primary);
-  
-  width: 100%;
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  z-index: 9999;
- 
-}
 
-.header .navbar {
-  display: flex;
-  width: inherit;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.header .navbar .navbar-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  text-decoration: none;
-}
-
-header .navbar .navbar-links li a {
-  color: var(--secondary);
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.3s;
-  display: flex;
-  background-color: white;
-  color: var(--logo-color);
-  box-shadow: 0 3px 15px var(--primary);
-  margin-right: 10px;
-  font-size: 15px;
-  margin: 30px;
-  padding: 15px 30px;
-  border-radius: 15px;
-  transition: background-color 0.3s;
-}
-
-
-.botao-header {
-  display: flex;
-  background: linear-gradient(145deg, #f3eded, #ffffff); /* Gradiente para realismo */
-  color: #333;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.7); /* Sombras suaves */
-  margin-right: 10px;
-  font-size: 15px;
-  padding: 15px 30px;
-  border-radius: 25px;
-  transition: background 0.3s, box-shadow 0.3s;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Contorno sutil */
-}
-
-.botao-header:hover {
-  background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Efeito de luz ao passar o mouse */
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25), -6px -6px 12px rgba(255, 255, 255, 0.8); /* Sombras mais intensas */
-}
-
-
-.header .navbar .logo-link .logo {
-  width: 104px;
-}
-
-.header .navbar .profile-link .profile {
-  width: 36px;
-}
 
 /* carrosel  */
 
@@ -100,6 +30,7 @@ header .navbar .navbar-links li a {
     height: auto;
     overflow: hidden;
     padding: 0;
+    margin-top: 4vw;
 }
 
 .slider-containner {
