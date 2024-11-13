@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Sala 3D</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simulador de Sala 3D</title>
+        <style>
         body { margin: 0; overflow: hidden; }
         canvas { display: block; }
         #controls {
@@ -63,32 +63,33 @@
             color: yellow; /* Cor da legenda */
             font-size: 16px; /* Tamanho da fonte */
         }
-    </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-</head>
-<body>
-    <div id="controls">
-        <button id="addSensor">Adicionar Sensor</button>
-        <button id="addAC">Adicionar Ar-Condicionado</button>
-        <button id="nextObject">Selecionar Próximo Objeto</button>
-        <button id="deselectAll">Deselecionar Todos</button>
-        <button id="increaseRange">Aumentar Alcance</button>
-        <button id="decreaseRange">Diminuir Alcance</button>
-    </div>
-    <button id="toggleControls">+</button>
-    <button id="zoomInButton">+</button>
-    <button id="zoomOutButton">-</button>
-    <button id="topViewButton">👁️</button>
-    
-    <div id="rangeLabel">Alcance: 10m</div> <!-- Legenda para o alcance -->
-
-    <div class="instruction-text">
-        <p>1º Adicione o Sensor/Ar-Condicionado<br>
-           2º Selecione Próximo Objeto <br>
-           3º Use W A S D para mover o sensor</p>
-    </div>
-
-    <script>
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    </head>
+    <body>
+        <div id="controls">
+            <button id="addSensor">Adicionar Sensor</button>
+            <button id="addAC">Adicionar Ar-Condicionado</button>
+            <button id="nextObject">Selecionar Próximo Objeto</button>
+            <button id="deselectAll">Deselecionar Todos</button>
+            <button id="increaseRange">Aumentar Alcance</button>
+            <button id="decreaseRange">Diminuir Alcance</button>
+        </div>
+        <button id="toggleControls">+</button>
+        <button id="zoomInButton">+</button>
+        <button id="zoomOutButton">-</button>
+        <button id="topViewButton">👁️</button>
+        <div id="rangeLabel">Alcance: 10m</div>
+        <!-- Legenda para o alcance -->
+        <div class="instruction-text">
+            <p>1º Adicione o Sensor/Ar-Condicionado
+                <br>
+                2º Selecione Próximo Objeto
+                <br>
+                3º Use W A S D para mover o sensor
+            </p>
+        </div>
+        <script>
         let scene, camera, renderer;
         const objects = [];
         const maxObjects = { sensor: 6, ac: 6 };
@@ -304,6 +305,6 @@
         }
 
         init();
-    </script>
-</body>
+        </script>
+    </body>
 </html>
