@@ -134,7 +134,7 @@ function logar() {
   var senha_login = LoginSenha_input.value
   var email_login = LoginNome_input.value
 
-  if(senha_login == undefined || email_login == undefined) {
+  if (senha_login == undefined || email_login == undefined) {
     alert("Por favor, preenchas as informações")
     return
   }
@@ -145,21 +145,34 @@ function logar() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      senha: senha,
-      email: email,
+      senha: senha_login,
+      email: email_login,
     }),
-  }).then(function(resposta){
-    if(resposta.ok){
-      alert('Cadastro realizado com sucesso!')
-      window.location.href = 'index.html'
-    }else{
+  }).then(function (resposta) {
+    if (resposta.ok) {
+      console.log(resposta);
+      resposta.json().then(json => {
+        console.log(json);
+        console.log(JSON.stringify(json));
+        sessionStorage.EMAIL_USUARIO = json.email;
+        sessionStorage.NOME_USUARIO = json.nome;
+        sessionStorage.ID_USUARIO = json.id;
+        setTimeout(function () {
+          window.location.href = "../../site/dashboard/dashboard_estatico.html";
+        }, 1000); // apenas para exibir o loading
+      });
+
+    } else {
       alert('Problema ao realizar cadastro')
+      error_login.style.display = 'block'
+      error_login.style.visibility = 'visible'
+
+      resposta.text().then(msg => {
+        console.error(msg);
+        finalizarAguardar(msg);
+      });
     }
   })
-
-  // error_login.style.display = 'block'
-  // error_login.style.visibility = 'visible'
-  
 }
 
 function cadastrar_button() {
@@ -189,17 +202,17 @@ function cadastrar_usuario() {
   var email = email_input.value
   var data_nascimento = input_data.value
 
-  if(nome == undefined || telefone == undefined || senha == undefined || confSenha == undefined || email == undefined){
+  if (nome == undefined || telefone == undefined || senha == undefined || confSenha == undefined || email == undefined) {
     alert('Todos os campos devem ser preenchidos')
     return
   }
 
-  if(senha !== confSenha){
+  if (senha !== confSenha) {
     alert('As senhas devem ser iguais')
     return
   }
 
-  if(!(email.includes('@') && email.includes('.com'))){
+  if (!(email.includes('@') && email.includes('.com'))) {
     alert('Email inválido')
     return
   }
@@ -216,11 +229,11 @@ function cadastrar_usuario() {
       email: email,
       dtNascimento: data_nascimento
     }),
-  }).then(function(resposta){
-    if(resposta.ok){
+  }).then(function (resposta) {
+    if (resposta.ok) {
       alert('Cadastro realizado com sucesso!')
       window.location.href = 'index.html'
-    }else{
+    } else {
       alert('Problema ao realizar cadastro')
     }
   })
