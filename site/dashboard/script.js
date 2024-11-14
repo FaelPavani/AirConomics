@@ -1,3 +1,6 @@
+var nome_usuario = sessionStorage.getItem('NOME_USUARIO');
+title_hello.innerHTML = `Olá. ${nome_usuario}`
+
 const ctx = document.getElementById('bar-graph').getContext('2d')
 
 const barGraph = new Chart(ctx, {
