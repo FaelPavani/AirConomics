@@ -126,7 +126,7 @@ function logar() {
         sessionStorage.NOME_USUARIO = json.nome;
         sessionStorage.ID_USUARIO = json.id;
         setTimeout(function () {
-          window.location.href = "../../site/dashboard/dashboard_estatico.html";
+          window.location.href = "../../Site.v2/dashboard/dashboard_estatico.html";
         }, 1000); // apenas para exibir o loading
       });
 
