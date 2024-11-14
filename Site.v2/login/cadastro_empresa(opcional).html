@@ -18,128 +18,117 @@
 <body>
 
 
-    <header class="header">
-        <nav class="navbar">
-            <a href="./index.html" class="logo-link">
-                <img src="./img/airconomics_logo_completo.png" class="logo">
-            </a>
-            <ul class="navbar-links">
-                <li>
-                    <a href="./index.html" class="botao-header">Home</a>
-                </li>
-                <li>
-                    <a href="#about" class="botao-header">Sobre Nós</a>
-                </li>
-                <li>
-                    <a href="#social" class="botao-header">Serviços</a>
-                </li>
-                <li>
-                    <a href="./calculadora/index.html" class="botao-header">Calculadora</a>
-                </li>
-            </ul>
-            <a href="./login/index.html" class="profile-link">
-                <img src="./img/profile.png" class="profile">
-            </a>
-        </nav>
-    </header>
+
     <div class="main">
 
         <div class="cadastro_empresa">
 
             <h1>Cadastro - Empresa</h1>
-
-            <div class="container-input">
-                <div class="side"></div>
-                <div class="input-box">
-                    <span> Razão social</span>
-                    <input id="RazãoSocial_input" type="text" placeholder="Ex. Jõao" />
-                    <i class='bx bxs-user'></i>
-                </div>
-                <div class="input-box">
-                    <span>Nome Fantasia</span>
-                    <input id="NomeFantasia_input" type="text" placeholder="Ex. Jõao" />
-                    <i class='bx bxs-user'></i>
-                </div>
-                <div class="input-box">
-                    <span>Responsável Legal</span>
-                    <input id="responsavel_input" type="text" placeholder="Ex. Jõao" />
-                    <i class='bx bxs-user'></i>
-                </div>
-                <div class="input-box">
-                    <span> Telefone Responsável</span>
-                    <input id="telefone_input" type="number" maxlength="13" placeholder="Ex. 11 91234-5678" />
-                    <i class='bx bxs-phone'></i>
-                </div>
-                <div class="input-box">
-                    <span> CNPJ </span>
-                    <input oninput="limpar_cnpj()" id="cnpj_input" type="number" maxlength="14"
-                        placeholder="Ex. 69087048000122." maxlength="14" />
-                    <i class='bx bxs-briefcase'></i>
-                </div>
-
-                <div class="side">
+            <div class="conteudo">
+                <div class="esquerda">
+                
+                    <div class="inneript">
                     <div class="input-box">
-                        <span> CEP</span>
-                        <input id="cep_input" type="number" maxlength="8" placeholder="Ex. 02125-040" />
-                        <i class='bx bx-buildings'></i>
+                        
+                        <span> Razão social</span>
+                        <input id="RazãoSocial_input" type="text" placeholder="Ex. Jõao" />
+                        <i class='bx bxs-user'></i>
                     </div>
                     <div class="input-box">
-                        <span>Numero</span>
-                        <input id="Numero_input" type="number" placeholder="Ex. 123" />
-                        <i class='bx bx-buildings'></i>
+                        <span>Nome Fantasia</span>
+                        <input id="NomeFantasia_input" type="text" placeholder="Ex. Jõao" />
+                        <i class='bx bxs-user'></i>
                     </div>
                     <div class="input-box">
-                        <span>Complemento</span>
-                        <input id="Complemento" type="text" placeholder="Ex. 5° andar" />
-                        <i class='bx bx-buildings'></i>
+                        <span>Responsável Legal</span>
+                        <input id="responsavel_input" type="text" placeholder="Ex. Jõao" />
+                        <i class='bx bxs-user'></i>
                     </div>
                     <div class="input-box">
-                        <span> Rua</span>
-                        <input id="rua_input" type="text" placeholder="Ex. Haddock Lobo" />
+                        <span> Telefone Responsável</span>
+                        <input id="telefone_input" type="number" maxlength="13" placeholder="Ex. 11 91234-5678" />
+                        <i class='bx bxs-phone'></i>
+                    </div>
+                    <div class="input-box">
+                        <span> CNPJ </span>
+                        <input oninput="limpar_cnpj()" id="cnpj_input" type="number" maxlength="14"
+                            placeholder="Ex. 69087048000122." maxlength="14" />
                         <i class='bx bxs-briefcase'></i>
                     </div>
-                    <center> <span> Cidade</span></center>
-                    <div class="cidade">
-                        <input id="cidade_input" type="text" placeholder="São Paulo">
-
-                        <select placeholder="Estado">
-                            <option value="">UF</option>
-                            <option value="AC">AC</option>
-                            <option value="AL">AL</option>
-                            <option value="AP">AP</option>
-                            <option value="AM">AM</option>
-                                <option value="BA">BA</option>
-                                <option value="CE">CE</option>
-                            <option value="DF">DF</option>
-                            <option value="ES">ES</option>
-                            <option value="GO">GO</option>
-                            <option value="MA">MA</option>
-                            <option value="MT">MT</option>
-                            <option value="MS">MS</option>
-                            <option value="MG">MG</option>
-                            <option value="PA">PA</option>
-                            <option value="PB">PB</option>
-                            <option value="PR">PR</option>
-                            <option value="PE">PE</option>
-                            <option value="PI">PI</option>
-                            <option value="RJ">RJ</option>
-                            <option value="RN">RN</option>
-                            <option value="RS">RS</option>
-                            <option value="RO">RO</option>
-                            <option value="RR">RR</option>
-                            <option value="SC">SC</option>
-                            <option value="SP">SP</option>
-                            <option value="SE">SE</option>
-                            <option value="TO">TO</option>
-                        </select>
-                    </div>
                 </div>
+           
+                </div>
+           
 
-                <div class="s">
-                    <button id="backButton" type="submit" class="btn">Voltar</button>
-                    <button id="concludeButton" type="submit" class="btn">Concluir Cadastro</button>
+        <div class="right">
+            <div class="inneript">
+                <div class="input-box">
+                    <span> CEP</span>
+                    <input id="cep_input" type="number" maxlength="8" placeholder="Ex. 02125-040" />
+                    <i class='bx bx-buildings'></i>
+                </div>
+                <div class="input-box">
+                    <span>Numero</span>
+                    <input id="Numero_input" type="number" placeholder="Ex. 123" />
+                    <i class='bx bx-buildings'></i>
+                </div>
+                <div class="input-box">
+                    <span>Complemento</span>
+                    <input id="Complemento" type="text" placeholder="Ex. 5° andar" />
+                    <i class='bx bx-buildings'></i>
+                </div>
+                <div class="input-box">
+                    <span> Rua</span>
+                    <input id="rua_input" type="text" placeholder="Ex. Haddock Lobo" />
+                    <i class='bx bxs-briefcase'></i>
+                </div>
+               
+                <div class="cidade">
+                    <span> Cidade</span><br>
+                    <input class="cidade_input" type="text" placeholder="São Paulo">
+                    <select id="selectcity" placeholder="Estado">
+                        <option value="">UF</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                    <i class='bx bxs-user'></i>
                 </div>
             </div>
+            
+        </div>
+    </div>
+        <div class="s">
+                <button id="backButton" type="submit" class="btn">Voltar</button>
+                <button id="concludeButton" type="submit" class="btn">Concluir Cadastro</button>
+            </div>
+    </div>
+            
+
 
         </div>
         <div id="messageBox" class="hidden">
@@ -151,7 +140,7 @@
 
 
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 
