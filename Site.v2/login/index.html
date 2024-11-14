@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AirConomics | Login</title>
-        <link rel="stylesheet" href="../header.css">
-        <link rel="stylesheet" href="./style.css">
-        <link rel="shortcut icon" href="../img/airconomics_logo_logo.png" type="image/x-icon">
-        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="main">
-            <div class="login" id="login">
-                <h1>Login</h1>
-                <div class="input-box">
-                    <input id="LoginNome_input" type="text" placeholder="E-mail">
-                    <i id="i" class="bx bxs-user"></i>
-                </div>
-                <div class="input-box">
-                    <input id="LoginSenha_input" type="password" placeholder="Senha">
-                    <i id="i" class="bx bxs-lock-alt"></i>
-                    <!-- <i class='bx bxs-low-vision'></i>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AirConomics | Login</title>
+
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="../img/airconomics_logo_logo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+
+
+    <header>
+        <a class="logo "><img src="img/airconomics_logo_completo.png" alt=""></a>
+        <ul>
+            <li><a class="nav" href="index.html">Home</a></li>
+            <li><a class="nav">Sobre nós</a></li>
+            <li><a class="nav">Serviços</a></li>
+            <li><a class="nav">Simulador</a></li>
+        </ul>
+        <a class="btlog" href="login/index.html"><i class='bx bxs-user'></i></a>
+
+
+
+
+    </header>
+<div class="main">
+    <div class="login" id="login">
+        <h1>Login</h1>
+        
+            <div class="input-box">
+                <input id="LoginNome_input" type="text" placeholder="E-mail" />
+                <i id="i" class='bx bxs-user'></i>
+            </div>
+
+            <div class="input-box">
+                <input id="LoginSenha_input" type="password" placeholder="Senha" />
+                <i id="i" class='bx bxs-lock-alt'></i>
+                <!-- <i class='bx bxs-low-vision'></i>
               <i class='bx bxs-show'></i> -->
                 </div>
                 <span id="error_login">Login e/ou Senha inválidos</span>
