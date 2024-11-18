@@ -218,8 +218,4 @@ function cadastrar_usuario() {
 function returnlog(){
   cadastro_user.classList.remove('hidden')
   empresa.classList.add('hidden')
-
-
-
-  
 }
