@@ -30,6 +30,7 @@
 	senha_login varchar(100),
 	dt_nascimento DATE,
 	fk_empresa int,
+	usuario_tecnico BOOLEAN
 	constraint fk_empresa_usuario foreign key (fk_empresa) references tb_empresa(id_empresa)
 	);
 
