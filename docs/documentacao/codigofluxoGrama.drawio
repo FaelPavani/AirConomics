@@ -1,0 +1,200 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="24.8.6">
+  <diagram name="Página-1" id="75zo6RJ1XJWQWy8D1ild">
+    <mxGraphModel dx="1909" dy="1027" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Lh1NX45-LWRNhMf645Q8-7" target="Lh1NX45-LWRNhMf645Q8-36" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-7" value="Sensor não funciona" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="20" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Lh1NX45-LWRNhMf645Q8-16" target="Lh1NX45-LWRNhMf645Q8-37" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Lh1NX45-LWRNhMf645Q8-16" target="Lh1NX45-LWRNhMf645Q8-44" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-16" value="A placa arduino não esta conectada corretamente no computador" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="350" width="210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Lh1NX45-LWRNhMf645Q8-36" target="Lh1NX45-LWRNhMf645Q8-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Lh1NX45-LWRNhMf645Q8-36" target="Lh1NX45-LWRNhMf645Q8-43" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-36" value="O sensor está conectado&lt;div&gt;&amp;nbsp;corretamente na placa arduino?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="180" width="210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Lh1NX45-LWRNhMf645Q8-37" target="Lh1NX45-LWRNhMf645Q8-45" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-37" value="O computador esta conectado&amp;nbsp;&lt;div&gt;em uma rede Wi-Fi?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="530" width="210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Lh1NX45-LWRNhMf645Q8-43" target="Lh1NX45-LWRNhMf645Q8-50" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-43" value="Conectar sensor corretamente" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="470" y="205" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Lh1NX45-LWRNhMf645Q8-44" target="Lh1NX45-LWRNhMf645Q8-50" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-44" value="Conectar placa do arduino corretamente" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="470" y="375" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Lh1NX45-LWRNhMf645Q8-45" target="Lh1NX45-LWRNhMf645Q8-50" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="770" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-45" value="Conectar em uma rede" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="470" y="555" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-49" value="Não" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="410" y="228" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Lh1NX45-LWRNhMf645Q8-50" target="Lh1NX45-LWRNhMf645Q8-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="932" y="65" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-76" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Lh1NX45-LWRNhMf645Q8-56" vertex="1" connectable="0">
+          <mxGeometry x="-0.5807" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Lh1NX45-LWRNhMf645Q8-50" target="Lh1NX45-LWRNhMf645Q8-57" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-75" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Lh1NX45-LWRNhMf645Q8-58" vertex="1" connectable="0">
+          <mxGeometry x="-0.1905" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-50" value="Está funcionando?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="827" y="350" width="210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-57" value="FIM" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1110" y="380" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-59" value="Não" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="410" y="398" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-60" value="Não" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="410" y="578" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-61" value="Sim" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="290" y="128" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-62" value="Sim" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="290" y="318" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh1NX45-LWRNhMf645Q8-63" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;Sim&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="500" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="0v2gfvuN_K1eRCaou5D9-2" target="0v2gfvuN_K1eRCaou5D9-8" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-2" value="Site não funciona" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="20" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="0v2gfvuN_K1eRCaou5D9-5" target="0v2gfvuN_K1eRCaou5D9-10" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="0v2gfvuN_K1eRCaou5D9-5" target="0v2gfvuN_K1eRCaou5D9-14" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-5" value="Verificou se o Arduino&amp;nbsp;&lt;div&gt;está conectado a internet&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="400" width="210" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="0v2gfvuN_K1eRCaou5D9-8" target="0v2gfvuN_K1eRCaou5D9-5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="0v2gfvuN_K1eRCaou5D9-8" target="0v2gfvuN_K1eRCaou5D9-12" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-8" value="A maquina tem&amp;nbsp;&lt;div&gt;conexão com a internet?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="180" width="210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="0v2gfvuN_K1eRCaou5D9-10" target="0v2gfvuN_K1eRCaou5D9-16" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-10" value="O computador esta conectado&amp;nbsp;&lt;div&gt;em uma rede Wi-Fi?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="680" width="210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="0v2gfvuN_K1eRCaou5D9-12" target="0v2gfvuN_K1eRCaou5D9-22" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1870" y="250" />
+              <mxPoint x="1870" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-12" value="O&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1540" y="205" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="0v2gfvuN_K1eRCaou5D9-14" target="0v2gfvuN_K1eRCaou5D9-22" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-14" value="Conectar placa do arduino corretamente" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1550" y="435" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="0v2gfvuN_K1eRCaou5D9-16" target="0v2gfvuN_K1eRCaou5D9-22" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1840" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-16" value="Conectar em uma rede" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1560" y="705" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-17" value="Não" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="228" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="0v2gfvuN_K1eRCaou5D9-22" target="0v2gfvuN_K1eRCaou5D9-2" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2002" y="65" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-19" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="0v2gfvuN_K1eRCaou5D9-18">
+          <mxGeometry x="-0.5807" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="0v2gfvuN_K1eRCaou5D9-22" target="0v2gfvuN_K1eRCaou5D9-23" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-21" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="0v2gfvuN_K1eRCaou5D9-20">
+          <mxGeometry x="-0.1905" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-22" value="Está funcionando?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1970" y="410" width="210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-23" value="FIM" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2320" y="440" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-24" value="Não" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="398" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-25" value="Não" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="578" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-26" value="Sim" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="128" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0v2gfvuN_K1eRCaou5D9-27" value="Sim" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="318" width="40" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
