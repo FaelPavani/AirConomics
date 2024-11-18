@@ -493,7 +493,7 @@ color: var(--secondary);
   box-shadow: 0 0 20px var(--logo-color);
 }
 
-/* Fundo animado */
+/* Fundo animado will efeito neon */
 body {
   background: linear-gradient(120deg, #000428, #004e92);
   animation: backgroundAnimation 10s ease-in-out infinite alternate;
