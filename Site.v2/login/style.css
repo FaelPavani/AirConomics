@@ -32,7 +32,8 @@
   justify-content: center;
   flex-direction: column;
   border-radius: 1vw;
-  border: solid 0.2vw var(--logo-color)
+  border: solid 0.2vw var(--logo-color);
+  overflow: hidden;
 }
 
 .login h1 {
@@ -164,7 +165,8 @@
   align-items: center;
   border-radius: 1vw;
   opacity: 1;
-  border: solid 0.2vw var(--logo-color)
+  border: solid 0.2vw var(--logo-color);
+  overflow: hidden;
 }
 
 .cadastro-user h1 {
@@ -261,7 +263,7 @@
 
 .cadastro-user .box-cadastro .btn {
   padding: 0px;
-  height: 2vw;
+  height: 2.5vw;
   width: 30%;
   position: absolute;
   left: 0;
@@ -306,7 +308,7 @@
   width: 90%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-top: 6%;
 }
 
 #span_senha {
@@ -321,13 +323,13 @@
   margin-bottom: 2vh
 }
 
-.s {
+/* .cadastro-user .s {
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 
-}
+} */
 
 .hidden {
   display: none;
@@ -343,17 +345,25 @@
 
 .cadastro_empresa {
   background-color: var(--primary);
-  width: 80%;
-  display: flex;
+  width: 60%;
   flex-direction: column;
   height: 60vh;
   align-items: center;
-
+  border-radius: 1vw;
+  margin-top: 18vh;
+  border: solid 0.2vw var(--logo-color);
+  overflow: hidden;
+  position: relative;
+}
+.cadastro_empresa h1 {
+  font-size: 4.5vh;
+text-align: center;
+  color: var(--secondary);
 }
 
 .cadastro_empresa .conteudo .right {
 
-  background-color: #2185D5;
+  
   width: 40%;
   display: flex;
   height: 95%;
@@ -361,7 +371,7 @@
 }
 
 .cadastro_empresa .conteudo .esquerda {
-  background-color: #2185D5;
+ 
   width: 40%;
   height: 95%;
   display: flex;
@@ -370,22 +380,21 @@
 }
 
 .cadastro_empresa .conteudo {
-  background-color: red;
+ 
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 80%;
+  height: 70%;
   justify-content: space-around;
   align-items: center;
-
 }
 
-.cadastro_empresa .conteudo .s {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.cadastro_empresa .s {
   width: 90%;
- 
+  margin-left: 5%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3%;
 }
 
 .cadastro_empresa .conteudo .input-box {
@@ -394,7 +403,7 @@
 }
 
 .cadastro_empresa .conteudo i {
-  transform: translate(11.5vw, -2.6vh);
+  transform: translate(19.5vw, -2.6vh);
   font-size: 2vh;
 }
 
@@ -405,11 +414,12 @@
 }
 .cadastro_empresa .conteudo .inneript span {
 font-size: 2vh;
+color: var(--secondary);
 }
 
 .cadastro_empresa .conteudo #selectcity {
   height: 3.8vh;
-  width: 3.3vw;
+  width: 5vw;
   font-size: 2vh;
   border-top-right-radius: 2vh;
   border-bottom-right-radius: 2vh;
@@ -421,17 +431,21 @@ font-size: 2vh;
 .cadastro_empresa .conteudo .input-box input {
   height: 3.5vh;
   border-radius: 2vh;
-  width: 13vw;
+  width: 20vw;
   font-size: 1.8vh;
   padding: 0 1vh;
 
 }
+.cidade{
+margin-bottom: 2vh;
+}
 .cidade span{
 font-size: 2vh;
+color: var(--secondary);
 }
 .cadastro_empresa .conteudo .cidade_input {
   height: 3.5vh;
-  width: 10vw;
+  width: 15vw;
   border-top-left-radius: 2vh;
   padding: 0 1vh;
   border-bottom-left-radius: 2vh;
@@ -440,10 +454,8 @@ font-size: 2vh;
 
 .cadastro_empresa .btn {
   padding: 0px;
-  height: 3vw;
-  width: 20%;
-
-  left: 0;
+  height: 2.5vw;
+  width: 22%;
   background: var(--secondary);
   border: none;
   outline: none;

@@ -168,6 +168,8 @@ function retornar() {
 }
 
 function cadastrar_usuario() {
+  cadastro_user.classList.add('hidden')
+  empresa.classList.remove('hidden')
   var nome = CadastroNome_input.value
   var telefone = Telefone_input.value
   var senha = confirmacao_senha_input.value
@@ -213,3 +215,11 @@ function cadastrar_usuario() {
 
 }
 
+function returnlog(){
+  cadastro_user.classList.remove('hidden')
+  empresa.classList.add('hidden')
+
+
+
+  
+}
