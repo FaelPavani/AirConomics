@@ -599,7 +599,7 @@ color: var(--primary);
   /*Faz com que os cards não fiquem
   só numa linha se a tela for menor:*/
   flex-wrap: wrap;
-  margin: 40px 0;
+  margin: 40px 100px;
 }
 
 /*Estilos dos cards, dentro do container:*/
