@@ -448,6 +448,7 @@ color: var(--primary);
   color: var(--primary);
 }
 
+
 .social .social-container {
   display: flex;
   flex-direction: column;
@@ -479,6 +480,7 @@ color: var(--primary);
   gap: 50px;
   /* Aumente este valor para mais espaço entre as boxes */
   align-self: center;
+  margin-bottom: 60px;
   /* Centraliza o grupo de boxes */
 }
 
@@ -741,7 +743,7 @@ passar o mouse em cima:*/
 .footer-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinha os itens à esquerda */
+  /* Alinha os itens à esquerda */
  
 }
 
