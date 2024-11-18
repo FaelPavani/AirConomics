@@ -194,3 +194,10 @@
   .valcad {
     opacity: 0;
   }
+  
+  body {
+    background-image: url('../img/fundo_suporte.jpg'); /* Substitua 'sua-imagem.jpg' pelo caminho da sua imagem */
+    background-size: cover; /* Faz com que a imagem ocupe todo o fundo */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-attachment: fixed; /* Faz o fundo permanecer fixo ao rolar a página */
+  }
