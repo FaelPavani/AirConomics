@@ -644,7 +644,7 @@ passar o mouse em cima:*/
   height: 150px;
   border-radius: 50%;
   overflow: hidden;
-  border: 10px solid var(--primary);
+  border: 10px solid black
 }
 
 /*Posicionamento da imagem do avatar dentro da borda:*/
