@@ -492,3 +492,27 @@ color: var(--secondary);
   color: var(--logo-color);
   box-shadow: 0 0 20px var(--logo-color);
 }
+
+/* Fundo animado */
+body {
+  background: linear-gradient(120deg, #000428, #004e92);
+  animation: backgroundAnimation 10s ease-in-out infinite alternate;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Garante que o fundo cubra toda a altura da janela */
+  overflow: hidden; /* Evita barras de rolagem desnecessárias */
+}
+
+/* Animação do fundo */
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(120deg, #000428, #004e92);
+  }
+  50% {
+    background: linear-gradient(120deg, #001858, #0078aa);
+  }
+  100% {
+    background: linear-gradient(120deg, #004e92, #000428);
+  }
+}
