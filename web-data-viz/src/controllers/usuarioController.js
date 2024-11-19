@@ -1,5 +1,6 @@
 var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
+var enderecoModel = require("../models/enderecoModel");
+var empresaModel = require("../models/empresaModel");
 
 function autenticar(req, res) {
     var email = req.body.email;
@@ -65,6 +66,19 @@ function cadastrar(req, res) {
     var telefone = req.body.telefone;
     var dt_nascimento = req.body.dtNascimento;
 
+    var razao_social = req.body.razao_social;
+    var nome_fantasia = req.body.nome_fantasia;
+    var responsavel = req.body.responsavel;
+    var telefone_emp= req.body.telefone_emp;
+    var cnpj = req.body.cnpj;
+
+    var cep = req.body.cep;
+    var numero = req.body.numero;
+    var complemento = req.body.complemento; 
+    var rua = req.body.rua;
+    var cidade = req.body.cidade;
+    var uf = req.body.uf;
+
     // Faça as validações dos valores
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
@@ -76,23 +90,43 @@ function cadastrar(req, res) {
         res.status(400).send("Seu telefone está undefined");
     } else if (dt_nascimento == undefined) {
         res.status(400).send("Data de nascimento undefined!");
+    }else if (razao_social == undefined) {
+        res.status(400).send("Razão social undefined!");
+    }else if (nome_fantasia == undefined) {
+        res.status(400).send("Nome Fantasia undefined!");
+    }else if (responsavel == undefined) {
+        res.status(400).send("Responsável undefined!");
+    }else if (telefone_emp == undefined) {
+        res.status(400).send("Telefone da empresa undefined!");
+    }else if (cnpj == undefined) {
+        res.status(400).send("CNPJ undefined!");
+    }else if (cep == undefined) {
+        res.status(400).send("CEP undefined!");
+    }else if (numero == undefined) {
+        res.status(400).send("Número do endereço undefined!");
+    }else if (rua == undefined) {
+        res.status(400).send("Rua undefined!");
+    }else if (cidade == undefined) {
+        res.status(400).send("Cidade undefined!");
+    }else if (uf == undefined) {
+        res.status(400).send("UF undefined!");
+    }else if (complemento == undefined) {
+        res.status(400).send("Coplemento undefined!");
     } else {
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, telefone, dt_nascimento)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
-                    );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
+        usuarioModel.cadastrar(req.body)
+                    .then(
+                        function (resultado) {
+                            res.json(resultado);
+                        }
+                    ).catch(function(erro){
+                        console.log(
+                            "\nHouve um erro ao realizar o cadastro! Erro: ",
+                            erro.sqlMessage
+                        );
+                        res.status(500).json(erro.sqlMessage);
+                    })
+
+
     }
 }
 

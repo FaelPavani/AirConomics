@@ -10,16 +10,36 @@ function autenticar(email, senha) {
 }
 
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucaoSql
-function cadastrar(nome, email, senha, telefone, dt_nascimento) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha, telefone);
+function cadastrar(body) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():");
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
+
     var instrucaoSql = `
-        INSERT INTO tb_usuario (nome_usuario, email_login, senha_login, telefone_usuario, fk_empresa, dt_nascimento) VALUES ('${nome}', '${email}', md5('${senha}'), '${telefone}', 1, '${dt_nascimento}');
+                    INSERT INTO tb_endereco (id_endereco, rua, bairro, cidade, cep, estado, complemento, numero) 
+                    VALUES (default, '${body.rua}', '${''}', '${body.cidade}', '${body.cep}', '${body.uf}', '${body.complemento}', '${body.numero}')
     `;
+    return database.executar(instrucaoSql).then((res) => {
+        var endereco_id = res.insertId
+        var instrucaoSql2 = `
+                        INSERT INTO tb_empresa (id_empresa, nome_empresa, cnpj_empresa, nomeFantasia_empresa, RazaoSocial_empresa, 
+                        responsavel_empresa, telefone_responsavel, fk_endereco) 
+                        VALUES (default, '${body.nome_fantasia}', '${body.cnpj}', '${body.nome_fantasia}', '${body.razao_social}', '${body.responsavel}', '${body.telefone_emp}', ${endereco_id})`;
+    
+        database.executar(instrucaoSql2).then((res) => {
+            var empresa_id = res.insertId
+            var instrucaoSql3 = `
+                                INSERT INTO tb_usuario (nome_usuario, email_login, senha_login, telefone_usuario, fk_empresa, dt_nascimento) VALUES ('${body.nome}', '${body.email}', md5('${body.senha}'), '${body.telefone}', ${empresa_id}, '${body.dtNascimento}');
+            `;
+            database.executar(instrucaoSql3)
+        })
+    })
+   
+    
+   
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
+    
 }
 
 function cadastrarPorEmpresa(nome, email, senha, telefone, dt_nascimento, id_empresa) {
