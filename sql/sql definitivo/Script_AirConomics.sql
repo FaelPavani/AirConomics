@@ -8,7 +8,9 @@
 	bairro varchar(65),
 	cidade varchar(65),
 	cep char(10),
-	estado char(2)
+	estado char(2),
+	complemento varchar(100),
+	numero varchar(5)
 	);
 	create table tb_empresa(
 	id_empresa int primary key auto_increment,
