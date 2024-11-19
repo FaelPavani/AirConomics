@@ -22,7 +22,20 @@ function cadastrar(nome, email, senha, telefone, dt_nascimento) {
     return database.executar(instrucaoSql);
 }
 
+function cadastrarPorEmpresa(nome, email, senha, telefone, dt_nascimento, id_empresa) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha, telefone);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucaoSql = `
+        INSERT INTO tb_usuario (nome_usuario, email_login, senha_login, telefone_usuario, fk_empresa, dt_nascimento) VALUES ('${nome}', '${email}', md5('${senha}'), '${telefone}', ${id_empresa}, '${dt_nascimento}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    cadastrarPorEmpresa
 };
