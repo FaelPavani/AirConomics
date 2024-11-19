@@ -1,203 +1,220 @@
-
 :root {
-    --primary: #303841;
-    --primary-light: #3A4750;
-    --secondary: #F3F3F3;
-    --alertcolor: #FF9669;
-    --logo-color: #2185D5;
-  }
-  
+  --primary: #303841;
+  --primary-light: #3A4750;
+  --secondary: #F3F3F3;
+  --alertcolor: #FF9669;
+  --logo-color: #2185D5;
+}
+
 
 .cadastro-user {
-    margin-left: 30%;
-    background-color: var(--primary);
-    width: 50%;
-    margin-top: 18vh;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 1vw;
-    opacity: 1;
-    border: solid 0.2vw var(--logo-color);
-    overflow: hidden;
-  }
-  
-  .cadastro-user h1 {
-    color: var(--secondary);
-    font-size: 4.5vh;
-  
-  }
-  
-  .cadastro-user .container-input {
-    display: flex;
-    width: 100%;
-  }
-  
-  .cadastro-user .left,
-  .right {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .cadastro-user .input-box {
-    position: relative;
-    width: 100%;
-    height: auto !important;
-    margin: 5px\ 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  
-  }
-  
-  .cadastro-user .input-box span {
-    color: var(--secondary);
-    display: flex;
-    justify-content: center;
-    margin-right: 10%;
-    font-size: 2vh;
-  }
-  
-  .cadastro-user .input-box input {
-    height: 70%;
-    width: 60%;
-    border: none;
-    outline: none;
-    margin-left: 15%;
-    color: var(--primary);
-    border-radius: 40px;
-    font-size: 0.7vw;
-    padding: 1vh;
-    border: 2px solid var(--secondary);
-  }
-  
-  .cadastro-user .input-box input:focus {
-    border: solid 2px var(--logo-color);
-    box-shadow: 0 0 1vh var(--logo-color);
-  }
-  
-  .cadastro-user .input-box input[type="date"] {
-    cursor: pointer;
-    text-align: center;
-  
-  
-  }
-  
-  .cadastro-user .input-box input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
-    cursor: pointer;
-  
-  }
-  
-  .cadastro-user .input-box i {
-    position: absolute;
-    right: 0px;
-    margin-top: 6%;
-    transform: translateX(-7vw);
-    font-size: 2vh;
-    color: var(--logo-color)
-  }
-  
-  .cadastro-user .senha-requisitos {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--alertcolor);
-  
-  
-  
-    align-items: center;
-    font-size: 1vw;
-  }
-  
-  .cadastro-user .box-cadastro .btn {
-    padding: 0px;
-    height: 2.5vw;
-    width: 30%;
-    position: absolute;
-    left: 0;
-    background: var(--secondary);
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    font-size: 2vh;
-    color: #333;
-    font-weight: 600;
-    position: relative;
-    overflow: hidden;
-    transition: color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .cadastro-user .box-cadastro .btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 40px;
-    border: 2px solid var(--logo-color);
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    animation: neon-animation 1.5s infinite alternate;
-  }
-  
-  .cadastro-user .box-cadastro .btn:hover::before {
-    opacity: 1;
-  }
-  
-  .cadastro-user .box-cadastro .btn:hover {
-    color: var(--logo-color);
-    box-shadow: 0 0 20px var(--logo-color);
-  }
-  
-  .cadastro-user .box-cadastro {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 6%;
-  }
-  
-  #span_senha {
-    display: none;
-    visibility: hidden;
-    color: var(--alertcolor);
-  }
-  
-  #valcad {
-    color: var(--alertcolor) !important;
-    font-size: 2vh;
-    margin-bottom: 2vh
-  }
-  
-  /* .cadastro-user .s {
+  margin-left: 30%;
+  background-color: var(--primary);
+  width: 50%;
+  margin-top: 18vh;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1vw;
+  opacity: 1;
+  border: solid 0.2vw var(--logo-color);
+  visibility: visible;
+  padding: 10px 20px;
+}
+
+.cadastro-user.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+.cadastro-user h1 {
+  color: var(--secondary);
+  font-size: 4.5vh;
+
+}
+
+.cadastro-user .container-input {
+  display: flex;
+  width: 100%;
+}
+
+.cadastro-user .left,
+.right {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.cadastro-user .input-box {
+  position: relative;
+  width: 100%;
+  height: auto !important;
+  margin: 5px\ 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.cadastro-user .input-box span {
+  color: var(--secondary);
+  display: flex;
+  justify-content: center;
+  margin-right: 10%;
+  font-size: 2vh;
+}
+
+.cadastro-user .input-box input {
+  height: 70%;
+  width: 60%;
+  border: none;
+  outline: none;
+  margin-left: 15%;
+  color: var(--primary);
+  border-radius: 40px;
+  font-size: 0.7vw;
+  padding: 1vh;
+  border: 2px solid var(--secondary);
+}
+
+.cadastro-user .input-box select{
+  height: 70%;
+  width: 60%;
+  border: none;
+  margin-left: 15%;
+  color: var(--primary);
+  border-radius: 40px;
+  font-size: 0.7vw;
+  padding: 1vh;
+  border: 2px solid var(--secondary);
+}
+
+.cadastro-user .input-box input:focus {
+  border: solid 2px var(--logo-color);
+  box-shadow: 0 0 1vh var(--logo-color);
+}
+
+.cadastro-user .input-box input[type="date"] {
+  cursor: pointer;
+  text-align: center;
+}
+
+.cadastro-user .input-box input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+
+}
+
+.cadastro-user .input-box i {
+  position: absolute;
+  right: 0px;
+  margin-top: 6%;
+  transform: translateX(-7vw);
+  font-size: 2vh;
+  color: var(--logo-color)
+}
+
+.cadastro-user .senha-requisitos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--alertcolor);
+  align-items: center;
+  font-size: 1vw;
+  margin-top: 2%;
+}
+
+.cadastro-user .box-cadastro .btn {
+  padding: 0px;
+  height: 2.5vw;
+  width: 30%;
+  position: absolute;
+  left: 0;
+  background: var(--secondary);
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 2vh;
+  color: #333;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cadastro-user .box-cadastro .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 40px;
+  border: 2px solid var(--logo-color);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  animation: neon-animation 1.5s infinite alternate;
+}
+
+.cadastro-user .box-cadastro .btn:hover::before {
+  opacity: 1;
+}
+
+.cadastro-user .box-cadastro .btn:hover {
+  color: var(--logo-color);
+  box-shadow: 0 0 20px var(--logo-color);
+}
+
+.cadastro-user .box-cadastro {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6%;
+}
+
+#span_senha {
+  display: none;
+  visibility: hidden;
+  color: var(--alertcolor);
+}
+
+#valcad {
+  color: var(--alertcolor) !important;
+  font-size: 2vh;
+  margin-bottom: 2vh
+}
+
+/* .cadastro-user .s {
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
   
   } */
-  
-  .hidden {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease, height 0.5s ease;
-  }
-  
-  .valcad {
-    opacity: 0;
-  }
-  
-  body {
-    background-image: url('../img/fundo_suporte.jpg'); /* Substitua 'sua-imagem.jpg' pelo caminho da sua imagem */
-    background-size: cover; /* Faz com que a imagem ocupe todo o fundo */
-    background-repeat: no-repeat; /* Impede que a imagem se repita */
-    background-attachment: fixed; /* Faz o fundo permanecer fixo ao rolar a página */
-  }
+
+.hidden {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease, height 0.5s ease;
+}
+
+.valcad {
+  opacity: 0;
+}
+
+body {
+  background-image: url('../img/fundo_suporte.jpg');
+  /* Substitua 'sua-imagem.jpg' pelo caminho da sua imagem */
+  background-size: cover;
+  /* Faz com que a imagem ocupe todo o fundo */
+  background-repeat: no-repeat;
+  /* Impede que a imagem se repita */
+  background-attachment: fixed;
+  /* Faz o fundo permanecer fixo ao rolar a página */
+}

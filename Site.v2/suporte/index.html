@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <!-- Importa o Chart.js para gráficos -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
@@ -18,7 +19,7 @@
             <div class="header-left">
                 <img src="../img/airconomics_logo_completo.png" alt="Logo AirConomics" class="logo">
                 <div class="btn-nav-white">
-                    <a onclick="cadastrar_usuario()">
+                    <a onclick="exibir()">
                         <h3>Cadastrar novo usuário</h3>
                     </a>
                 </div>
@@ -29,7 +30,7 @@
             </div>
             
         </div>
-        <div class="cadastro-user x" id="cadastro_user">
+        <div class="cadastro-user hidden x" id="cadastro_user">
             <h1>Cadastro - Usuário</h1>
             <div class="container-input">
                 <div class="left">
@@ -49,7 +50,7 @@
                         <i class="bx bxs-phone"></i>
                     </div>
                     <div class="input-box">
-                        <span>senha</span>
+                        <span>Senha</span>
                         <input
                             oninput="verificar_requisitos()"
                             id="CadastroSenha_input"
@@ -57,6 +58,14 @@
                             placeholder="Senha"
                         >
                         <i class="bx bxs-lock-alt"></i>
+                    </div>
+                    <div class="input-box">
+                        <span>Selecione a empresa</span>
+                        <select
+                            id="empresa_select"
+                        >
+                            <option value="#">Selecione a empresa...</option>
+                        </select>
                     </div>
                 </div>
                 <div class="right">

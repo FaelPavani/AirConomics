@@ -127,7 +127,7 @@ function logar() {
         sessionStorage.ID_USUARIO = json.id;
         setTimeout(function () {
           if(json.tecnico){
-            window.location.href = "../../bobIA/public/redirect.html";
+            window.location.href = "../suporte/index.html";
           }else{
             window.location.href = "../../Site.v2/dashboard/dashboard_estatico.html";
           }
@@ -172,7 +172,7 @@ function cadastrar_usuario() {
   empresa.classList.remove('hidden')
   var nome = CadastroNome_input.value
   var telefone = Telefone_input.value
-  var senha = confirmacao_senha_input.value
+  var senha = CadastroSenha_input.value
   var confSenha = confirmacao_senha_input.value
   var email = email_input.value
   var data_nascimento = input_data.value
