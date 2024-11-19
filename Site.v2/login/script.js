@@ -126,7 +126,8 @@ function logar() {
         sessionStorage.NOME_USUARIO = json.nome;
         sessionStorage.ID_USUARIO = json.id;
         sessionStorage.MASTER = json.master;
-        
+        sessionStorage.ID_EMPRESA = json.empresa_id;
+
         setTimeout(function () {
           if(json.tecnico){
             window.location.href = "../suporte/index.html";

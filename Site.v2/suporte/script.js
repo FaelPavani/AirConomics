@@ -1,26 +1,8 @@
-fetch('http://localhost:3333/empresas/listar', {
-  method: "GET",
-  headers: {
-    "Content-Type": "application/json",
-  }
-}).then(function (resposta) {
-  if (resposta.ok) {
-    resposta.json().then((json) => {
-      for (var i = 0; i < json.length; i++) {
-        // var option = document.createElement("option")
-        // option.value = json[i].id_empresa
-        // option.textContent = json[i].nome_empresa
-        // empresa_select.appendChild(option)
-        console.log(json[i])
-        empresa_select.innerHTML += `<option value="${json[i].id_empresa}"> ${json[i].nome_empresa} </option>`
-        // empresa_select.innerHTML += `<option> Teste </option>`
-
-      }
-    });
-  } else {
-    alert('Problema ao realizar cadastro')
-  }
-})
+var is_master = sessionStorage.MASTER
+if(is_master == 1){
+  novo_user.style.display = 'block';
+  novo_user.style.visibility = 'visible';
+}
 
 function exibir() {
   var cadastro = document.getElementById('cadastro_user')
@@ -39,7 +21,9 @@ function cadastrar_usuario() {
   var confSenha = confirmacao_senha_input.value
   var email = email_input.value
   var data_nascimento = input_data.value
-  var id_empresa = empresa_select.value
+  // id_empresa = 1, pq a AirConomics será a empresa 1
+  var id_empresa = 1
+  var is_tecnico = true
 
   if (nome == undefined || telefone == undefined || senha == undefined || confSenha == undefined || email == undefined) {
     alert('Todos os campos devem ser preenchidos')
@@ -66,7 +50,8 @@ function cadastrar_usuario() {
       telefone: telefone,
       senha: senha,
       email: email,
-      dtNascimento: data_nascimento
+      dtNascimento: data_nascimento,
+      is_tecnico: is_tecnico,
     }),
   }).then(function (resposta) {
     if (resposta.ok) {
@@ -111,4 +96,9 @@ function verificar_requisitos() {
     req_esp.style.color = '#CC0000'
     req_esp.innerHTML = `<i class='bx bxs-dislike'></i>Caractere especial`
   }
+}
+
+function limparSessao() {
+  sessionStorage.clear();
+  window.location = "../../Site.v2/index.html";
 }

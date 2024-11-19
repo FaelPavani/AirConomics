@@ -138,6 +138,7 @@ function cadastrarPorEmpresa(req, res){
     var senha = req.body.senha;
     var telefone = req.body.telefone;
     var dt_nascimento = req.body.dtNascimento;
+    var is_tecnico = req.body.is_tecnico;
     var id_empresa = req.params.empresaId;
 
     // Faça as validações dos valores
@@ -153,7 +154,7 @@ function cadastrarPorEmpresa(req, res){
         res.status(400).send("Data de nascimento undefined!");
     } else {
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrarPorEmpresa(nome, email, senha, telefone, dt_nascimento, id_empresa)
+        usuarioModel.cadastrarPorEmpresa(nome, email, senha, telefone, dt_nascimento, id_empresa, is_tecnico)
             .then(
                 function (resultado) {
                     res.json(resultado);
