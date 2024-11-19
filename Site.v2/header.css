@@ -73,7 +73,7 @@ header .nav::after {
 }
 header .nav:hover::after {
   width: 100%;
-}
+}s
 header a .login {
   background-color: red;
 }
