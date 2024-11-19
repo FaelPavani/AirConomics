@@ -25,7 +25,8 @@ function autenticar(req, res) {
                             email: resultadoAutenticar[0].email_login,
                             nome: resultadoAutenticar[0].nome_usuario,
                             empresa_id: resultadoAutenticar[0].empresaId,
-                            tecnico: resultadoAutenticar[0].usuario_tecnico
+                            tecnico: resultadoAutenticar[0].usuario_tecnico,
+                            master: resultadoAutenticar[0].usuario_master
                         })
                         // aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
                         //     .then((resultadoAquarios) => {

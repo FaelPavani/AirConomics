@@ -458,6 +458,11 @@ canvas {
   padding: 2% 5%;
 }
 
+#novo_user{
+  display: none;
+  visibility: hidden;
+}
+
 .btn-nav-white h3 {
   color: #fdfdfd;
   padding: 0;

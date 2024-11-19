@@ -7,12 +7,14 @@ fetch('http://localhost:3333/empresas/listar', {
   if (resposta.ok) {
     resposta.json().then((json) => {
       for (var i = 0; i < json.length; i++) {
-        var option = document.createElement("option")
-        option.value = json[i].id_empresa
-        option.textContent = json[i].nome_empresa
-        empresa_select.appendChild(option)
+        // var option = document.createElement("option")
+        // option.value = json[i].id_empresa
+        // option.textContent = json[i].nome_empresa
+        // empresa_select.appendChild(option)
         console.log(json[i])
-        // empresa_select.innerHTML += `<option value="${json[i].id_empresa}"> ${json[i].nome_empresa} </option>`
+        empresa_select.innerHTML += `<option value="${json[i].id_empresa}"> ${json[i].nome_empresa} </option>`
+        // empresa_select.innerHTML += `<option> Teste </option>`
+
       }
     });
   } else {

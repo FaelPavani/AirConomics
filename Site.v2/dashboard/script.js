@@ -1,5 +1,13 @@
 // Personaliza o título com o nome do usuário
 title_hello.innerHTML = `Olá, <u>${sessionStorage.NOME_USUARIO}</u>`;
+var is_master = sessionStorage.MASTER
+console.log(is_master)
+
+if(is_master == 1){
+    novo_user.style.display = 'block';
+    novo_user.style.visibility = 'visible';
+}
+
 buscarIndicadores()
 buscarHistorico()
 
