@@ -167,9 +167,7 @@ function retornar() {
 
 }
 
-function cadastrar_usuario() {
-  cadastro_user.classList.add('hidden')
-  empresa.classList.remove('hidden')
+function proxima_fase(){
   var nome = CadastroNome_input.value
   var telefone = Telefone_input.value
   var senha = CadastroSenha_input.value
@@ -191,6 +189,46 @@ function cadastrar_usuario() {
     alert('Email inválido')
     return
   }
+  cadastro_user.classList.add('hidden')
+  empresa.classList.remove('hidden')
+}
+
+function cadastrar_usuario() {
+  var nome = CadastroNome_input.value
+  var telefone = Telefone_input.value
+  var senha = CadastroSenha_input.value
+  var confSenha = confirmacao_senha_input.value
+  var email = email_input.value
+  var data_nascimento = input_data.value
+
+  var razao_social = RazãoSocial_input.value
+  var nome_fantasia = NomeFantasia_input.value
+  var responsavel = responsavel_input.value
+  var telefone_emp = telefone_input.value
+  var cnpj = cnpj_input.value
+  var cep = cep_input.value
+  var numero = Numero_input.value
+  var complemento = Complemento_input.value
+  var rua = rua_input.value
+  var cidade = cidade_input.value
+  var uf_select = selectcity.value
+
+  if(razao_social == undefined || nome_fantasia == undefined || responsavel == undefined || telefone_emp == undefined
+    || cnpj == undefined || cep == undefined || numero == undefined || complemento == undefined || rua == undefined || cidade == undefined || uf_select == undefined
+  ){
+    alert('Todos os campos devem ser preenchidos')
+    return
+  }
+
+  if(cep.length != 8){
+    alert('CEP com tamanho inválido')
+    return
+  }
+
+  if(cnpj.length != 14){
+    alert('CNPJ com tamanho inválido')
+    return
+  }
 
   fetch('http://localhost:3333/usuarios/cadastrar', {
     method: "POST",
@@ -202,7 +240,18 @@ function cadastrar_usuario() {
       telefone: telefone,
       senha: senha,
       email: email,
-      dtNascimento: data_nascimento
+      dtNascimento: data_nascimento,
+      razao_social: razao_social,
+      nome_fantasia: nome_fantasia,
+      responsavel: responsavel,
+      telefone_emp: telefone_emp,
+      cnpj: cnpj,
+      cep: cep,
+      numero: numero,
+      complemento: complemento,
+      rua: rua,
+      cidade: cidade,
+      uf: uf_select
     }),
   }).then(function (resposta) {
     if (resposta.ok) {

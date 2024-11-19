@@ -138,7 +138,7 @@
                         id="rotateButton"
                         type="submit"
                         class="btn"
-                        onclick="cadastrar_usuario()"
+                        onclick="proxima_fase()"
                     >Concluir</button>
                 </div>
             </div>
@@ -199,7 +199,7 @@
                     </div>
                     <div class="input-box">
                         <span>Complemento</span>
-                        <input id="Complemento" type="text" placeholder="Ex. 5° andar" />
+                        <input id="Complemento_input" type="text" placeholder="Ex. 5° andar" />
                         <i class='bx bx-buildings'></i>
                     </div>
                     <div class="input-box">
@@ -249,7 +249,7 @@
         </div>
             <div class="s">
                     <button id="backButton" type="submit" onclick="returnlog()" class="btn">Voltar</button>
-                    <button id="concludeButton" type="submit" class="btn">Concluir Cadastro</button>
+                    <button id="concludeButton" type="submit" class="btn" onclick="cadastrar_usuario()">Concluir Cadastro</button>
                 </div>
         </div>
                 
