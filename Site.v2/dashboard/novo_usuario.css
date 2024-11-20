@@ -539,6 +539,12 @@ canvas {
   z-index: -1;
 }
 
+.btn-nav-white.active{
+  color: white;
+  background-color: #0080FF;
+  box-shadow: 0 0 5px #0068e6, 0 0 5px #0068e6, 0 0 10px #0068e6;
+}
+
 .btn-nav {
   background-color: #252525;
   color: #fff;
