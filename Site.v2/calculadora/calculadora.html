@@ -9,13 +9,13 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <title>AIRConomics</title>
     </head>
-    <body>
+    <body onload="aparecer()">
         <header>
             <a class="logo "><img src="../img/airconomics_logo_completo.png" alt=""></a>
             <ul>
                 <li><a class="nav" href="../index.html">Home</a></li>
-                <li><a class="nav"  href="#about">Sobre nós</a></li>
-                <li><a class="nav"  href="#social">Serviços</a></li>
+                <li><a class="nav"  href="../index.html#about">Sobre nós</a></li>
+                <li><a class="nav"  href="../index.html#social">Serviços</a></li>
                 <li><a class="atual" >Simulador</a></li>
             </ul>
             <a class="btlog" href="../login/index.html"><i class='bx bxs-user'></i></a>
@@ -23,7 +23,7 @@
         <div class="social">
             <div class="container">
                 <div class="boxes">
-                    <div class="box">
+                    <div class="box" id="box">
                         <div class="container-calculator">
                             <h1>
                                 <span>AIR</span>Conomics Calc
@@ -69,5 +69,15 @@
     `;
     document.getElementById('div_result').style.display = 'block';
 }
+function aparecer(){
+// var calculadera = document.getElementById('box');
+box.style.opacity = 1
+
+
+
+
+
+}
+
 </script>
 </html>

@@ -34,6 +34,8 @@
   border-radius: 1vw;
   border: solid 0.2vw var(--logo-color);
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 1.5s ease;
 }
 
 .login h1 {
@@ -164,7 +166,8 @@
   flex-direction: column;
   align-items: center;
   border-radius: 1vw;
-  opacity: 1;
+  opacity: 0;
+  transition: opacity 1.5s ease;
   border: solid 0.2vw var(--logo-color);
   overflow: hidden;
 }
@@ -346,6 +349,8 @@
 .cadastro_empresa {
   background-color: var(--primary);
   width: 60%;
+  opacity: 0;
+  transition: opacity 1.5s ease;
   flex-direction: column;
   height: 60vh;
   align-items: center;
@@ -495,6 +500,7 @@ color: var(--secondary);
 
 body {
   background: linear-gradient(120deg, #000428, #004e92);
+  animation: backgroundAnimation 10Ws ease-in-out infinite alternate;
   background-size: 200% 200%; /* Permite o deslocamento da animação */
   animation: backgroundAnimation 8s ease-in-out infinite; /* Animação lenta e suave */
   font-family: Arial, sans-serif;
