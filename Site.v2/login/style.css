@@ -495,12 +495,8 @@ color: var(--secondary);
 
 body {
   background: linear-gradient(120deg, #000428, #004e92);
-<<<<<<< HEAD
-  animation: backgroundAnimation 10Ws ease-in-out infinite alternate;
-=======
   background-size: 200% 200%; /* Permite o deslocamento da animação */
   animation: backgroundAnimation 8s ease-in-out infinite; /* Animação lenta e suave */
->>>>>>> 35232329f5579471059e631b321aca8acdf604d9
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
