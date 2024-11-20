@@ -31,7 +31,6 @@
   width: 100%;
   height: 110vh;
   background: linear-gradient(120deg, #000428, #004e92);
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,6 +42,7 @@
 .social .container .boxes {
   display: flex;
   /* Certifique-se de que isso está correto */
+  margin-top: 20vh;
   gap: 60px;
   /* Espaço entre as caixas */
   justify-content: center;

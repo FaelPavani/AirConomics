@@ -496,7 +496,7 @@ color: var(--secondary);
 /* Fundo animado will efeito neon */
 body {
   background: linear-gradient(120deg, #000428, #004e92);
-  animation: backgroundAnimation 10s ease-in-out infinite alternate;
+  animation: backgroundAnimation 10Ws ease-in-out infinite alternate;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
