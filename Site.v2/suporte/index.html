@@ -28,6 +28,17 @@
                     <h3>Sair</h3>
                 </div>
             </div>
+
+            <div id="container" >
+                <h1>BobIA</h1>
+                <textarea id="pergunta" type="text" placeholder="Digite a pergunta..."></textarea>
+                <br>
+                <br>
+                <button onclick="gerarResposta()">Gerar Resposta</button>
+                <h3>Resposta da IA:</h3>
+                <div id="resposta"></div>
+            </div>
+          
             <div class="cadastro-user hidden x" id="cadastro_user">
                 <h1>Cadastro - Usuário</h1>
                 <div class="container-input">
@@ -123,9 +134,41 @@
                     >Concluir</button>
                 </div>
             </div>    
+            <div class="circle" onclick="bobia()">
+                <img src="../img/bob_camisa.png" alt="bob">
+            </div>
         </div>
         
     </body>
 </html>
-<script src="./script.js"></script>
+<script src="script.js"></script>
+<script>
+   var z = 0;
+function bobia(){
+const box = document.getElementById('container');
+
+if (z == 0){
+box.style.display = 'block';
+z++
+}
+else{
+    box.style.display = 'none';
+z--;
+
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+</script>
 <!-- <script src="../login/script.js"></script> -->

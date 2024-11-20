@@ -6,6 +6,31 @@
   --logo-color: #2185D5;
 }
 
+body{
+  background: linear-gradient(120deg, #000428, #004e92);
+  animation: backgroundAnimation 10Ws ease-in-out infinite alternate;
+  background-size: 200% 200%; /* Permite o deslocamento da animação */
+  animation: backgroundAnimation 8s ease-in-out infinite; /* Animação lenta e suave */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Garante que o fundo cubra toda a altura da janela */
+  overflow: hidden; /* Evita barras de rolagem desnecessárias */
+}
+
+/* Animação do fundo */
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 #novo_user{
   display: none;
   visibility: hidden;
@@ -205,4 +230,66 @@ body {
   /* Impede que a imagem se repita */
   background-attachment: fixed;
   /* Faz o fundo permanecer fixo ao rolar a página */
+}
+
+
+
+#container {
+  margin-top: 20vh;
+  display: none;
+  width: 50%;
+  margin-left: 30%;
+  text-align: center;
+  font-family: Arial, sans-serif;
+    background-color: #63B1BC;
+}
+
+#container h1 {
+  color: #1F2A44;
+}
+
+#container textarea[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 400px;
+}
+
+#container select,
+#container button {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#container button {
+  background-color: #ED145B;
+  color: #FFFFFF;
+  border: none;
+}
+
+#container button:hover {
+  background-color: #EFB661;
+}
+.circle{
+  width: 3.5vw;
+  height: 3.5vw;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  transition: .5s all ease;
+}
+
+.circle:hover{
+  scale: 1.1;
+  cursor: pointer;
+}
+.circle img {
+  width: 3.5vw;
+  height: 3.5vw;
+
+
+
 }

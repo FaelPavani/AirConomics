@@ -11,32 +11,32 @@ body {
     text-align: center;
 }
 
-h1 {
+#container h1 {
     color: #1F2A44;
 }
 
-textarea[type="text"] {
+#container textarea[type="text"] {
     padding: 8px;
     font-size: 16px;
     border-radius: 5px;
     width: 400px;
 }
 
-select,
-button {
+#container select,
+#container button {
     padding: 8px;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-button {
+#container button {
     background-color: #ED145B;
     color: #FFFFFF;
     border: none;
 }
 
-button:hover {
+#container button:hover {
     background-color: #EFB661;
 }
 
