@@ -39,7 +39,17 @@
                 <div class="div_animacao">
                     <h1 id="title_hello">Olá, Empresa</h1>
                 </div>
-                <div id="alerta"></div>
+                <div class="div_filtros">
+                    <select onchange="pegar_datas()" id="select_salas">
+                        <option value="#">Selecione uma sala...</option>
+                        <option value="#">Selecione uma sala...</option>
+                        <option value="#">Selecione uma sala...</option>
+                        <option value="#">Selecione uma sala...</option>
+                    </select>
+                    <select disabled onchange="filtrar_dados()" id="select_datas">
+                        <option value="#">Selecione uma data..</option>
+                    </select>
+                </div>
                 
                 <!-- Área dos gráficos alinhados lado a lado -->
                 <div class="indicadores">

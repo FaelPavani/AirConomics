@@ -102,6 +102,11 @@ function atualizarGraficos(label, data) {
     graficoLinha.update();  // Atualiza o gráfico de linhas na tela
 }
 
+function pegar_datas(){
+    select_datas.disabled = false
+    var sala = select_salas.value
+}
+
 // // Simulação de atualização de dados (substitua pelos dados do banco)
 // setTimeout(() => {
 //     const dadosAtualizadosBarra = [8, 14, 5, 6, 10];
