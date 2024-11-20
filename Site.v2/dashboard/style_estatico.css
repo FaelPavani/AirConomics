@@ -596,3 +596,25 @@ canvas {
 .div_filtros option{
   background-color: transparent;
 }
+body {
+  background: linear-gradient(120deg, #000428, #004e92);
+  animation: backgroundAnimation 10Ws ease-in-out infinite alternate;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Garante que o fundo cubra toda a altura da janela */
+  overflow: hidden; /* Evita barras de rolagem desnecessárias */
+}
+
+/* Animação do fundo */
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
