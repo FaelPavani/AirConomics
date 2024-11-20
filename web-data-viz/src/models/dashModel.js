@@ -30,7 +30,7 @@ function listarIndicadoresFiltro(id_sensor, dia){
           DESC LIMIT 1) AS temp_atual 
         FROM tb_dado
         WHERE fk_sensor = ${id_sensor} 
-        AND dataColeta_dado >= ${dia};
+        AND DATE(dataColeta_dado) = '${dia}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -56,7 +56,7 @@ function buscarTemperaturaHistoricaFiltro(id_sensor, dia){
           temperatura_dado 
         FROM tb_dado 
         WHERE fk_sensor = ${id_sensor} 
-        AND dataColeta_dado >= ${dia};
+        AND DATE(dataColeta_dado) = '${dia}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

@@ -15,7 +15,7 @@ router.get("/temperaturaHist/:sensorId/:dia", function (req, res) {
   dashController.buscarTemperaturaHistoricaFiltro(req, res);
 })
 
-router.get("/temperaturaReal/:sensorId/:dia", function (req, res) {
+router.get("/indicadores/:sensorId/:dia", function (req, res) {
   dashController.listarIndicadoresFiltro(req, res);
 })
 
