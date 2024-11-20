@@ -106,11 +106,12 @@
 .login .input-box input {
   width: 60%;
   border-radius: 10vw;
-  height: 5vh;
+  height: 2vw;
   font-size: 2vh;
   padding: 0px 1vw;
   margin-bottom: 1.5vw;
   border: 2px solid var(--secondary);
+  border: none ;
 }
 
 .login .input-box input:focus {
@@ -122,8 +123,8 @@
 
   right: 40px;
   margin-top: 3%;
-  transform: translateX(-4vh);
-  font-size: 2vh;
+  transform: translate(-2vw, 0vw );
+  font-size: 1vw;
   color: var(--logo-color)
 }
 
@@ -212,6 +213,7 @@
 
 .cadastro-user .input-box input {
   height: 70%;
+  border: none ;
   width: 60%;
   border: none;
   outline: none;
@@ -220,7 +222,7 @@
   border-radius: 40px;
   font-size: 0.7vw;
   padding: 1vh;
-  border: 2px solid var(--secondary);
+ 
 }
 
 .cadastro-user .input-box input:focus {

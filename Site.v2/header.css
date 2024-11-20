@@ -33,6 +33,7 @@ header:hover {
 }
 header ul {
   width: 100%;
+  height: 100%;
   display: flex !important;
   justify-content: space-between;
   list-style: none !important;
@@ -41,7 +42,10 @@ header a {
   cursor: pointer;
   position: relative !important;
   text-decoration: none;
+  display: flex;
   font-size: 3vh;
+  align-items: center ;
+  margin-top: 1vw;
   color: var(--secondary);
 }
 .logo {
@@ -49,6 +53,7 @@ header a {
   margin-right: 15%;
   width: 18%;
   height: 3vw;
+  transform: translateY(-0.5vw);
 }
 .logo img {
 width: 100%;
@@ -59,8 +64,8 @@ height: 100%;
   margin-right: 5%;
   margin-left: 25%;
   font-size: 2.5rem;
-  margin-top: 0.5%;
   font-size: 5.5vh;
+  
 }
 header .nav::after {
   content: "";
