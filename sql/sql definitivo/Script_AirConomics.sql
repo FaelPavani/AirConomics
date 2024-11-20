@@ -31,9 +31,9 @@
 	email_login varchar(45),
 	senha_login varchar(100),
 	dt_nascimento DATE,
-	fk_empresa int,
 	usuario_tecnico BOOLEAN default false,
-	usuario_master BOOLEAN default false
+	usuario_master BOOLEAN default false,
+	fk_empresa int
 	constraint fk_empresa_usuario foreign key (fk_empresa) references tb_empresa(id_empresa)
 	);
 
@@ -47,7 +47,7 @@
 
 	create table tb_dado(
 	id_dado int  auto_increment,
-	dataColeta_dado datetime,
+	dataColeta_dado datetime default current_timestamp,
 	temperatura_dado decimal(5,2),
 	fk_sensor int,
 	constraint fk_sensor_dado foreign key (fk_sensor) references tb_sensor(id_sensor),
