@@ -8,8 +8,31 @@ if(is_master == 1){
     novo_user.style.visibility = 'visible';
 }
 
-buscarIndicadores()
-buscarHistorico()
+// buscarIndicadores()
+// buscarHistorico()
+buscarSalas()
+
+function buscarSalas(){
+    fetch(`http://localhost:3333/salas/listar/${sessionStorage.ID_EMPRESA}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }).then((resposta) => {
+        if (resposta.ok) {
+            console.log(resposta);
+            resposta.json().then((json) => {
+                console.log(json)
+                for(var i = 0; i < json.length; i++) {
+                    select_salas.innerHTML += `<option value='${json[i].id_sensor}'> ${json[i].numero_sala} </option>`
+                }
+            });
+
+        } else {
+            alert('Problema pegar temperatura da sala')
+        }
+    })
+}
 
 function buscarIndicadores() {
     fetch('http://localhost:3333/dash/indicadores', {
@@ -34,8 +57,11 @@ function buscarIndicadores() {
     })
 }
 
-function buscarHistorico() {
-    fetch('http://localhost:3333/dash/temperaturaHist', {
+function filtrar_dados() {
+    var sala = select_salas.value
+    var dia = select_datas.value
+    console.log(sala, dia)
+    fetch(`http://localhost:3333/dash/temperaturaHist/${sala}/${dia}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -57,7 +83,7 @@ function buscarHistorico() {
                 console.log(temperaturas_lista)
                 atualizarGraficos(datas_lista, temperaturas_lista)
             });
-
+            buscarIndicadores()
         } else {
             alert('Problema pegar temperatura da sala')
         }
@@ -68,6 +94,40 @@ function buscarHistorico() {
 function limparSessao() {
     sessionStorage.clear();
     window.location = "../../Site.v2/index.html";
+}
+
+// Função para atualizar os dados dos gráficos dinamicamente
+function atualizarGraficos(label, data) { 
+    graficoLinha.data.datasets[0].data = data;  // Atualiza os dados do gráfico de linhas  // Atualiza o gráfico de barras na tela
+    graficoLinha.data.labels = label
+    graficoLinha.update();  // Atualiza o gráfico de linhas na tela
+}
+
+function pegar_datas(){
+    select_datas.disabled = false
+    var sala = select_salas.value
+    console.log(sala)
+
+    fetch(`http://localhost:3333/salas/datas/${sala}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }).then((resposta) => {
+        if (resposta.ok) {
+            console.log(resposta);
+            resposta.json().then((json) => {
+                console.log(json)
+                for(var i = 0; i < json.length; i++) {
+                    var data = json[i].datas_disponiveis.split('T')[0]
+                    select_datas.innerHTML += `<option value='${data}'> ${data} </option>`
+                }
+            });
+
+        } else {
+            alert('Problema pegar temperatura da sala')
+        }
+    })
 }
 
 // Configuração do Gráfico de Linhas
@@ -94,18 +154,6 @@ const graficoLinha = new Chart(ctxLinha, {
         }
     }
 });
-
-// Função para atualizar os dados dos gráficos dinamicamente
-function atualizarGraficos(label, data) { 
-    graficoLinha.data.datasets[0].data = data;  // Atualiza os dados do gráfico de linhas  // Atualiza o gráfico de barras na tela
-    graficoLinha.data.labels = label
-    graficoLinha.update();  // Atualiza o gráfico de linhas na tela
-}
-
-function pegar_datas(){
-    select_datas.disabled = false
-    var sala = select_salas.value
-}
 
 // // Simulação de atualização de dados (substitua pelos dados do banco)
 // setTimeout(() => {
