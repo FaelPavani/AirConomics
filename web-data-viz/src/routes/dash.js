@@ -11,4 +11,12 @@ router.get("/temperaturaHist", function (req, res) {
   dashController.buscarTemperaturaHistorica(req, res);
 })
 
+router.get("/temperaturaHist/:sensorId/:dia", function (req, res) {
+  dashController.buscarTemperaturaHistoricaFiltro(req, res);
+})
+
+router.get("/indicadores/:sensorId/:dia", function (req, res) {
+  dashController.listarIndicadoresFiltro(req, res);
+})
+
 module.exports = router;

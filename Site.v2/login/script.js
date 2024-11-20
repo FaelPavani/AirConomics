@@ -1,6 +1,14 @@
 var email_comp = ''
 var senha_comp = ''
 
+function aparecer(){
+var login = document.getElementById('login');
+
+login.style.opacity = '1';
+
+
+}
+
 function verificar_requisitos() {
   var senha = CadastroSenha_input.value
 
@@ -89,7 +97,6 @@ document.getElementById('rotateButton').addEventListener('click', function () {
       input_data.value != "" &&
       confirmacao_senha_input.value != "") && (senha == conf_senha) && (email.includes('@') && email.includes('.'))
   ) {
-
     valcad.classList.add('valcad');
   }
   else {
@@ -155,9 +162,18 @@ function cadastrar_button() {
 
   var login = document.getElementById('login');
   var cadastro = document.getElementById('cadastro_user');
-
   login.classList.add('hidden')
   cadastro.classList.remove('hidden')
+  setTimeout(() => {
+    
+    cadastro.style.opacity = '1';
+    login.style.opacity = '0';
+   }, 1);
+  
+
+  
+
+  
 }
 
 function retornar() {
@@ -165,7 +181,13 @@ function retornar() {
   var login = document.getElementById('login');
   var cadastro = document.getElementById('cadastro_user');
 
+
   login.classList.remove('hidden')
+  setTimeout(() => {
+   login.style.opacity = '1';
+   cadastro.style.opacity = '0';  
+  }, 1);
+
   cadastro.classList.add('hidden')
 
 }
@@ -192,8 +214,17 @@ function proxima_fase(){
     alert('Email inválido')
     return
   }
-  cadastro_user.classList.add('hidden')
+
+  var empresa = document.getElementById('empresa');
+  var cadastro = document.getElementById('cadastro_user');
+  cadastro.classList.add('hidden')
   empresa.classList.remove('hidden')
+  setTimeout(() => {
+    empresa.style.opacity = '1';
+    cadastro.style.opacity = '0';  
+   }, 1);
+
+  
 }
 
 function cadastrar_usuario() {
@@ -268,6 +299,13 @@ function cadastrar_usuario() {
 }
 
 function returnlog(){
-  cadastro_user.classList.remove('hidden')
+
+  var empresa = document.getElementById('empresa');
+  var cadastro = document.getElementById('cadastro_user');
   empresa.classList.add('hidden')
+  cadastro.classList.remove('hidden')
+  setTimeout(() => {
+    empresa.style.opacity = '0';
+    cadastro.style.opacity = '1';  
+   }, 1);
 }
