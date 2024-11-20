@@ -11,11 +11,16 @@
         <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap" rel="stylesheet">
         <!-- Importa o Chart.js para gráficos -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
     </head>
     <body>
+        <script data-jsd-embedded data-key="bc4cce06-bb15-44a8-a457-8ea7d4d999bf" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
         <div class="janela">
             <div class="header-left">
+                
                 <img src="../img/airconomics_logo_completo.png" alt="Logo AirConomics" class="logo">
+                
+                
                 <div class="btn-nav-white">
                     <a href="./dashboard_estatico.html">
                         <h3>Salas</h3>
@@ -43,19 +48,20 @@
                 </div>
             </div>
         </div>
+        
     </body>
-</html>
+    </html>
+    
+    <script>
+        // Personaliza o título com o nome do usuário
+        title_hello.innerHTML = `Olá, <u>${sessionStorage.NOME_USUARIO}</u>`;
 
-<script>
-    // Personaliza o título com o nome do usuário
-    title_hello.innerHTML = `Olá, <u>${sessionStorage.NOME_USUARIO}</u>`;
-
-    // Função para limpar a sessão e redirecionar para a página inicial
+        // Função para limpar a sessão e redirecionar para a página inicial
     function limparSessao() {
         sessionStorage.clear();
         window.location = "../../Site.v2/index.html";
     }
-
+    
     // Configuração do Gráfico de Barras
     const ctxBarra = document.getElementById('graficoBarra').getContext('2d');
     const graficoBarra = new Chart(ctxBarra, {
