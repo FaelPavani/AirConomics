@@ -8,11 +8,14 @@ if(is_master == 1){
 }
 
 function exibir() {
+  var box = document.getElementById('container');
   var cadastro = document.getElementById('cadastro_user')
   if (cadastro.classList.contains('hidden')) {
     cadastro.classList.remove('hidden')
+    box.style.display = 'none';
   } else {
     cadastro.classList.add('hidden')
+
   }
   // cadastro.classList.toggle('hidden')
 }
@@ -120,4 +123,20 @@ async function gerarResposta() {
 
   resposta.style.display = 'block';
   document.getElementById('resposta').innerText = data.resultado;
+}
+
+var z = 0;
+function bobia(){
+const box = document.getElementById('container');
+var cadastro = document.getElementById('cadastro_user')
+if (z == 0){
+box.style.display = 'block';
+z++
+    cadastro.classList.add('hidden')
+
+}
+else{
+    box.style.display = 'none';
+z--;
+}
 }
