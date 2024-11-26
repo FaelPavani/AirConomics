@@ -1,5 +1,6 @@
 // Personaliza o título com o nome do usuário
-title_hello.innerHTML = `Olá, <u>${sessionStorage.NOME_USUARIO}</u>`;
+// title_hello.innerHTML = `Olá, <u>${sessionStorage.NOME_USUARIO}</u>`;
+title_hello.innerHTML = `Olá,`;
 var is_master = sessionStorage.MASTER
 var loop = false
 
