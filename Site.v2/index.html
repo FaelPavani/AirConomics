@@ -34,11 +34,11 @@
                 <!-- <div class="slider-text">Eficiência energética em cada ambiente</div> -->
             </div>
             <div class="slider-box">
-                <img class="img-desktop" src="./img/Home Carrosel.webp" alt="slide2">
+                <img class="img-desktop" src="./img/Fundo carrosel 2.png" alt="slide2">
                 <!-- <div class="slider-text">Reduza custos com monitoramento inteligente</div> -->
             </div>
             <div class="slider-box">
-                <img class="img-desktop" src="./img/logo de fundo calc.webp" alt="slide3">
+                <img class="img-desktop" src="./img/carrosel parte 3.jpg" alt="slide3">
                 <!-- <div class="slider-text">Conforto e sustentabilidade ao seu alcance</div> -->
             </div>
         </div>
@@ -472,10 +472,11 @@
 </html>
 
 <script>
-    let counter = 0;
+     let contador = 0;
     setInterval(() => {
-        const sliderContainer = document.querySelector('.slider-containner');
-        counter = (counter + 1) % 3; // alterna entre 0, 1 e 2 (total de 3 imagens)
-        sliderContainer.style.transform = `translateX(-${counter * 100}vw)`;
-    }, 3000); // Alterne as imagens a cada 5 segundos
+      const sliderContainer = document.querySelector('.slider-containner');
+      contador = (contador + 1) % 3; // alterna entre 0, 1 , 2 e 3 (total de 4 ou a sua escolha rs rsw imagens)
+      sliderContainer.style.transform = `translateX(-${contador * 100}vw)`;
+    }, 3000); // Alterne as imagens a cada 3!!!!!!!!!!!!!!!!!!!!!!!!!! segundos</script>
+
 </script>
