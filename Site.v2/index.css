@@ -79,6 +79,7 @@ html{
   font-size: 2.5em; /* Tamanho da fonte */
   color: var(--primary); /* Cor do texto */
   margin-bottom: 20px; /* Espaçamento inferior */
+  
 }
 
 /* Estilo dos subtítulos */
@@ -192,14 +193,20 @@ color: var(--primary);
   align-items: flex-start;
   justify-content: center;
   gap: 40px;
+  margin-top: 5%;
   margin-top: 20px;
 }
 
 /* Imagem posicionada à esquerda */
 #img-AirCono {
-  max-width: 300px; /* Ajuste o tamanho conforme necessário */
-  margin: 0;
+  max-width: 350px; /* Ajuste o tamanho conforme necessário */
+  margin-top: 40px;
+  border: 20px solid white;
+  box-shadow: 0 0 20px black;
 }
+
+
+
 
 /* Lista de problemas à direita da imagem */
 .lista-problemas {
@@ -218,11 +225,10 @@ color: var(--primary);
 
 /* Espaçamento entre parágrafos */
 .lista-problemas p {
-  margin-bottom: 20px; /* Espaçamento entre parágrafo e próximo elemento */
+  margin-top: 35px; /* Espaçamento entre parágrafo e próximo elemento */
   font-size: 18px;
   line-height: 1.8;
 }
-
 
 
 
@@ -231,7 +237,7 @@ color: var(--primary);
 .social-about {
   
   height: 40vh; 
-
+margin: 80px 80px;
   
   background-size: cover;
   background-repeat: no-repeat;
@@ -246,6 +252,7 @@ color: var(--primary);
 .social-about h1{
   font-size: 40px;
   color: var(--primary);
+  
 }
 
 .social-about .container-about {
@@ -263,6 +270,7 @@ color: var(--primary);
   justify-content: center; /* centralizei de forma horizontal boxes */
   gap: 20px; 
   align-self: center;
+  margin-top: 5%;
  
 }
 
@@ -293,12 +301,13 @@ color: var(--primary);
   height: 100%;
   border-radius: 20px;
   background-color: var(--secondary) ;
-  box-shadow: 0 4px 20px var(--primary);
+ 
+  box-shadow: 0 0 40px black;
   
   display: flex;
   border-radius: 20px;
   align-items: center;
-  border: 5px solid var(--primary);
+  border: 5px solid white;
   flex-direction: column;
   align-self: center;
   padding: 20px;
@@ -401,6 +410,7 @@ color: var(--primary);
   align-items: center;
   transition: transform 0.6s;
   flex-direction: column;
+  
 }
 
 .back-about {
@@ -449,6 +459,10 @@ color: var(--primary);
 
 }
 
+.social h1{
+  font-size: 40px;
+  color: var(--primary);
+}
 
 .social-boxes h1{
   font-size: 40px;
@@ -484,7 +498,7 @@ color: var(--primary);
   margin-top: 5%;
   justify-content: center;
   /* Centraliza boxes horizontalmente */
-  gap: 50px;
+  gap: 200px;
   /* Aumente este valor para mais espaço entre as boxes */
   align-self: center;
   margin-bottom: 60px;
@@ -510,12 +524,12 @@ color: var(--primary);
   height: 100%;
   border-radius: 20px;
   background-color: var(--secondary) ;
-  box-shadow: 0 4px 20px var(--primary);
+  box-shadow: 0 0 40px black;
   
   display: flex;
   border-radius: 20px;
   align-items: center;
-  border: 5px solid var(--primary);
+  border: 5px solid vwhite;
   flex-direction: column;
   align-self: center;
   padding: 20px;
@@ -585,11 +599,12 @@ color: var(--primary);
 
 .Integrantes-titulo h1 {
 
-
+  font-size: 40px;
+  color: var(--primary);
   text-align: center; /* Centraliza o título */
   margin-bottom: 20px; /* Espaço entre o título e os cards */
-  font-size: 2rem; /* Ajuste de tamanho da fonte */
-  font-weight: bold;
+  margin-top: 5%;
+  
 }
 
 .Integrantes-titulo span {
@@ -606,6 +621,7 @@ color: var(--primary);
   /*Faz com que os cards não fiquem
   só numa linha se a tela for menor:*/
   flex-wrap: wrap;
+  
   margin: 40px 100px;
 }
 
@@ -617,13 +633,14 @@ color: var(--primary);
   height: 400px;
   background: rgba(255, 255, 255, 0.05);
   margin: 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 40px black;
+ 
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /*Embaça o fundo:*/
-  backdrop-filter: blur(5px);
+  border: 5px solid white;
+  /* backdrop-filter: blur(5px); */
 }
 
 /*Estilo do conteúdo dentro dos cards:*/
@@ -634,12 +651,18 @@ color: var(--primary);
   align-items: center;
   flex-direction: column;
   opacity: 0.5;
+  
   transition: 0.5s;
+}
+  
+.content .container-cards {
+  gap: 200px;
 }
 
 /*Comportamento do conteúdo dos cards ao
 passar o mouse em cima:*/
 .container-cards .card:hover .content {
+  
   opacity: 1;
   /*Sobe um pouco o conteúdo do card
   pra caber os ícones de rede social:*/
@@ -728,6 +751,10 @@ passar o mouse em cima:*/
   font-size: 24px;
 
 
+}
+
+.Integrantes-titulo .container-cards {
+  gap: 60px;
 }
 
 
