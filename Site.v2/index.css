@@ -228,6 +228,8 @@ color: var(--primary);
   margin-top: 35px; /* Espaçamento entre parágrafo e próximo elemento */
   font-size: 18px;
   line-height: 1.8;
+  margin-bottom: 20px;
+  
 }
 
 
@@ -484,6 +486,10 @@ color: var(--primary);
   /* Espaço ao redor do conteúdo */
 }
 
+
+
+
+
 .social .social-container h2{
   color: var(--secondary);
   width: 100%;
@@ -553,20 +559,19 @@ color: var(--primary);
   /* Adiciona um espaço no topo para afastar do limite */
 }
 
-.back {
-  transform: rotateY(180deg);
-  /* Gira o verso da box */
-}
+
 
 .box:hover .front {
   transform: rotateY(180deg);
+  
+    transform: translateY(-25px);
+    /* Elevação */
+    /* box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5); */
+    /* Sombra mais intensa */
   /* Gira a frente ao passar o mouse */
 }
 
-.box:hover .back {
-  transform: rotateY(0);
-  /* Mostra o verso ao passar o mouse */
-}
+
 
 .box img {
   width: 80%;
