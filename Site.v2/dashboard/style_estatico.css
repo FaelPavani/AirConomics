@@ -155,9 +155,8 @@ body {
 .dash #graficos{
   width: 80% !important;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   margin: 0 auto;
 }
 

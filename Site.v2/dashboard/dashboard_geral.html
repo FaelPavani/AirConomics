@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>AirConomics | Dashboards</title>
         <link rel="stylesheet" href="./style_estatico.css">
+        <link rel="stylesheet" href="./dashboard_geral.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap" rel="stylesheet">
         <!-- Importa o Chart.js para gráficos -->
@@ -55,8 +56,8 @@
                 </div>
                 <!-- Área dos gráficos alinhados lado a lado -->
                 <div id="graficos" style="display: flex; gap: 20px; justify-content: center;">
-                    <canvas id="graficoBarra" width="400" height="200"></canvas>
-                    <canvas id="graficoLinha" width="400" height="200"></canvas>
+                    <div class="grafico1"><canvas id="graficoBarra" ></canvas></div>
+                    <div class="grafico1"><canvas id="graficoLinha" ></canvas></div>
                 </div>
             </div>
         </div>
