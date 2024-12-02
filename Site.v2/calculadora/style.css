@@ -208,3 +208,8 @@ margin: 5px 0; /* Espaço entre os itens da lista
     background-position: 0% 50%;
   }
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

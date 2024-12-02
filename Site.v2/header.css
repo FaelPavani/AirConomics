@@ -34,8 +34,9 @@ header:hover {
 header ul {
   width: 100%;
   height: 100%;
+  margin-inline: 10%;
   display: flex !important;
-  justify-content: space-between;
+  justify-content: space-around ;
   list-style: none !important;
 }
 header a {
@@ -50,8 +51,7 @@ header a {
 }
 .logo {
   margin-left: 5%;
-  margin-right: 15%;
-  width: 18%;
+  width: 10%;
   height: 3vw;
   transform: translateY(-0.5vw);
 }
@@ -62,7 +62,6 @@ height: 100%;
 }
 .btlog {
   margin-right: 5%;
-  margin-left: 25%;
   font-size: 2.5rem;
   font-size: 5.5vh;
   
@@ -88,7 +87,10 @@ font-size: 1.5vw;
 
 }
 .atual{
-  font-size: 1.5vw;
+  display: none;
+  /* font-size: 1.5vw;
+  opacity: 0;
+  pointer-events: none; */
 
 
 }
