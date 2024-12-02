@@ -96,6 +96,15 @@ html{
   margin-bottom: 15px; /* Margem inferior */
 }
 
+
+.problemas li {
+
+margin-left: 2%;
+
+}
+
+
+
 /* Estilo da lista */
 .content-problemas ul {
   padding-left: 0px; /* Espaçamento interno à esquerda */
