@@ -62,9 +62,51 @@ function buscarTemperaturaHistoricaFiltro(req, res) {
   });
 }
 
+function mediaTemperatura(req, res){
+  var empresa_id = req.params.empresaId
+
+  if(empresa_id == undefined){
+    res.status(404).send("Id da empresa indefinido")
+  }else{
+    dashModel.mediaTemperatura(empresa_id).then(function (resultado) {
+      if (resultado.length > 0) {
+        res.status(200).json(resultado);
+      } else {
+        res.status(204).send("Nenhum resultado encontrado!")
+      }
+    }).catch(function (erro) {
+      console.log(erro);
+      console.log("Houve um erro ao buscar temperaturas históricas: ", erro.sqlMessage);
+      res.status(500).json(erro.sqlMessage);
+    });
+  }
+}
+
+function alertasEmpresa(req, res){
+  var empresa_id = req.params.empresaId
+  
+  if(empresa_id == undefined){
+    res.status(404).send("Id da empresa indefinido")
+  }else{
+    dashModel.alertasEmpresa(empresa_id).then(function (resultado) {
+      if (resultado.length > 0) {
+        res.status(200).json(resultado);
+      } else {
+        res.status(204).send("Nenhum resultado encontrado!")
+      }
+    }).catch(function (erro) {
+      console.log(erro);
+      console.log("Houve um erro ao buscar alertas: ", erro.sqlMessage);
+      res.status(500).json(erro.sqlMessage);
+    });
+  }
+}
+
 module.exports = {
   listarIndicadores,
   buscarTemperaturaHistorica,
   buscarTemperaturaHistoricaFiltro,
-  listarIndicadoresFiltro
+  listarIndicadoresFiltro,
+  mediaTemperatura,
+  alertasEmpresa
 }

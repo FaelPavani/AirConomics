@@ -19,4 +19,12 @@ router.get("/indicadores/:sensorId/:dia", function (req, res) {
   dashController.listarIndicadoresFiltro(req, res);
 })
 
+router.get("/mediaTemp/:empresaId", function (req, res){
+  dashController.mediaTemperatura(req, res)
+})
+
+router.get("/alertas/:empresaId", function (req, res){
+  dashController.alertasEmpresa(req, res)
+})
+
 module.exports = router;

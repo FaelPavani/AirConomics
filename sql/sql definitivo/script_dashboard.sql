@@ -104,15 +104,25 @@ ON a.fk_dado = d.id_dado
 WHERE s.id_sensor = 1
 AND s.numeroSala_sensor = 101;
 
--- alertas especifico da sala, por dia
+-- alertas especifico da sala
+-- estamos usando essa query
 SELECT 
-	COUNT(a.id_alerta) AS qtd_alerta,
-    d.dataColeta_dado AS data_dado
+	COUNT(*) AS total_alertas,
+    s.numeroSala_sensor AS num_sala
 FROM tb_dado AS d
 JOIN tb_sensor AS s
 ON d.fk_sensor = s.id_sensor
-JOIN tb_alerta AS a
-ON a.fk_dado = d.id_dado
-WHERE s.id_sensor = 1
-AND s.numeroSala_sensor = 101
-GROUP BY d.dataColeta_dado;
+WHERE s.fk_empresa = 7 AND d.temperatura_dado >= 25.00 OR d.temperatura_dado <= 21.00
+GROUP BY s.numeroSala_sensor;
+
+
+-- temp média por sala
+SELECT 
+	s.numeroSala_sensor AS num_sala,
+    TRUNCATE(AVG(d.temperatura_dado),2) AS temp_media
+FROM tb_dado AS d
+JOIN tb_sensor AS s
+ON d.fk_sensor = s.id_sensor
+WHERE s.fk_empresa = 7
+GROUP BY s.numeroSala_sensor;
+

@@ -18,10 +18,7 @@
         
         <div class="janela">
             <div class="header-left">
-                
                 <img src="../img/airconomics_logo_completo.png" alt="Logo AirConomics" class="logo">
-                
-                
                 <div class="btn-nav-white">
                     <a href="./dashboard_estatico.html">
                         <h3>Salas</h3>
@@ -43,10 +40,19 @@
             </div>
             <div class="dash">
                 <div class="div_animacao">
-                    <h1 id="title_hello">Olá, Empresa</h1>
+                    <h1 id="title_hello"></h1>
                 </div>
                 <div id="alerta"></div>
-                
+                <div class="indicadores">
+                    <div class="indicador" id="temp_media">
+                        <h3>Sala com maior quantidade de alertas</h3>
+                        <span id="span_maior_alertas"></span>
+                    </div>
+                    <div class="indicador" id="temp_max">
+                        <h3>Sala com maior temperatura média</h3>
+                        <span id="span_maior_media"></span>
+                    </div>                    
+                </div>
                 <!-- Área dos gráficos alinhados lado a lado -->
                 <div id="graficos" style="display: flex; gap: 20px; justify-content: center;">
                     <canvas id="graficoBarra" width="400" height="200"></canvas>

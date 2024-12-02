@@ -1,6 +1,5 @@
 title_hello.innerHTML = `Olá, <u>${sessionStorage.NOME_USUARIO}</u>`;
 var is_master = sessionStorage.MASTER
-console.log(is_master)
 
 if(is_master == 1){
     novo_user.style.display = 'block';
@@ -12,29 +11,92 @@ function limparSessao() {
   window.location = "../../Site.v2/index.html";
 }
 
+function mediaPorSala(){
+    fetch(`http://localhost:3333/dash/mediaTemp/${sessionStorage.ID_EMPRESA}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }).then((resposta) => {
+        if (resposta.ok) {
+            resposta.json().then((json) => {
+                var salas_lista = []
+                var temperaturas_lista = []
+
+                for(var i = 0; i < json.length; i++) {
+                    salas_lista.push(json[i].num_sala)
+                    temperaturas_lista.push(json[i].temp_media)
+                }
+                atualizarGraficoMedia(salas_lista, temperaturas_lista)
+
+                var maior_temp = temperaturas_lista[0]
+
+                for(var i = 0; i < temperaturas_lista.length; i++){
+                    if(temperaturas_lista[i] > maior_temp){
+                        maior_temp = temperaturas_lista[i]
+                    }
+                }
+            
+                var posicao_maior_temp = temperaturas_lista.indexOf(maior_temp)
+                var sala_maior_temp = salas_lista[posicao_maior_temp]
+                
+                span_maior_media.innerHTML = sala_maior_temp
+            });
+        } else {
+            alert('Problema pegar temperatura média das salas')
+        }
+    })
+}
+
+function alertasSala(){
+    // 
+    fetch(`http://localhost:3333/dash/alertas/${sessionStorage.ID_EMPRESA}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }).then((resposta) => {
+        if (resposta.ok) {
+            resposta.json().then((json) => {
+                var alertas_lista = []
+                var salas_lista = []
+
+                for(var i = 0; i < json.length; i++) {
+                    salas_lista.push(json[i].num_sala)
+                    alertas_lista.push(json[i].total_alertas)
+                }
+                atualizarGraficoAlertas(salas_lista, alertas_lista)
+
+                var maior_alertas = alertas_lista[0]
+
+                for(var i = 0; i < alertas_lista.length; i++){
+                    if(alertas_lista[i] > maior_alertas){
+                        maior_alertas = alertas_lista[i]
+                    }
+                }
+            
+                var posicao_maior_alertas = alertas_lista.indexOf(maior_alertas)
+                var sala_maior_alertas = salas_lista[posicao_maior_alertas]
+                
+                span_maior_alertas.innerHTML = sala_maior_alertas
+            });
+        } else {
+            alert('Problema pegar alertas das salas')
+        }
+    })
+}
+
 // Configuração do Gráfico de Barras
 const ctxBarra = document.getElementById('graficoBarra').getContext('2d');
 const graficoBarra = new Chart(ctxBarra, {
   type: 'bar',  // Define o tipo de gráfico como barras
   data: {
-      labels: ['KPI 1', 'KPI 2', 'KPI 3', 'KPI 4', 'KPI 5'], // Indicadores que deseja monitorar
+      labels: [], // Indicadores que deseja monitorar
       datasets: [{
-          label: 'Desempenho Mensal',  // Nome do conjunto de dados
-          data: [12, 19, 3, 5, 2],  // Valores dos indicadores
-          backgroundColor: [
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 99, 132, 0.2)'
-          ],
-          borderColor: [
-              'rgba(75, 192, 192, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 99, 132, 1)'
-          ],
+          label: 'Total de alertas por sala',  // Nome do conjunto de dados
+          data: [],  // Valores dos indicadores
+          backgroundColor: 'rgba(255, 50, 50, 0.2)',  // Cor de fundo da linha
+          borderColor: 'rgb(255, 50, 50)',  // Cor da borda da linha
           borderWidth: 1 // Espessura da borda das barras
       }]
   },
@@ -53,12 +115,12 @@ const ctxLinha = document.getElementById('graficoLinha').getContext('2d');
 const graficoLinha = new Chart(ctxLinha, {
   type: 'line',  // Define o tipo de gráfico como linha
   data: {
-      labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4', 'Semana 5'], // Semanas ou períodos de tempo
+      labels: [],
       datasets: [{
-          label: 'Evolução Semanal',  // Nome do conjunto de dados
-          data: [3, 6, 8, 5, 9],  // Valores da evolução semanal
-          backgroundColor: 'rgba(54, 162, 235, 0.2)',  // Cor de fundo da linha
-          borderColor: 'rgba(54, 162, 235, 1)',  // Cor da borda da linha
+          label: 'Temperatura média por salas', 
+          data: [], 
+          backgroundColor: 'rgba(50, 50, 255, 0.2)',  // Cor de fundo da linha
+          borderColor: 'rgb(50, 50, 255)',  // Cor da borda da linha
           borderWidth: 2,  // Espessura da linha
           tension: 0.3  // Suavidade da curva da linha
       }]
@@ -74,16 +136,22 @@ const graficoLinha = new Chart(ctxLinha, {
 });
 
 // Função para atualizar os dados dos gráficos dinamicamente
-function atualizarGraficos(dadosBarras, dadosLinhas) {
-  graficoBarra.data.datasets[0].data = dadosBarras;  // Atualiza os dados do gráfico de barras
-  graficoLinha.data.datasets[0].data = dadosLinhas;  // Atualiza os dados do gráfico de linhas
-  graficoBarra.update();  // Atualiza o gráfico de barras na tela
-  graficoLinha.update();  // Atualiza o gráfico de linhas na tela
+function atualizarGraficoMedia(label, data) {
+    graficoLinha.data.labels = label // Atualiza as labels do gráfico
+    graficoLinha.data.datasets[0].data = data;  // Atualiza os dados do gráfico de linhas
+    graficoLinha.update();  // Atualiza o gráfico de linhas na tela
 }
 
-// Simulação de atualização de dados (substitua pelos dados do banco)
-setTimeout(() => {
-  const dadosAtualizadosBarra = [8, 14, 5, 6, 10];
-  const dadosAtualizadosLinha = [4, 7, 6, 8, 10];
-  atualizarGraficos(dadosAtualizadosBarra, dadosAtualizadosLinha);
-}, 5000);
+function atualizarGraficoAlertas(label, data){
+    graficoBarra.data.labels = label
+    graficoBarra.data.datasets[0].data = data
+    graficoBarra.update()
+}
+
+var intervalo = setInterval(() => {
+    alertasSala()
+    mediaPorSala()
+}, 2000)
+
+mediaPorSala()
+alertasSala()
