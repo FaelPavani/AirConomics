@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AirConomics | Dashboards</title>
+        <link rel="stylesheet" href="./style_estatico.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap" rel="stylesheet">
+        <!-- Importa o Chart.js para gráficos -->
+        <script data-jsd-embedded data-key="bc4cce06-bb15-44a8-a457-8ea7d4d999bf" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <div class="janela">
+            <div class="header-left">
+                <img src="../img/airconomics_logo_completo.png" alt="Logo AirConomics" class="logo">
+                <div class="btn-nav-white active">
+                    <a href="./dashboard_estatico.html">
+                        <h3>Salas</h3>
+                    </a>
+                </div>
+                <div class="btn-nav">
+                    <a href="./dashboard_geral.html">
+                        <h3>Geral</h3>
+                    </a>
+                </div>
+                <div class="btn-nav-white" id="novo_user">
+                    <a href="./novo_usuario.html">
+                        <h3>Cadastrar novo usuário</h3>
+                    </a>
+                </div>
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3>Sair</h3>
+                </div>
+            </div>
+            <div class="dash">
+                <div class="div_animacao">
+                    <h1 id="title_hello">Olá, Empresa</h1>
+                </div>
+                <div class="div_filtros">
+                    <select onchange="pegar_datas()" id="select_salas">
+                        <option value="#">Selecione uma sala...</option>
+                    </select>
+                    <select disabled onchange="filtrar_dados()" id="select_datas">
+                        <option value="#">Selecione uma data..</option>
+                    </select>
+                </div>
+                
+                <!-- Área dos gráficos alinhados lado a lado -->
+                <div class="indicadores">
+                    <div class="indicador" id="temp_media">
+                        <h3>Temperatura Média da Sala</h3>
+                        <span id="span_temp_media"></span>
+                    </div>
+                    <div class="indicador" id="temp_max">
+                        <h3>Temperatura Máxima da Sala</h3>
+                        <span id="span_temp_max"></span>
+                    </div>
+                    <div class="indicador" id="temp_min">
+                        <h3>Temperatura Mínima da Sala</h3>
+                        <span id="span_temp_min"></span>
+                    </div>
+                    <div class="indicador" id="temp_atual">
+                        <h3>Temperatura Atual da Sala</h3>
+                        <span id="span_temp_atual"></span>
+                    </div>
+                </div>
+                <div id="graficos">
+                    <canvas id="graficoLinha"></canvas>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script src="./script.js"></script>

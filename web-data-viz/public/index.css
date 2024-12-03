@@ -1,0 +1,897 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #303841;
+  --primary-light: #3A4750;
+  --secondary: #F3F3F3;
+  --alertcolor: #FF9669;
+  --logo-color: #2185D5;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
+    
+  
+}
+
+
+
+/* carrosel  */
+
+/* Estilos gerais para o carrossel */
+.slider {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 0;
+}
+
+.slider-containner {
+      width: 400%; /* 100% por imagem, ajuste conforme o número de imagens */
+      height: 90vh;
+      display: flex;
+      transition: transform 0.5s ease; /* Adiciona uma transição suave */
+}
+
+
+
+.slider-box {
+    width: 100vw; /* Cada imagem ocupa a largura total da tela */
+    height: auto;
+    position: relative;
+    text-align: center;
+}
+
+.slider-box img {
+    width: 100%; /* As imagens ocupam a largura total de cada box */
+    height: auto;
+}
+
+
+
+.content-problemas {
+  margin: 80px 80px; /* Espaçamento interno */
+  
+  
+  background-color: white;
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 2px 10px var(--logo-color0); /* Sombra */
+ 
+}
+
+.content-problemas span {
+  color:  var(--logo-color);
+}
+
+/* Estilo do título principal da seção */
+.content-problemas h1 {
+  font-size: 2.5em; /* Tamanho da fonte */
+  color: var(--primary); /* Cor do texto */
+  margin-bottom: 20px; /* Espaçamento inferior */
+  
+}
+
+/* Estilo dos subtítulos */
+.content-problemas h3 {
+  font-size: 1.8em; /* Tamanho da fonte */
+  color: var(--primary); /* Cor do texto */
+  margin: 20px 0; /* Margem superior e inferior */
+}
+
+/* Estilo dos parágrafos */
+.content-problemas p {
+  font-size: 1em; /* Tamanho da fonte */
+  line-height: 1.6; /* Altura da linha */
+  color: var(--primary); /* Cor do texto */
+  margin-bottom: 15px; /* Margem inferior */
+}
+
+
+.problemas li {
+
+margin-left: 2%;
+
+}
+
+
+
+/* Estilo da lista */
+.content-problemas ul {
+  padding-left: 0px; /* Espaçamento interno à esquerda */
+  list-style-type: disc; /* Estilo da lista */
+}
+
+/* Estilo dos itens da lista */
+.content-problemas ul li {
+  margin-bottom: 10px; /* Margem inferior para os itens */
+color: var(--primary);
+}
+
+
+ 
+  
+
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Esconde a parte de trás quando não visível */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s;
+  flex-direction: column;
+}
+
+.back {
+  background-color: var(--secondary);
+  transform: rotateY(180deg); /* Esconde a parte de trás inicialmente, ou seja irá rotacionar pessoal !! */
+}
+
+.box img { 
+  width: 60px;
+  border-radius: 10px;
+  height: 60px;
+}
+
+.box h2 {
+  color: var(--secondary);
+  text-shadow: 0 0 5px var(--logo-color), 0 0 10px var(--logo-color), 0 0 15px var(--logo-color);
+  margin-top: 20px;  /* Remove margens para alinhamento */
+}
+
+.box p {
+  margin: 10%;
+  color: var(--primary);
+  align-items: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+} 
+
+/* Problemas que enfrentamos ou solucionamos */
+.problemas {
+  height: 550px;
+  margin: 20px 80px; /* Espaçamento interno */
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+  text-align: center;
+}
+
+#img-AirCono {
+  /* Ajuste o tamanho conforme necessário */
+  margin: 0;
+  border: 5px solid var(--primary); /* Borda sólida de 5px com cor azul */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 1px; /* Espaçamento entre a borda e a imagem */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave */
+}
+
+
+
+/* Título centralizado */
+.titulo-problemas {
+  font-size: 40px;
+  color: var(--primary);
+  margin-bottom: 30px; /* Aumenta o espaço abaixo do título */
+}
+
+/* Flexbox para alinhar imagem e lista lado a lado */
+.conteudo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 5%;
+  margin-top: 20px;
+}
+
+/* Imagem posicionada à esquerda */
+#img-AirCono {
+  max-width: 350px; /* Ajuste o tamanho conforme necessário */
+  margin-top: 40px;
+  border: 20px solid white;
+  box-shadow: 0 0 20px black;
+}
+
+
+
+
+/* Lista de problemas à direita da imagem */
+.lista-problemas {
+  color: #000;
+  list-style-type: disc;
+  text-align: left;
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* Adiciona espaçamento entre os itens da lista */
+.lista-problemas li {
+  margin-bottom: 20px;
+}
+
+/* Espaçamento entre parágrafos */
+.lista-problemas p {
+  margin-top: 35px; /* Espaçamento entre parágrafo e próximo elemento */
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  
+}
+
+
+
+/* sobre nós e serviços */
+
+.social-about {
+  
+  height: 40vh; 
+margin: 80px 80px;
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+ padding: 20%;
+  justify-content: center;/* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+
+  /* margin-bottom: 2rem; */
+}
+
+.social-about h1{
+  font-size: 40px;
+  color: var(--primary);
+  
+}
+
+.social-about .container-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  
+  width: 80%; 
+  padding: 20px; /*espaço ao redor do conteúdo que você guilherme quiser implementar*/
+}
+.social-about .container-about .boxes-about {
+  display: flex;
+  flex-direction: row; /* fiz as boxes ficarem  em linha */
+  justify-content: center; /* centralizei de forma horizontal boxes */
+  gap: 20px; 
+  align-self: center;
+  margin-top: 5%;
+ 
+}
+
+.box-about { 
+  flex: 1; /* Faz a box ocupar espaço proporcionalmente */
+  min-width: 400px; 
+  max-width: 500px; 
+  min-height: 400px;
+ 
+   
+ 
+ 
+  padding: 30px; 
+  justify-content: center;
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px;
+  transition: transform 0.9s; 
+  perspective: 1000px; 
+}
+
+
+.front-about, .back-about {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: var(--secondary) ;
+ 
+  box-shadow: 0 0 40px black;
+  
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  border: 5px solid white;
+  flex-direction: column;
+  align-self: center;
+  padding: 20px;
+}
+
+
+.back-about {
+  transform: rotateY(180deg) rotateX(180deg)
+}
+
+.box-about:hover .front-about {
+  transform: rotateY(180deg);
+   /* Vira a frente ao passar o mouse */
+}
+
+.box-about:hover .back-about {
+  transform: rotateY(0); /* Mostra a parte de trás ao passar o mouse */
+}
+
+.box-about img { 
+  width: 200px;
+    border-radius: 10px;
+    height: 200px;
+}
+
+.box-about p {
+  margin: 10%;
+  color: var(--primary);
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.front-about span{
+  color: var(--logo-color);
+}
+
+.back-about span {
+  color:  var(--logo-color);
+}
+/* Estilo geral da seção */
+.content-about {
+  padding: 40px; /* Espaçamento interno */
+  background-color: var(--secondary); /* Cor de fundo */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 2px 10px var(--logo-color0); /* Sombra */
+ 
+}
+
+.content-about span {
+  color:  var(--logo-color);
+}
+
+/* Estilo do título principal da seção */
+.content-about h1 {
+  font-size: 2.5em; /* Tamanho da fonte */
+  color: var(--primary); /* Cor do texto */
+  margin-bottom: 20px; /* Espaçamento inferior */
+ 
+}
+
+/* Estilo dos subtítulos */
+.content-about h3 {
+  font-size: 1.8em; /* Tamanho da fonte */
+  color: var(--primary); /* Cor do texto */
+  margin: 20px 0; /* Margem superior e inferior */
+}
+
+/* Estilo dos parágrafos */
+.content-about p {
+  font-size: 1em; /* Tamanho da fonte */
+  line-height: 1.6; /* Altura da linha */
+  color: var(--primary); /* Cor do texto */
+  margin-bottom: 15px; /* Margem inferior */
+}
+
+/* Estilo da lista */
+.content-about ul {
+  padding-left: 0px; /* Espaçamento interno à esquerda */
+  list-style-type: disc; /* Estilo da lista */
+}
+
+/* Estilo dos itens da lista */
+.content-about ul li {
+  margin-bottom: 10px; /* Margem inferior para os itens */
+color: var(--primary);
+}
+
+
+ 
+  
+
+
+.front-about, .back-about {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Esconde a parte de trás quando não visível */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s;
+  flex-direction: column;
+  
+}
+
+.back-about {
+  background-color: var(--secondary);
+  transform: rotateY(180deg); /* Esconde a parte de trás inicialmente, ou seja irá rotacionar pessoal !! */
+}
+
+.box-about img { 
+  width: 60px;
+  border-radius: 10px;
+  height: 60px;
+}
+
+.box-about h2 {
+  color: var(--secondary);
+  /* text-shadow: 0 0 5px var(--logo-color), 0 0 10px var(--logo-color), 0 0 15px var(--logo-color); */
+  margin-top: 20px;  /* Remove margens para alinhamento */
+}
+
+.box-about p {
+  margin: 10%;
+  color: var(--primary);
+  align-items: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.container-about h2{
+  color: var(--primary);
+  width: 100%;
+  text-align: center;
+  
+}
+
+
+
+
+/* serviços */
+
+
+.social {
+  
+  height: calc(fit-content + 10%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.social h1{
+  font-size: 40px;
+  color: var(--primary);
+}
+
+.social-boxes h1{
+  font-size: 40px;
+  color: var(--primary);
+}
+
+
+.social .social-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Centraliza verticalmente */
+  align-items: center;
+  /* Centraliza horizontalmente */
+  width: 80%;
+  height: 100%;
+  /* Garante que a altura ocupe todo o espaço disponível */
+  padding: 20px;
+  /* Espaço ao redor do conteúdo */
+}
+
+
+
+
+
+.social .social-container h2{
+  color: var(--secondary);
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.social .social-container .social-boxes {
+  display: flex;
+  flex-direction: row;
+  /* As boxes ficam em linha */
+  margin-top: 5%;
+  justify-content: center;
+  /* Centraliza boxes horizontalmente */
+  gap: 200px;
+  /* Aumente este valor para mais espaço entre as boxes */
+  align-self: center;
+  margin-bottom: 60px;
+  /* Centraliza o grupo de boxes */
+}
+
+.box {
+  position: relative;
+  /* Necessário para o efeito de rotação */
+  width: 300px;
+  /* Ajuste conforme necessário */
+  height: 300px;
+  /* Ajuste conforme necessário */
+  perspective: 1000px;
+  /* Profundidade do efeito 3D */
+}
+
+
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: var(--secondary) ;
+  box-shadow: 0 0 40px black;
+  
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  border: 5px solid vwhite;
+  flex-direction: column;
+  align-self: center;
+  padding: 20px;
+  /* Efeito suave na rotação */
+}
+
+.front {
+  z-index: 2;
+  /* Mantém a frente acima da parte de trás */
+  flex-direction: column;
+  /* Empilha logo e texto verticalmente */
+  justify-content: flex-start;
+  /* Alinha o conteúdo no topo */
+  align-items: center;
+  /* Centraliza horizontalmente */
+  text-align: center;
+  /* Centraliza o texto */
+  height: 100%;
+  /* Garante que ocupe toda a altura da box */
+  padding-top: 10px;
+  /* Adiciona um espaço no topo para afastar do limite */
+}
+
+
+
+.box:hover .front {
+  transform: rotateY(180deg);
+  
+    transform: translateY(-25px);
+    /* Elevação */
+    /* box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5); */
+    /* Sombra mais intensa */
+  /* Gira a frente ao passar o mouse */
+}
+
+
+
+.box img {
+  width: 80%;
+  height: 100%;
+  max-height: 200px;
+  margin-bottom: 5px;
+  filter: grayscale(70%) brightness(0);
+}
+
+.box h4 {
+  color: var(--primary);
+  margin: -30px 0 2px 0;
+  font-size: 22px;
+}
+
+.back p {
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+  line-height: 1.6;
+  color: var(--primary);
+  font-weight: bold;
+  text-align: center;
+  padding: 3%;
+}
+
+/* Integrantes */
+
+/*Container que abriga os cards:*/
+
+
+.Integrantes-titulo h1 {
+
+  font-size: 40px;
+  color: var(--primary);
+  text-align: center; /* Centraliza o título */
+  margin-bottom: 20px; /* Espaço entre o título e os cards */
+  margin-top: 5%;
+  
+}
+
+.Integrantes-titulo span {
+  color: var(--logo-color) /* Adiciona cor ao 'Air' no título */
+}
+
+.container-cards {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /*Faz com que os cards não fiquem
+  só numa linha se a tela for menor:*/
+  flex-wrap: wrap;
+  
+  margin: 40px 100px;
+}
+
+/*Estilos dos cards, dentro do container:*/
+.card {
+  position: relative;
+  /* border: 5px solid var(--primary); */
+  width: 300px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 20px;
+  box-shadow: 0 0 40px black;
+ 
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid white;
+  /* backdrop-filter: blur(5px); */
+}
+
+/*Estilo do conteúdo dentro dos cards:*/
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0.5;
+  
+  transition: 0.5s;
+}
+  
+.content .container-cards {
+  gap: 200px;
+}
+
+/*Comportamento do conteúdo dos cards ao
+passar o mouse em cima:*/
+.container-cards .card:hover .content {
+  
+  opacity: 1;
+  /*Sobe um pouco o conteúdo do card
+  pra caber os ícones de rede social:*/
+  transform: translateY(-20px);
+}
+
+/*Imagem do avatar, com borda externa sutil:*/
+.container-cards .card .content .avatarImg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid black
+}
+
+/*Posicionamento da imagem do avatar dentro da borda:*/
+.container-cards .card .content .avatarImg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  color: black;
+  
+}
+
+/*Estilo do nome/título do avatar:*/
+.container-cards .card .content .avatarTxt h3 {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0 10px;
+  line-height: 1.1em;
+}
+
+/*Estilo do cargo/subtítulo do avatar:*/
+.container-cards .card .content .avatarTxt h3 span {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: initial;
+}
+
+/*Posição dos ícones de rede social do avatar:*/
+.container-cards .card .socialIcons {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  
+}
+
+/*Estilo da lista de rede social:*/
+.container-cards .card .socialIcons li {
+  /*Tira as bolinhas de lista:*/
+  list-style: none;
+  /*Dá espaçamento pros ícones*/
+  margin: 0 10px;
+  /*Deixa escondido embaixo do card:*/
+  transform: translateY(40px);
+  /*Deixa a transição suave:*/
+  transition: 0.5s;
+  opacity: 0;
+  /*Faz a transição acontecer em cascata,
+  a partir dos valores da variável "--i"
+  definida lá no HTML:*/
+  transition-delay: calc(0.1s * var(--i));
+  
+}
+
+/*Comportamento dos ícones rede social ao 
+passar o mouse em cima:*/
+.container-cards .card:hover .socialIcons li {
+  /*Faz os ícones subirem pra uma posição
+  visível, já que antes estavam escondidos:*/
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/*Estilo ícones de rede social, dentro da tag "a":*/
+.container-cards .card .socialIcons li a {
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+
+
+}
+
+.Integrantes-titulo .container-cards {
+  gap: 60px;
+}
+
+
+
+/*footer*/
+
+.footer-container {
+
+  font-family: 'Poppins';
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+
+}
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  /* Alinha os itens à esquerda */
+ 
+}
+
+.h3-r {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;  /* Centraliza as imagens horizontalmente */
+  align-items: center;      /* Alinha as imagens verticalmente */
+  gap: 15px;                /* Espaçamento entre os ícones */
+  margin-top: 10px;         /* Espaço superior, se necessário */
+}
+
+/* Ajuste as imagens das redes sociais */
+.social-icons img {
+  width: 40px;  /* Ajuste o tamanho das imagens (tamanho uniforme) */
+  height: 40px; /* Mantenha as proporções dos ícones */
+  object-fit: contain; /* Garante que as imagens não se distorçam */
+  transition: transform 0.3s ease; /* Animação quando houver interação */
+}
+
+.social-icons img:hover {
+  transform: scale(1.1); /* Aumenta um pouco o ícone quando o usuário passar o mouse */
+}
+
+/* Estilo do endereço e do contato */
+.p-footer {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000000;
+  line-height: 1.5; /* Melhora o espaçamento entre as linhas */
+}
+
+
+.footer-links1 a {
+  margin-right: 70px;
+  text-decoration: none; 
+  color: #000000;
+  font-size: 16px;
+}
+
+.footer-links1 li {
+  margin-bottom: 15px;
+}
+
+.footer-links2 a {
+  text-decoration: none; 
+  color: #000000;
+  font-size: 16px;
+}
+
+.footer-links2 li {
+  margin-bottom: 15px;
+}
+
+.social-icons img {
+  width: 30px; /* Ajuste o valor para o tamanho desejado */
+  height: 30px;
+}
+.social-icons a {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  margin-right: 15px; 
+  width: 30px; /* Ajuste o valor para o tamanho desejado */
+  height: 30px;
+}
+
+.footer-logo img {
+  max-width: 200px; /* Define a largura máxima da imagem */
+  max-height: 100px; /* Define a altura máxima da imagem */
+  width: auto; /* Ajuste automático da largura para manter a proporção */
+  height: auto; /* Ajuste automático da altura para manter a proporção */
+}
+
+.p-footer {
+  color: #000000;
+  font-size: 14px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+.h3-n {
+  margin-bottom: 55%;
+  all: unset;
+  font-size: 25px;
+}
+
+.links {
+  display: flex;
+}
+
+.h3-r {
+  margin-bottom: 35%;
+  all: unset;
+  font-size: 16px;
+}
+
+.p-copy {
+  text-align: center;    /* Centraliza o texto horizontalmente */
+  margin: 0;             /* Remove qualquer margem padrão */
+  padding: 10px 0;       /* Adiciona algum espaçamento vertical */
+}
+
+

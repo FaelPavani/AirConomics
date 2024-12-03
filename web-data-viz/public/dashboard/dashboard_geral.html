@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AirConomics | Dashboards</title>
+        <link rel="stylesheet" href="./style_estatico.css">
+        <link rel="stylesheet" href="./dashboard_geral.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap" rel="stylesheet">
+        <!-- Importa o Chart.js para gráficos -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script data-jsd-embedded data-key="bc4cce06-bb15-44a8-a457-8ea7d4d999bf" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+        
+    </head>
+    <body>
+        
+        <div class="janela">
+            <div class="header-left">
+                <img src="../img/airconomics_logo_completo.png" alt="Logo AirConomics" class="logo">
+                <div class="btn-nav-white">
+                    <a href="./dashboard_estatico.html">
+                        <h3>Salas</h3>
+                    </a>
+                </div>
+                <div class="btn-nav active">
+                    <a href="./dashboard_geral.html">
+                        <h3>Geral</h3>
+                    </a>
+                </div>
+                <div class="btn-nav-white" id="novo_user">
+                    <a href="./novo_usuario.html">
+                        <h3>Cadastrar novo usuário</h3>
+                    </a>
+                </div>
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3>Sair</h3>
+                </div>
+            </div>
+            <div class="dash">
+                <div class="div_animacao">
+                    <h1 id="title_hello"></h1>
+                </div>
+                <div id="alerta"></div>
+                <div class="indicadores">
+                    <div class="indicador" id="temp_media">
+                        <h3>Sala com maior quantidade de alertas</h3>
+                        <span id="span_maior_alertas"></span>
+                    </div>
+                    <div class="indicador" id="temp_max">
+                        <h3>Sala com maior temperatura média</h3>
+                        <span id="span_maior_media"></span>
+                    </div>                    
+                </div>
+                <!-- Área dos gráficos alinhados lado a lado -->
+                <div id="graficos" style="display: flex; gap: 20px; justify-content: center;">
+                    <div class="grafico1"><canvas id="graficoBarra" ></canvas></div>
+                    <div class="grafico1"><canvas id="graficoLinha" ></canvas></div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
+<script src="./dashboard_geral.js"></script>
