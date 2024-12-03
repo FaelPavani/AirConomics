@@ -34,6 +34,7 @@ function buscarSalas(){
 
 function buscarIndicadores() {
     var sala = select_salas.value
+    var sala_selecionada = select_salas
     var dia = select_datas.value
     fetch(`http://localhost:3333/dash/indicadores/${sala}/${dia}`, {
         method: "GET",
@@ -43,10 +44,32 @@ function buscarIndicadores() {
     }).then((resposta) => {
         if (resposta.ok) {
             resposta.json().then((json) => {
-                span_temp_media.innerHTML = `${json[0].temp_media} ºC`
+                if(json[0].temp_media == null){
+                    span_temp_media.innerHTML = `Dados indisponíveis`
+                }else{
+                    span_temp_media.innerHTML = `${json[0].temp_media} ºC`
+                }
+
+                if(json[0].temp_max == null){
+                    span_temp_max.innerHTML = `Dados indisponíveis`
+                }else{
+                    span_temp_max.innerHTML = `${json[0].temp_max} ºC`
+                }
+
+                if(json[0].temp_min == null){
+                    span_temp_min.innerHTML = `Dados indisponíveis`
+                }else{
+                    span_temp_min.innerHTML = `${json[0].temp_min} ºC`
+                }
+
+                if(json[0].temp_atual >= 25 || json[0].temp_atual <= 21){
+                    div_alerta.style.display = 'flex'
+                    let sala_selecionada = select_salas.value = sala
+                    div_alerta.innerHTML = `<span>❗A temperatura da sala selecionada está fora dos padrões❗</span>`
+                }else{
+                    div_alerta.style.display = 'none'
+                }
                 span_temp_atual.innerHTML = `${json[0].temp_atual} ºC`
-                span_temp_max.innerHTML = `${json[0].temp_max} ºC`
-                span_temp_min.innerHTML = `${json[0].temp_min} ºC`
             });
 
         } else {

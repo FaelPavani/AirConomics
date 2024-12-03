@@ -20,6 +20,8 @@ function autenticar(req, res) {
 
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
+                        usuarioModel.inserirHistorico(resultadoAutenticar[0].id_usuario, resultadoAutenticar[0].empresaId)
+                        
                         return res.json({
                             id: resultadoAutenticar[0].id_usuario,
                             email: resultadoAutenticar[0].email_login,

@@ -12,6 +12,31 @@
         <!-- Importa o Chart.js para gráficos -->
         <script data-jsd-embedded data-key="bc4cce06-bb15-44a8-a457-8ea7d4d999bf" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            .alerta{
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                /* color: white; */
+                height: 80px;
+                width: 160px;
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: #212124;
+                color: white;
+                z-index: 9999;
+                margin: 0 20px;
+                padding: 10px;
+                border-radius: 10px;
+                border: 1px solid #0055ff;
+            }
+
+            .alerta span{
+                text-align: justify;
+            }
+        </style>
     </head>
     <body>
         <div class="janela">
@@ -39,6 +64,20 @@
             <div class="dash">
                 <div class="div_animacao">
                     <h1 id="title_hello">Olá, Empresa</h1>
+                </div>
+                <div class="parametros-alerta">
+                    <div class="item-regua perigo-quente">
+                        <p>Alerta</p>
+                        <p><=21°C</p>
+                    </div>
+                    <div class="item-regua ideal">
+                        <p>Ideal</p>
+                        <p>20°C</p>
+                    </div>
+                    <div class="item-regua perigo-quente">
+                        <p>Alerta</p>
+                        <p>>=25°C</p>
+                    </div>
                 </div>
                 <div class="div_filtros">
                     <select onchange="pegar_datas()" id="select_salas">
@@ -71,6 +110,10 @@
                 <div id="graficos">
                     <canvas id="graficoLinha"></canvas>
                 </div>
+            </div>
+
+            <div class="alerta" id="div_alerta">
+                
             </div>
         </div>
     </body>

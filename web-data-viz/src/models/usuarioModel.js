@@ -42,6 +42,18 @@ function cadastrar(body) {
     
 }
 
+function inserirHistorico(id_usuario, id_empresa){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", id_usuario, id_empresa);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucaoSql = `
+        INSERT INTO historico_login VALUES (default, ${id_usuario}, ${id_empresa}, default);
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 function cadastrarPorEmpresa(nome, email, senha, telefone, dt_nascimento, id_empresa, tecnico) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha, telefone);
     
@@ -57,5 +69,6 @@ function cadastrarPorEmpresa(nome, email, senha, telefone, dt_nascimento, id_emp
 module.exports = {
     autenticar,
     cadastrar,
-    cadastrarPorEmpresa
+    cadastrarPorEmpresa,
+    inserirHistorico
 };
