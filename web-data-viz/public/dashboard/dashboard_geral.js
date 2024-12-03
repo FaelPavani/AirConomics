@@ -8,11 +8,11 @@ if(is_master == 1){
 
 function limparSessao() {
   sessionStorage.clear();
-  window.location = "../../Site.v2/index.html";
+  window.location = "../index.html";
 }
 
 function mediaPorSala(){
-    fetch(`http://localhost:3333/dash/mediaTemp/${sessionStorage.ID_EMPRESA}`, {
+    fetch(`/dash/mediaTemp/${sessionStorage.ID_EMPRESA}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -50,7 +50,7 @@ function mediaPorSala(){
 
 function alertasSala(){
     // 
-    fetch(`http://localhost:3333/dash/alertas/${sessionStorage.ID_EMPRESA}`, {
+    fetch(`/dash/alertas/${sessionStorage.ID_EMPRESA}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

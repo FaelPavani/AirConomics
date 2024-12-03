@@ -114,7 +114,7 @@ function logar() {
     return
   }
 
-  fetch('http://localhost:3333/usuarios/autenticar', {
+  fetch('/usuarios/autenticar', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -264,7 +264,7 @@ function cadastrar_usuario() {
     return
   }
 
-  fetch('http://localhost:3333/usuarios/cadastrar', {
+  fetch('/usuarios/cadastrar', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

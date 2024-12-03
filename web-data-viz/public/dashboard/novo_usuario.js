@@ -24,7 +24,7 @@ function cadastrar_novo_usuario() {
     return
   }
 
-  fetch(`http://localhost:3333/usuarios/cadastrar/${id_empresa}`, {
+  fetch(`/usuarios/cadastrar/${id_empresa}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -84,5 +84,5 @@ function verificar_requisitos() {
 
 function limparSessao() {
   sessionStorage.clear();
-  window.location = "../../Site.v2/index.html";
+  window.location = "../index.html";
 }

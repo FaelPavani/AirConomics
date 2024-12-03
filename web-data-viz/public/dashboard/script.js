@@ -13,7 +13,7 @@ if(is_master == 1){
 buscarSalas()
 
 function buscarSalas(){
-    fetch(`http://localhost:3333/salas/listar/${sessionStorage.ID_EMPRESA}`, {
+    fetch(`/salas/listar/${sessionStorage.ID_EMPRESA}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function buscarIndicadores() {
     var sala = select_salas.value
     var sala_selecionada = select_salas
     var dia = select_datas.value
-    fetch(`http://localhost:3333/dash/indicadores/${sala}/${dia}`, {
+    fetch(`/dash/indicadores/${sala}/${dia}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -82,7 +82,7 @@ function filtrar_dados() {
     var sala = select_salas.value
     var dia = select_datas.value
 
-    fetch(`http://localhost:3333/dash/temperaturaHist/${sala}/${dia}`, {
+    fetch(`/dash/temperaturaHist/${sala}/${dia}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -125,7 +125,7 @@ function pegar_datas(){
     loop = true
     var sala = select_salas.value
 
-    fetch(`http://localhost:3333/salas/datas/${sala}`, {
+    fetch(`/salas/datas/${sala}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
