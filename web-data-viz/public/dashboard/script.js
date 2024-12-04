@@ -62,7 +62,7 @@ function buscarIndicadores() {
                     span_temp_min.innerHTML = `${json[0].temp_min} ºC`
                 }
 
-                if(json[0].temp_atual >= 25 || json[0].temp_atual <= 21){
+                if(json[0].temp_atual >= 23 || json[0].temp_atual <= 20){
                     div_alerta.style.display = 'flex'
                     let sala_selecionada = select_salas.value = sala
                     div_alerta.innerHTML = `<span>❗A temperatura da sala selecionada está fora dos padrões❗</span>`
