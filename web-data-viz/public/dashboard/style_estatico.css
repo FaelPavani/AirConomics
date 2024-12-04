@@ -204,6 +204,7 @@ body {
 .item-regua p {
   margin: 0;
   font-weight: 500;
+  color: rgb(216, 216, 216);
 }
 
 .item-regua p:nth-child(2) {
@@ -227,7 +228,11 @@ body {
 }
 
 .ideal {
-  background-color: #9ccc65;
+  background-color: #98ff98;
+
+}
+.ideal p{
+  color: white;
 }
 
 .cards {
