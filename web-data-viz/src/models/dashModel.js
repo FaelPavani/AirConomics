@@ -87,7 +87,7 @@ function alertasEmpresa(id_empresa) {
       FROM tb_dado AS d
       JOIN tb_sensor AS s
       ON d.fk_sensor = s.id_sensor
-      WHERE s.fk_empresa = ${id_empresa} AND d.temperatura_dado >= 25.00 OR d.temperatura_dado <= 21.00
+      WHERE s.fk_empresa = ${id_empresa} AND d.temperatura_dado >= 23.00 OR d.temperatura_dado <= 20.00
       GROUP BY s.numeroSala_sensor;
   `;
   console.log("Executando a instrução SQL: \n" + instrucaoSql);

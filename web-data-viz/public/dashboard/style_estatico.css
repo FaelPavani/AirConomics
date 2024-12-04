@@ -115,10 +115,10 @@ body {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  background-color: white;
   height: 100vh;
   overflow: auto;
-  color: white;
+  color: black;
 }
 
 .dash .div_animacao{
@@ -250,7 +250,8 @@ body {
   /* text-align: center; */
   height: 180px;
   /* justify-content: right; */
-  background-color: #212124;
+  background-color: white;
+  color: black;
   font-size: 20px;
 }
 
